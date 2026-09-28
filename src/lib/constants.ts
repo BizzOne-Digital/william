@@ -1,9 +1,8 @@
 export const BRAND = {
   name: "Intense Dropz",
-  operator: "WJT Enterprises",
   email: "info@intensedropz.ca",
-  phone: "+1 (519) 212-7624",
-  phoneTel: "+15192127624",
+  phone: "226-499-8539",
+  phoneTel: "+12264998539",
   market: "Canada",
   currency: "CAD",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",

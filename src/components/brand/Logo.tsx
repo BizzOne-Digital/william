@@ -46,16 +46,9 @@ export function Logo({ compact, variant = "default" }: { compact?: boolean; vari
             <span className="text-accent">DROPZ</span>
           </div>
         ) : (
-          <>
-            <div className="font-display text-base font-extrabold uppercase tracking-[0.1em] text-white sm:text-lg">
-              Intense Dropz
-            </div>
-            {!compact && (
-              <div className="mt-1 text-[10px] font-medium uppercase tracking-[0.22em] text-muted sm:text-[11px]">
-                WJT Enterprises
-              </div>
-            )}
-          </>
+          <div className="font-display text-base font-extrabold uppercase tracking-[0.1em] text-white sm:text-lg">
+            Intense Dropz
+          </div>
         )}
       </div>
     </Link>

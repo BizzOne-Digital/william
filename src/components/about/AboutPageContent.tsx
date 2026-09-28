@@ -64,7 +64,7 @@ export function AboutPageContent({
           <div className="relative mx-auto flex min-h-[min(52svh,520px)] w-full min-w-0 max-w-7xl flex-col justify-center px-4 py-16 pt-[5.5rem] sm:min-h-[min(58svh,580px)] sm:px-6 sm:py-20 lg:px-8">
             <div className="w-full min-w-0 max-w-2xl">
               <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/85 sm:text-[11px] sm:tracking-[0.38em]">
-                {BRAND.operator}
+                {BRAND.name}
               </p>
 
               <h1 className="mt-4 font-display text-[clamp(2rem,8vw,4.25rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] break-words">
@@ -75,7 +75,7 @@ export function AboutPageContent({
               <div className="mt-5 h-[3px] w-12 rounded-sm bg-accent shadow-[0_0_18px_rgba(0,245,255,0.55)]" />
 
               <p className="mt-6 text-lg font-semibold leading-snug text-white sm:text-xl">
-                The public face of WJT Enterprises.
+                Premium research products. Elevated experience.
               </p>
               <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/60 sm:text-base">
                 A refined online destination built for peptide research customers who expect
@@ -92,9 +92,8 @@ export function AboutPageContent({
             <div>
               <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">Who we are</h2>
               <p className="mt-4 leading-relaxed text-white/65">
-                <strong className="font-semibold text-white/90">{BRAND.name}</strong> is operated by{" "}
-                <strong className="font-semibold text-white/90">{BRAND.operator}</strong>. We are
-                building a trustworthy ecommerce experience for adults in {BRAND.market} — with
+                <strong className="font-semibold text-white/90">{BRAND.name}</strong> is building a
+                trustworthy ecommerce experience for adults in {BRAND.market} — with
                 honest product information, clear policies, and tools that support informed
                 decisions.
               </p>

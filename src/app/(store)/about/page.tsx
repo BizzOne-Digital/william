@@ -4,7 +4,7 @@ import { AboutPageContent } from "@/components/about/AboutPageContent";
 
 export const metadata = siteMetadata({
   title: "About Us",
-  description: "Learn about Intense Dropz and WJT Enterprises.",
+  description: "Learn about Intense Dropz.",
 });
 
 export default async function AboutPage() {

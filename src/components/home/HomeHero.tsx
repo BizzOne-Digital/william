@@ -27,7 +27,7 @@ export function HomeHero() {
       <div className="relative mx-auto flex min-h-[100svh] w-full min-w-0 max-w-7xl flex-col justify-center px-4 pb-24 pt-[5.25rem] sm:px-6 sm:pb-20 lg:px-8">
         <div className="w-full min-w-0 max-w-xl lg:max-w-2xl">
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/90 sm:text-[11px] sm:tracking-[0.35em]">
-            {BRAND.operator} presents
+            {BRAND.market} · {BRAND.currency}
           </p>
 
           <h1 className="mt-4 font-display text-[clamp(2.15rem,11vw,5.75rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] break-words sm:mt-5">

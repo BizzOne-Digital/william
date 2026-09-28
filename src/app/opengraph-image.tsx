@@ -22,7 +22,7 @@ export default function OgImage() {
         }}
       >
         <div style={{ fontSize: 28, letterSpacing: 6, opacity: 0.7, textTransform: "uppercase" }}>
-          {BRAND.operator}
+          Premium research
         </div>
         <div style={{ fontSize: 72, fontWeight: 700, marginTop: 16 }}>{BRAND.name}</div>
         <div style={{ fontSize: 28, marginTop: 24, color: "#22d3ee" }}>

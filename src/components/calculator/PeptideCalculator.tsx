@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { SyringeDoseVisual } from "@/components/calculator/SyringeDoseVisual";
 type AmountUnit = "mg" | "mcg";
 
 function parsePositive(value: string): number | null {
@@ -154,6 +155,12 @@ export function PeptideCalculator() {
                   </>
                 )}
               </div>
+              {!result.error &&
+                result.volumeMl != null &&
+                result.volumeUl != null &&
+                result.volumeMl > 0 && (
+                  <SyringeDoseVisual volumeMl={result.volumeMl} volumeUl={result.volumeUl} />
+                )}
             </div>
           ) : null}
         </div>

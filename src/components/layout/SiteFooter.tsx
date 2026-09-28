@@ -97,8 +97,8 @@ export async function SiteFooter() {
           <div className="lg:col-span-5">
             <Logo />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/55">
-              Premium ecommerce for {BRAND.market}. {BRAND.name} is operated by {BRAND.operator}.
-              Verified pricing appears on published listings when your catalog is live.
+              Premium ecommerce for {BRAND.market}. Verified pricing appears on published listings
+              when your catalog is live.
             </p>
             <Link
               href="/shop"
@@ -172,7 +172,7 @@ export async function SiteFooter() {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-white/[0.08] pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[11px] leading-relaxed text-white/40 sm:text-xs">
-            © {new Date().getFullYear()} {BRAND.operator}. All rights reserved.
+            © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
           </p>
           <p className="text-[11px] text-white/35 sm:text-xs">
             Adults 18+ · {BRAND.currency} · {BRAND.market}

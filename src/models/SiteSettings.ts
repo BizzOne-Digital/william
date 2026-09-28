@@ -4,14 +4,14 @@ import { BRAND, POLICY_REVIEW_NOTICE } from "@/lib/constants";
 const defaultHomeHero = {
   headline: "Precision-formulated products. Elevated experience.",
   subheadline:
-    "Intense Dropz by WJT Enterprises — a premium Canadian storefront built for clarity, quality, and confident shopping.",
+    "Intense Dropz — a premium Canadian storefront built for clarity, quality, and confident shopping.",
   ctaPrimary: "Explore the shop",
   ctaSecondary: "Peptide calculator",
 };
 
 const defaultAbout = `[Owner review required]
 
-Replace this block in Admin → Settings with your approved story: why you started Intense Dropz, how WJT Enterprises serves customers, your quality standards, and what makes your catalog trustworthy — only include claims you can verify.`;
+Replace this block in Admin → Settings with your approved story: why you started Intense Dropz, your quality standards, and what makes your catalog trustworthy — only include claims you can verify.`;
 
 const defaultPolicies = {
   shipping: `${POLICY_REVIEW_NOTICE}\n\nAdd your shipping regions, carriers, processing times, and any restrictions once approved for your market.`,
@@ -29,7 +29,7 @@ const SiteSettingsSchema = new Schema(
     homeIntro: {
       type: String,
       default:
-        "Intense Dropz is the public brand operated by WJT Enterprises. Our online experience is designed to be fast, transparent, and mobile-ready — with tools that help you shop with confidence.",
+        "Intense Dropz is designed to be fast, transparent, and mobile-ready — with tools that help you shop with confidence.",
     },
     bookingAvailabilityMessage: {
       type: String,

@@ -1,4 +1,4 @@
-# Intense Dropz — WJT Enterprises
+# Intense Dropz
 
 Premium ecommerce storefront and admin portal in a **single Next.js App Router** project (TypeScript, Tailwind CSS, MongoDB Atlas, Cloudinary).
 
