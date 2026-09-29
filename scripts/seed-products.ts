@@ -72,11 +72,7 @@ async function main() {
 
     const existing = await Product.findOne({ slug: item.slug });
     if (existing) {
-      const update = { ...payload };
-      if (item.imageFile === "rt-10.jpg" && existing.images?.[0]) {
-        update.images = existing.images as string[];
-      }
-      await Product.updateOne({ _id: existing._id }, { $set: update });
+      await Product.updateOne({ _id: existing._id }, { $set: payload });
       console.log("Updated:", item.title);
     } else {
       await Product.create(payload);

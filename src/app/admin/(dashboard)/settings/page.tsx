@@ -33,17 +33,6 @@ export default async function AdminSettingsPage() {
           <textarea name="homeIntro" defaultValue={settings.homeIntro} rows={3} className="w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm" />
         </fieldset>
         <fieldset className="glass-panel space-y-3 rounded-2xl p-6">
-          <legend className="px-2 font-semibold text-white">Pricing page range</legend>
-          <label className="flex items-center gap-2 text-sm">
-            <input type="checkbox" name="pricingRangeApproved" defaultChecked={settings.pricingRangeApproved} />
-            Show approved range on /pricing
-          </label>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <input name="pricingRangeMinCAD" type="number" step="0.01" placeholder="Min CAD" defaultValue={settings.pricingRangeMinCAD ?? ""} className="rounded-xl border border-border bg-surface px-3 py-2 text-sm" />
-            <input name="pricingRangeMaxCAD" type="number" step="0.01" placeholder="Max CAD" defaultValue={settings.pricingRangeMaxCAD ?? ""} className="rounded-xl border border-border bg-surface px-3 py-2 text-sm" />
-          </div>
-        </fieldset>
-        <fieldset className="glass-panel space-y-3 rounded-2xl p-6">
           <legend className="px-2 font-semibold text-white">Checkout & shipping</legend>
           <label className="flex items-center gap-2 text-sm">
             <input type="checkbox" name="checkoutEnabled" defaultChecked={settings.checkoutEnabled} />

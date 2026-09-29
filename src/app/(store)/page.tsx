@@ -58,9 +58,6 @@ export default async function HomePage() {
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
               <h2 className="font-display text-3xl font-semibold text-white">Featured products</h2>
-              <p className="mt-2 text-sm text-muted">
-                Published catalog items appear here. Add and publish products in admin when ready.
-              </p>
             </div>
             <Link href="/shop" className="hidden items-center gap-1 text-sm text-accent sm:inline-flex">
               View shop <ArrowRight className="h-4 w-4" />

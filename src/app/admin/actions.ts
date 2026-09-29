@@ -312,6 +312,5 @@ async function saveSiteSettings(formData: FormData) {
     entityType: "site_settings",
   });
   revalidatePath("/");
-  revalidatePath("/pricing");
   return { ok: true as const };
 }

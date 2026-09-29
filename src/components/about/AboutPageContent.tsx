@@ -42,51 +42,17 @@ export function AboutPageContent({
 
   return (
     <>
-      <section className="about-hero-band relative -mt-[4.5rem] w-full max-w-full overflow-hidden border-b border-white/[0.06]">
-        <div className="relative min-h-[min(52svh,520px)] sm:min-h-[min(58svh,580px)]">
-          <Image
-            src="/images/feature-luxury-lab.jpg"
-            alt=""
-            fill
-            className="object-cover object-[75%_center] sm:object-[right_center]"
-            priority
-            sizes="100vw"
-          />
-          <div
-            className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/55 via-45% to-black/25"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/35"
-            aria-hidden
-          />
+      <section className="mx-auto w-full min-w-0 max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <header className="mb-10 max-w-2xl border-b border-white/[0.08] pb-8">
+          <h1 className="font-display text-3xl font-bold text-white sm:text-4xl">
+            About <span className="text-accent">{BRAND.name}</span>
+          </h1>
+          <p className="mt-3 text-sm leading-relaxed text-white/60 sm:text-base">
+            Premium research products for {BRAND.market} — clarity, consistency, and a refined
+            shopping experience.
+          </p>
+        </header>
 
-          <div className="relative mx-auto flex min-h-[min(52svh,520px)] w-full min-w-0 max-w-7xl flex-col justify-center px-4 py-16 pt-[5.5rem] sm:min-h-[min(58svh,580px)] sm:px-6 sm:py-20 lg:px-8">
-            <div className="w-full min-w-0 max-w-2xl">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/85 sm:text-[11px] sm:tracking-[0.38em]">
-                {BRAND.name}
-              </p>
-
-              <h1 className="mt-4 font-display text-[clamp(2rem,8vw,4.25rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] break-words">
-                <span className="text-white">About </span>
-                <span className="text-accent">Intense Dropz</span>
-              </h1>
-
-              <div className="mt-5 h-[3px] w-12 rounded-sm bg-accent shadow-[0_0_18px_rgba(0,245,255,0.55)]" />
-
-              <p className="mt-6 text-lg font-semibold leading-snug text-white sm:text-xl">
-                Premium research products. Elevated experience.
-              </p>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/60 sm:text-base">
-                A refined online destination built for peptide research customers who expect
-                clarity, consistency, and a premium experience.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto w-full min-w-0 max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="space-y-8">
             <div>
@@ -104,24 +70,12 @@ export function AboutPageContent({
               </p>
             </div>
 
-            {showOwnerBlock ? (
+            {showOwnerBlock && (
               <div className="rounded-2xl border border-accent/25 bg-accent/[0.06] p-6 sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
                   From the owner
                 </p>
                 <div className="prose-policy mt-4 text-white/75">{ownerMessage}</div>
-              </div>
-            ) : (
-              <div className="rounded-2xl border border-amber-500/25 bg-amber-500/[0.06] p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-200/90">
-                  Owner story — coming soon
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-white/65">
-                  Add your approved brand story, mission, and standards in{" "}
-                  <span className="text-white/85">Admin → Settings → About content</span>. We
-                  intentionally avoid placeholder history or credentials until you supply verified
-                  copy.
-                </p>
               </div>
             )}
 

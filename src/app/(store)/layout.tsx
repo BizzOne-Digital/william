@@ -17,7 +17,7 @@ export default async function StoreLayout({ children }: { children: React.ReactN
   return (
     <>
       <SiteHeader cartCount={cartCount} />
-      <main className="page-width flex-1 pt-[4.5rem] [&:has(.about-hero-band)]:pt-0 [&:has(.home-hero-root)]:pt-0">
+      <main className="page-width flex-1 pt-[4.5rem] [&:has(.home-hero-root)]:pt-0">
         {children}
       </main>
       <SiteFooter />

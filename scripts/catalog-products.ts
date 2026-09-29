@@ -164,11 +164,9 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
   },
 ];
 
-/**
- * Cursor asset filename fragment → catalog imageFile.
- * Retatrutide (rt-10.jpg) is intentionally omitted — keep existing hero-style image.
- */
+/** Cursor asset filename fragment → catalog imageFile */
 export const ASSET_IMAGE_MAP: Record<string, string> = {
+  "image-6dc3bbcf": "rt-10.jpg",
   "image-27c770c6": "tsm10.jpg",
   "image-f551d7e5": "nj500.jpg",
   "image-0741e952": "nj1000.jpg",
