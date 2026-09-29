@@ -11,6 +11,14 @@ export function siteMetadata(overrides?: Metadata): Metadata {
       overrides?.description ??
       `Shop approved products from ${BRAND.name} in ${BRAND.market}.`,
     metadataBase: new URL(BRAND.url),
+    icons: {
+      icon: [
+        { url: "/favicon.jpg", type: "image/jpeg", sizes: "32x32" },
+        { url: "/favicon.jpg", type: "image/jpeg", sizes: "192x192" },
+      ],
+      shortcut: "/favicon.jpg",
+      apple: "/apple-touch-icon.jpg",
+    },
     openGraph: {
       title: String(title),
       description:
