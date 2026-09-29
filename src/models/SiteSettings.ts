@@ -1,4 +1,5 @@
 import mongoose, { Schema, type InferSchemaType, type Model } from "mongoose";
+import { TERMS_AND_CONDITIONS } from "@/content/terms-and-conditions";
 import { BRAND, POLICY_REVIEW_NOTICE } from "@/lib/constants";
 
 const defaultHomeHero = {
@@ -17,7 +18,7 @@ const defaultPolicies = {
   shipping: `${POLICY_REVIEW_NOTICE}\n\nAdd your shipping regions, carriers, processing times, and any restrictions once approved for your market.`,
   returns: `${POLICY_REVIEW_NOTICE}\n\nAdd your return eligibility, windows, and process once approved by the owner.`,
   privacy: `${POLICY_REVIEW_NOTICE}\n\nDescribe what data you collect, how orders and forms are handled, and contact details for privacy requests.`,
-  terms: `${POLICY_REVIEW_NOTICE}\n\nAdd terms of sale, age requirements, acceptable use, and limitation of liability once reviewed by counsel.`,
+  terms: TERMS_AND_CONDITIONS,
 };
 
 const SiteSettingsSchema = new Schema(

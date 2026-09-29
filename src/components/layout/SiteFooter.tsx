@@ -17,7 +17,7 @@ const policyLinks = [
   { href: "/shipping", label: "Shipping" },
   { href: "/returns", label: "Returns" },
   { href: "/privacy", label: "Privacy" },
-  { href: "/terms", label: "Terms" },
+  { href: "/terms", label: "Terms & Conditions" },
 ];
 
 function FooterContact({
