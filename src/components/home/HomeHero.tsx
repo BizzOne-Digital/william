@@ -24,7 +24,7 @@ export function HomeHero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto flex min-h-[100svh] w-full min-w-0 max-w-7xl flex-col justify-center px-4 pb-24 pt-[5.25rem] sm:px-6 sm:pb-20 lg:px-8">
+      <div className="relative mx-auto flex min-h-[100svh] w-full min-w-0 max-w-7xl flex-col justify-center px-4 pb-24 pt-[5.75rem] sm:px-6 sm:pb-20 sm:pt-[6rem] lg:px-8">
         <div className="w-full min-w-0 max-w-xl lg:max-w-2xl">
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/90 sm:text-[11px] sm:tracking-[0.35em]">
             {BRAND.market} · {BRAND.currency}

@@ -103,6 +103,37 @@ export function AboutPageContent({
                 </li>
               </ul>
             </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm sm:p-8">
+              <h3 className="font-display text-lg font-bold text-white">Get in touch</h3>
+              <p className="mt-2 text-sm text-white/55">
+                Questions about the brand, catalog, or when shopping goes live?
+              </p>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>
+                  <a href={`mailto:${contactEmail}`} className="text-accent hover:underline">
+                    {contactEmail}
+                  </a>
+                </li>
+                <li>
+                  <a href={`tel:${BRAND.phoneTel}`} className="text-accent hover:underline">
+                    {contactPhone}
+                  </a>
+                </li>
+              </ul>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Button href="/contact" className="sm:min-w-[10rem]">
+                  Contact us
+                </Button>
+                <Link
+                  href="/shop"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-accent/50"
+                >
+                  Visit shop
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-4 lg:sticky lg:top-24">
@@ -123,36 +154,6 @@ export function AboutPageContent({
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm">
-              <h3 className="font-display text-lg font-bold text-white">Get in touch</h3>
-              <p className="mt-2 text-sm text-white/55">
-                Questions about the brand, catalog, or when shopping goes live?
-              </p>
-              <ul className="mt-4 space-y-2 text-sm">
-                <li>
-                  <a href={`mailto:${contactEmail}`} className="text-accent hover:underline">
-                    {contactEmail}
-                  </a>
-                </li>
-                <li>
-                  <a href={`tel:${BRAND.phoneTel}`} className="text-accent hover:underline">
-                    {contactPhone}
-                  </a>
-                </li>
-              </ul>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Button href="/contact" className="sm:flex-1">
-                  Contact us
-                </Button>
-                <Link
-                  href="/shop"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-accent/50"
-                >
-                  Visit shop
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </Link>
-              </div>
             </div>
           </div>
         </div>

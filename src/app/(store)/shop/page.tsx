@@ -47,9 +47,6 @@ export default async function ShopPage({ searchParams }: { searchParams: SearchP
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/25" />
           <div className="relative px-6 py-10 sm:px-10">
             <h1 className="font-display text-4xl font-bold text-white">Shop</h1>
-            <p className="mt-3 max-w-xl text-sm text-white/70 sm:text-base">
-              Search, filter, and sort published listings. Draft products remain visible in admin only.
-            </p>
           </div>
         </div>
       </div>

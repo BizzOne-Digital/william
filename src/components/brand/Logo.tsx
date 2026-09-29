@@ -22,7 +22,7 @@ export function Logo({ compact, variant = "default" }: LogoProps) {
       <span
         className={cn(
           "inline-flex shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white/95 shadow-[0_0_20px_rgba(0,0,0,0.25)] ring-1 ring-white/20",
-          isHeader && "rounded-md px-1.5 py-1 sm:px-2",
+          isHeader && "rounded-md px-2 py-1.5 sm:px-2.5",
           compact && "px-2 py-1.5",
           isFooter && "px-2.5 py-2",
           !isHeader && !compact && !isFooter && "px-2 py-1.5",
@@ -36,7 +36,7 @@ export function Logo({ compact, variant = "default" }: LogoProps) {
           priority={isHeader}
           className={cn(
             "h-auto w-auto object-contain object-center transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transform-none",
-            isHeader && "max-h-8 max-w-[7.5rem] sm:max-h-9 sm:max-w-[9rem]",
+            isHeader && "max-h-10 max-w-[10.5rem] sm:max-h-12 sm:max-w-[13rem]",
             compact && "max-h-12 max-w-[11rem]",
             isFooter && "max-h-[4.75rem] max-w-[13rem] sm:max-h-20 sm:max-w-[15rem]",
             !isHeader && !compact && !isFooter && "max-h-14 max-w-[12rem]",
