@@ -100,7 +100,7 @@ export async function SiteFooter() {
       <div className="relative mx-auto w-full min-w-0 max-w-7xl px-4 pt-14 pb-10 sm:px-6 lg:px-8 lg:pt-16">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-10">
           <div className="lg:col-span-4">
-            <Logo />
+            <Logo variant="footer" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/55">
               Premium research products for {BRAND.market}. Transparent {BRAND.currency} pricing on
               every published listing.
