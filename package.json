@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seed:admin": "tsx --env-file=.env.local scripts/seed-admin.ts"
+    "seed:admin": "tsx --env-file=.env.local scripts/seed-admin.ts",
+    "seed:products": "tsx --env-file=.env.local scripts/seed-products.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
