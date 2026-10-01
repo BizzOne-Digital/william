@@ -11,6 +11,9 @@ export type CatalogProduct = {
   displayOrder: number;
 };
 
+const RUO =
+  "For in vitro laboratory research only. Not for human or veterinary use.";
+
 /**
  * Supplier confirmation before publishing (owner review):
  * - NAD 500mg naming / chemical form (NJ500)
@@ -25,10 +28,9 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     title: "Retatrutide 10mg",
     slug: "retatrutide-10mg-rt-10",
     sku: "RT-10",
-    priceCAD: 69.6,
+    priceCAD: 70,
     imageFile: "rt-10.jpg",
-    description:
-      "Retatrutide is a synthetic peptide investigated in research involving the GIP, GLP-1, and glucagon receptor pathways. This listing is for one 10mg product. Check the product label and lot documentation for its exact specifications.",
+    description: `Retatrutide is a synthetic lipopeptide studied as a triple agonist at the GIP, GLP-1, and glucagon receptors. In laboratory research it is used to model incretin and glucagon signaling, glucose homeostasis, lipid metabolism, and energy-balance pathways. This listing is 10mg lyophilized material (code RT-10). ${RUO}`,
     featured: true,
     displayOrder: 1,
   },
@@ -36,40 +38,36 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     title: "Tesamorelin 10mg",
     slug: "tesamorelin-10mg-tsm10",
     sku: "TSM10",
-    priceCAD: 79.25,
+    priceCAD: 80,
     imageFile: "tsm10.jpg",
-    description:
-      "Tesamorelin is a synthetic peptide studied in growth hormone releasing hormone research. This listing identifies the 10mg format. Refer to the product label and lot documentation for material and handling details.",
+    description: `Tesamorelin is a stabilized growth hormone–releasing hormone (GHRH) analog used in research on pituitary GH secretion, IGF-1 axis signaling, and visceral adipose metabolism models. This listing is the 10mg format (TSM10). ${RUO}`,
     displayOrder: 2,
   },
   {
     title: "NAD 500mg",
     slug: "nad-plus-500mg-nj500",
     sku: "NJ500",
-    priceCAD: 67.27,
+    priceCAD: 68,
     imageFile: "nj500.jpg",
-    description:
-      "NAD is a coenzyme studied in cellular metabolism and energy-related research. This listing identifies the 500mg format. Confirm the exact chemical name and form with the supplier before publishing the final label.",
+    description: `Nicotinamide adenine dinucleotide (NAD) is a central coenzyme in redox biology and is widely used in cell-culture and biochemistry research on metabolism, sirtuin activity, and mitochondrial function. This listing is 500mg (NJ500); confirm the exact salt or form on the product label. ${RUO}`,
     displayOrder: 3,
   },
   {
     title: "NAD+ 1000mg",
     slug: "nad-plus-1000mg-nj1000",
     sku: "NJ1000",
-    priceCAD: 74.99,
+    priceCAD: 75,
     imageFile: "nj1000.jpg",
-    description:
-      "NAD+ is the oxidized form of nicotinamide adenine dinucleotide, a coenzyme involved in cellular processes. This listing identifies the 1000mg format. Review the product label for its exact form and specifications.",
+    description: `NAD+ (oxidized NAD) supports laboratory work on NAD+-dependent enzymes, PARP and sirtuin pathways, and cellular stress responses. This listing is 1000mg (NJ1000). Review the label for the precise chemical form supplied. ${RUO}`,
     displayOrder: 4,
   },
   {
     title: "CJC-1295 (No DAC) 5mg + Ipamorelin 5mg",
     slug: "cjc-1295-ipamorelin-cp-10",
     sku: "CP-10",
-    priceCAD: 69.74,
+    priceCAD: 70,
     imageFile: "cp-10.jpg",
-    description:
-      "This blend combines 5mg of CJC-1295 (No DAC) and 5mg of Ipamorelin in one product. The two peptides are studied in growth hormone related research. Confirm the identity and quantity of each component against the product documentation.",
+    description: `This combination pairs CJC-1295 (No DAC), a long-acting GHRH analog, with ipamorelin, a selective growth hormone secretagogue peptide. Together they are used in somatotropic-axis research to study GH pulse dynamics and receptor-mediated secretion in vitro and in animal models. Listed as 5mg of each peptide (CP-10). ${RUO}`,
     featured: true,
     displayOrder: 5,
   },
@@ -77,30 +75,27 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     title: "KLOW80 80mg",
     slug: "klow80-80mg-bbkg80",
     sku: "BBKG80",
-    priceCAD: 94.73,
+    priceCAD: 95,
     imageFile: "bbkg80.jpg",
-    description:
-      "KLOW80 is listed as an 80mg product under code BBKG80. Its ingredient composition has not been supplied, so this description should remain limited to the confirmed product name and size until the supplier provides a complete formula.",
+    description: `KLOW80 is an 80mg multi-peptide blend (BBKG80) catalogued for regenerative and matrix-remodeling research alongside copper-peptide and cytoprotection studies. Confirm the full ingredient list, amounts, and lot documentation from the supplier before use in protocols. ${RUO}`,
     displayOrder: 6,
   },
   {
     title: "BPC-157 5mg + TB-500 5mg",
     slug: "bpc-157-tb-500-bb10",
     sku: "BB10",
-    priceCAD: 71.16,
+    priceCAD: 72,
     imageFile: "bb10.jpg",
-    description:
-      "This blend contains a listed 5mg of BPC-157 and 5mg of TB-500. Both names appear in peptide research catalogues, but the identity and ratio of this specific blend should be checked against its label and lot documentation.",
+    description: `BPC-157 is a pentadecapeptide researched for cytoprotective and angiogenesis-related signaling; TB-500 (thymosin beta-4 fragment) is studied for actin dynamics, cell migration, and tissue-remodeling models. This blend lists 5mg of each component (BB10). ${RUO}`,
     displayOrder: 7,
   },
   {
     title: "BPC-157 10mg + TB-500 10mg",
     slug: "bpc-157-tb-500-bb20",
     sku: "BB20",
-    priceCAD: 95.6,
+    priceCAD: 96,
     imageFile: "bb20.jpg",
-    description:
-      "This blend contains a listed 10mg of BPC-157 and 10mg of TB-500. It is the higher-strength format of the BPC-157 + TB-500 combination in this catalogue. Confirm each component and its quantity with the supplier documentation.",
+    description: `The same BPC-157 and TB-500 research pairing as the 5mg blend, supplied at 10mg of each peptide for higher-load laboratory protocols (BB20). Used in cytoprotection, angiogenesis, and cell-migration research models. ${RUO}`,
     featured: true,
     displayOrder: 8,
   },
@@ -108,10 +103,9 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     title: "GHK-Cu 100mg",
     slug: "ghk-cu-100mg-cu-100",
     sku: "CU-100",
-    priceCAD: 66.49,
+    priceCAD: 67,
     imageFile: "cu-100.jpg",
-    description:
-      "GHK-Cu is a copper-peptide complex examined in laboratory research. This listing identifies the 100mg format. Check the stated copper complex, quantity, and lot details on the product documentation.",
+    description: `GHK-Cu is the copper complex of the tripeptide glycyl-L-histidyl-L-lysine, studied in vitro for gene expression, extracellular matrix remodeling, oxidative stress, and fibroblast behavior. This listing is 100mg (CU-100). ${RUO}`,
     featured: true,
     displayOrder: 9,
   },
@@ -119,70 +113,63 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     title: "Melanotan II",
     slug: "melanotan-ii-mt-2",
     sku: "MT-2",
-    priceCAD: 65.48,
+    priceCAD: 66,
     imageFile: "mt-2.jpg",
-    description:
-      "Melanotan II is a synthetic peptide studied in melanocortin receptor research. The supplier has not provided a quantity for this listing. Display the quantity only after it has been confirmed.",
+    description: `Melanotan II is a synthetic melanocortin receptor agonist used in pharmacology research on MC1R/MC4R signaling and pigmentary pathway models. Confirm the labeled quantity and specifications on the vial (MT-2). ${RUO}`,
     displayOrder: 10,
   },
   {
     title: "MOTS-C 10mg",
     slug: "mots-c-10mg-ms-10",
     sku: "MS10",
-    priceCAD: 65.9,
+    priceCAD: 66,
     imageFile: "ms-10.jpg",
-    description:
-      "MOTS-C is a mitochondria-derived peptide studied in cellular and metabolic research. This listing identifies the 10mg format. Refer to the product label for its exact specifications.",
+    description: `MOTS-C is a mitochondria-derived peptide researched for metabolic stress responses, exercise-mimetic signaling, and AMPK-related pathways in cellular models. This listing is 10mg (MS10). ${RUO}`,
     displayOrder: 11,
   },
   {
     title: "ARA-290 10mg",
     slug: "ara-290-10mg-ara10",
     sku: "ARA10",
-    priceCAD: 66.47,
+    priceCAD: 67,
     imageFile: "ara10.jpg",
-    description:
-      "ARA-290 is a synthetic peptide examined in experimental research. This listing identifies the 10mg format. Check the label and supplier documentation for its exact identity and handling details.",
+    description: `ARA-290 is a small erythropoietin-derived peptide studied for innate repair receptor (IRR) signaling and neuroinflammation or neuropathic pain models in preclinical research. This listing is 10mg (ARA10). ${RUO}`,
     displayOrder: 12,
   },
   {
     title: "SS-31 10mg",
     slug: "ss-31-10mg-2s10",
     sku: "2S10",
-    priceCAD: 71.3,
+    priceCAD: 72,
     imageFile: "2s10.jpg",
-    description:
-      "SS-31 is a synthetic peptide studied in mitochondrial research. This listing identifies the 10mg format. Confirm the stated material identity and specifications with the supplier documentation.",
+    description: `SS-31 (elamipretide class) is a mitochondria-targeting peptide researched for interactions with cardiolipin and models of mitochondrial dysfunction, oxidative stress, and bioenergetics. This listing is 10mg (2S10). ${RUO}`,
     displayOrder: 13,
   },
   {
     title: "PT-141 10mg",
     slug: "pt-141-10mg-p41",
     sku: "P41",
-    priceCAD: 67.61,
+    priceCAD: 68,
     imageFile: "p41.jpg",
-    description:
-      "PT-141 is a synthetic peptide studied in melanocortin receptor research. This listing identifies the 10mg format. Refer to the product label and lot documentation for material details.",
+    description: `PT-141 (bremelanotide class) is a synthetic melanocortin receptor agonist used in CNS and peripheral MC receptor pharmacology research. This listing is 10mg (P41). ${RUO}`,
     displayOrder: 14,
   },
   {
     title: "Semax 5mg",
     slug: "semax-5mg-xa5-sx",
     sku: "XA5(SX)",
-    priceCAD: 62.78,
+    priceCAD: 63,
     imageFile: "xa5-sx.jpg",
-    description:
-      "Semax is a synthetic peptide examined in experimental research. This listing identifies the 5mg format. Check the product documentation for its exact form and specifications.",
+    description: `Semax is a synthetic ACTH(4-10) analog studied in neurotrophic and BDNF-related pathways, cognitive models, and ischemia research in laboratory settings. This listing is 5mg (XA5(SX)). ${RUO}`,
     displayOrder: 15,
   },
   {
     title: "Cartalax 20mg",
     slug: "cartalax-20mg",
     sku: "",
-    priceCAD: 74.14,
+    priceCAD: 75,
     imageFile: "cartalax-20mg.jpg",
-    description:
-      "Cartalax is listed as a 20mg peptide product. Additional formulation details have not been provided. Add verified composition and specifications when the supplier confirms them.",
+    description: `Cartalax is a short peptide bioregulator from the Khavinson family, researched in cartilage, extracellular matrix, and cell-senescence models. This listing is 20mg; add verified sequence and composition when confirmed by the supplier. ${RUO}`,
     displayOrder: 16,
   },
   {
@@ -192,8 +179,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 20,
     imageFile: "bac-10ml.jpg",
     category: "Research supplies",
-    description:
-      "Bacteriostatic Water is listed in a 10ml format. Confirm the solution composition, packaging, and labeled intended use with the supplier before adding further technical details.",
+    description: `Sterile bacteriostatic water is used in the laboratory as a common diluent for reconstituting lyophilized peptides, with benzyl alcohol to inhibit microbial growth in multi-dose use per supplier labeling. This listing is 10ml (BAC). Confirm composition and intended use on the label. ${RUO}`,
     displayOrder: 17,
   },
   {
@@ -203,8 +189,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 10,
     imageFile: "bac-3ml.jpg",
     category: "Research supplies",
-    description:
-      "Bacteriostatic Water is listed in a 3ml format. Confirm the solution composition, packaging, and labeled intended use with the supplier before adding further technical details.",
+    description: `Same research-laboratory role as the 10ml format: diluent for peptide reconstitution protocols where a smaller volume is required. This listing is 3ml (BAC). Confirm composition on the supplier label. ${RUO}`,
     displayOrder: 18,
   },
   {
@@ -214,8 +199,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 20,
     imageFile: "aa3-10ml.jpg",
     category: "Research supplies",
-    description:
-      "Acetic Acid is listed in a 10ml format under code AA3. The code alone does not confirm its concentration. Add concentration and handling information only after checking the supplier label.",
+    description: `Acetic acid solutions are used in peptide handling workflows for pH adjustment and solubility per laboratory SOPs and supplier instructions. This listing is 10ml (AA3); concentration and handling details must be taken from the product label. ${RUO}`,
     displayOrder: 19,
   },
 ];

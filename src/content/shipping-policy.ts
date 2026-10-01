@@ -1,11 +1,9 @@
-/** Shipping Policy — adapted for Intense Dropz / William Taylor (October 2026). */
+/** Shipping Policy — Intense Dropz (October 2026). */
 export const SHIPPING_POLICY = `Shipping Policy
 
 Last updated: October, 2026
 
 This Shipping Policy explains how Intense Dropz processes and ships orders placed through intensedropz.ca.
-
-Intense Dropz is operated by William Taylor.
 
 Where We Ship
 
@@ -13,8 +11,7 @@ We currently ship only to Canadian addresses. A complete Canadian shipping addre
 
 Shipping Rates
 
-• Canadian provinces: Tracked Shipping is $19.95.
-• Yukon, Northwest Territories and Nunavut: Tracked Shipping is $34.95.
+• Tracked Shipping across Canada is $25.64.
 • Free Express Shipping: available across Canada when the merchandise subtotal is $299 or more after discounts.
 
 Shipping charges are shown before the order is placed. Applicable sales taxes are calculated from the shipping destination and itemized at checkout.
@@ -51,5 +48,5 @@ If tracking shows delivery, the order may be treated as completed. If you believ
 
 Contact
 
-For shipping questions, contact Intense Dropz (William Taylor) at info@intensedropz.ca or 226-499-8539.
+For shipping questions, contact Intense Dropz at info@intensedropz.ca or 226-499-8539.
 `;

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-export const LOGO_SRC = "/images/intense-dropz-logo.jpg";
+export const LOGO_SRC = "/images/intense-dropz-logo.png";
 export const LOGO_ALT = "Intense Dropz — Repair. Rebuild. Renew.";
 
 type LogoProps = {
@@ -21,11 +21,11 @@ export function Logo({ compact, variant = "default" }: LogoProps) {
     >
       <span
         className={cn(
-          "inline-flex shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white/95 shadow-[0_0_20px_rgba(0,0,0,0.25)] ring-1 ring-white/20",
-          isHeader && "rounded-md px-2 py-1.5 sm:px-2.5",
-          compact && "px-2 py-1.5",
-          isFooter && "px-2.5 py-2",
-          !isHeader && !compact && !isFooter && "px-2 py-1.5",
+          "inline-flex shrink-0 items-center justify-center overflow-hidden",
+          isHeader && "px-0.5 py-0",
+          compact && "px-1 py-0.5",
+          isFooter && "px-0 py-0",
+          !isHeader && !compact && !isFooter && "px-1 py-0.5",
         )}
       >
         <Image
@@ -36,10 +36,10 @@ export function Logo({ compact, variant = "default" }: LogoProps) {
           priority={isHeader}
           className={cn(
             "h-auto w-auto object-contain object-center transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transform-none",
-            isHeader && "max-h-10 max-w-[10.5rem] sm:max-h-12 sm:max-w-[13rem]",
-            compact && "max-h-12 max-w-[11rem]",
-            isFooter && "max-h-[4.75rem] max-w-[13rem] sm:max-h-20 sm:max-w-[15rem]",
-            !isHeader && !compact && !isFooter && "max-h-14 max-w-[12rem]",
+            isHeader && "max-h-[3.75rem] max-w-[12.5rem] sm:max-h-[4.5rem] sm:max-w-[15rem]",
+            compact && "max-h-14 max-w-[13rem]",
+            isFooter && "max-h-[6.5rem] max-w-[16rem] sm:max-h-[7.5rem] sm:max-w-[18rem]",
+            !isHeader && !compact && !isFooter && "max-h-16 max-w-[14rem]",
           )}
         />
       </span>

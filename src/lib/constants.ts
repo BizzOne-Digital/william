@@ -6,6 +6,9 @@ export function getSiteUrl(): string {
   return "http://localhost:3000";
 }
 
+/** Flat tracked shipping (CAD) — also set in Admin → Settings and shipping policy. */
+export const SHIPPING_FLAT_RATE_CAD = 25.64;
+
 export const BRAND = {
   name: "Intense Dropz",
   email: "info@intensedropz.ca",

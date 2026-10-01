@@ -1,6 +1,6 @@
 import mongoose, { Schema, type InferSchemaType, type Model } from "mongoose";
 import { TERMS_AND_CONDITIONS } from "@/content/terms-and-conditions";
-import { BRAND, POLICY_REVIEW_NOTICE } from "@/lib/constants";
+import { BRAND, POLICY_REVIEW_NOTICE, SHIPPING_FLAT_RATE_CAD } from "@/lib/constants";
 
 const defaultHomeHero = {
   headline: "Precision-formulated products. Elevated experience.",
@@ -40,7 +40,7 @@ const SiteSettingsSchema = new Schema(
     pricingRangeMinCAD: { type: Number, default: null, min: 0 },
     pricingRangeMaxCAD: { type: Number, default: null, min: 0 },
     pricingRangeApproved: { type: Boolean, default: false },
-    shippingFlatRateCAD: { type: Number, default: 0, min: 0 },
+    shippingFlatRateCAD: { type: Number, default: SHIPPING_FLAT_RATE_CAD, min: 0 },
     freeShippingThresholdCAD: { type: Number, default: null, min: 0 },
     taxRatePercent: { type: Number, default: 0, min: 0, max: 100 },
     taxEnabled: { type: Boolean, default: false },
