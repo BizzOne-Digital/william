@@ -3,6 +3,7 @@ import Image from "next/image";
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
 import { siteMetadata } from "@/lib/metadata";
+import { ProductCoaLink } from "@/components/shop/ProductCoaLink";
 import { ProductPurchasePanel } from "@/components/shop/ProductPurchasePanel";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -70,7 +71,11 @@ export default async function ProductPage({ params }: Props) {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-accent">{product.category}</p>
           <h1 className="mt-2 font-display text-4xl font-semibold text-white">{product.title}</h1>
-          {product.sku && <p className="mt-2 text-sm text-muted">SKU: {product.sku}</p>}
+          {product.sku && <p className="mt-2 text-sm text-muted">Code: {product.sku}</p>}
+          {product.description?.trim() && (
+            <p className="prose-policy mt-6 text-sm text-muted">{product.description}</p>
+          )}
+          <ProductCoaLink slug={slug} />
           <div className="mt-8">
             <ProductPurchasePanel product={serialized} />
           </div>

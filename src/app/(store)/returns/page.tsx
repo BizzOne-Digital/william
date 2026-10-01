@@ -1,10 +1,12 @@
-import { getSiteSettings } from "@/lib/site-settings";
 import { PolicyPage } from "@/components/PolicyPage";
+import { RETURN_REFUND_POLICY } from "@/content/return-refund-policy";
 import { siteMetadata } from "@/lib/metadata";
 
-export const metadata = siteMetadata({ title: "Returns" });
+export const metadata = siteMetadata({
+  title: "Returns",
+  description: "Return and refund policy for Intense Dropz orders.",
+});
 
-export default async function ReturnsPage() {
-  const settings = await getSiteSettings();
-  return <PolicyPage title="Returns" body={settings.policies?.returns ?? ""} />;
+export default function ReturnsPage() {
+  return <PolicyPage title="Return & Refund Policy" body={RETURN_REFUND_POLICY} />;
 }
