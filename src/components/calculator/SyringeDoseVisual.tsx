@@ -84,13 +84,13 @@ export function SyringeDoseVisual({ volumeMl, volumeUl }: SyringeDoseVisualProps
       >
         <svg
           viewBox="0 0 140 320"
-          className="h-auto w-[min(100%,9.5rem)] shrink-0 drop-shadow-[0_0_24px_rgba(0,245,255,0.12)]"
+          className="h-auto w-[min(100%,9.5rem)] shrink-0 drop-shadow-[0_0_24px_rgba(7,120,214,0.15)]"
           aria-hidden
         >
           <defs>
             <linearGradient id="syringeLiquid" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="rgba(0,245,255,0.55)" />
-              <stop offset="100%" stopColor="rgba(0,245,255,0.28)" />
+              <stop offset="0%" stopColor="rgba(7,120,214,0.55)" />
+              <stop offset="100%" stopColor="rgba(7,120,214,0.28)" />
             </linearGradient>
             <clipPath id="syringeBarrelClip">
               <rect x="44" y={barrelTop} width="52" height={barrelHeight} rx="4" />
@@ -128,7 +128,7 @@ export function SyringeDoseVisual({ volumeMl, volumeUl }: SyringeDoseVisualProps
                 x2="98"
                 y1={fillTop}
                 y2={fillTop}
-                stroke="#00f5ff"
+                stroke="#0778d6"
                 strokeWidth="2"
                 strokeDasharray="4 3"
               />
@@ -193,7 +193,7 @@ export function SyringeDoseVisual({ volumeMl, volumeUl }: SyringeDoseVisualProps
           </div>
           <p className="text-xs leading-relaxed text-muted">
             On a U-100 syringe, each numbered unit is 0.01 mL. Align the top of the plunger rubber
-            with the dashed cyan line (liquid meniscus level).
+            with the dashed blue line (liquid meniscus level).
           </p>
           {!overCapacity && syringeMl !== suggestedSize && (
             <button

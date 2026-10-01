@@ -25,7 +25,7 @@ export default function OgImage() {
           Premium research
         </div>
         <div style={{ fontSize: 72, fontWeight: 700, marginTop: 16 }}>{BRAND.name}</div>
-        <div style={{ fontSize: 28, marginTop: 24, color: "#22d3ee" }}>
+        <div style={{ fontSize: 28, marginTop: 24, color: "#0778d6" }}>
           Premium ecommerce · {BRAND.market}
         </div>
       </div>

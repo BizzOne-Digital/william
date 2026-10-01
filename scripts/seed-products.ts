@@ -43,6 +43,22 @@ function copyProductImages() {
   console.log(`Copied ${copied} product images to public/images/products/`);
 }
 
+/** Until owner photos are added, use a generic vial image for any missing catalog file. */
+function ensureProductImagePlaceholders() {
+  const outDir = path.join(process.cwd(), "public", "images", "products");
+  const fallback = path.join(process.cwd(), "public", "images", "feature-vial-rock.jpg");
+  if (!fs.existsSync(fallback)) return;
+
+  fs.mkdirSync(outDir, { recursive: true });
+  for (const item of CATALOG_PRODUCTS) {
+    const dest = path.join(outDir, item.imageFile);
+    if (!fs.existsSync(dest)) {
+      fs.copyFileSync(fallback, dest);
+      console.log("Placeholder image:", item.imageFile);
+    }
+  }
+}
+
 async function main() {
   const uri = process.env.MONGODB_URI;
   if (!uri) {
@@ -51,6 +67,7 @@ async function main() {
   }
 
   copyProductImages();
+  ensureProductImagePlaceholders();
 
   await mongoose.connect(uri);
 
@@ -61,7 +78,7 @@ async function main() {
       slug: item.slug,
       sku: item.sku,
       description: item.description,
-      category: "Research peptides",
+      category: item.category ?? "Research peptides",
       images: [imagePath],
       priceCAD: item.priceCAD,
       stock: 100,

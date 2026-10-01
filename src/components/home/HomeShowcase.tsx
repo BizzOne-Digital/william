@@ -2,23 +2,23 @@ import Image from "next/image";
 
 const tiles = [
   {
-    src: "/images/feature-vial-rock.jpg",
-    alt: "Product vial on textured stone with teal lighting",
+    src: "/images/products/rt-10.jpg",
+    alt: "Retatrutide 10mg",
     className: "col-span-2 row-span-2 min-h-[280px] sm:min-h-[360px]",
   },
   {
-    src: "/images/feature-lab.jpg",
-    alt: "Modern laboratory workspace with glassware",
+    src: "/images/products/cp-10.jpg",
+    alt: "CJC-1295 (No DAC) 5mg + Ipamorelin 5mg",
     className: "col-span-1 min-h-[160px] sm:min-h-[170px]",
   },
   {
-    src: "/images/feature-molecule.jpg",
-    alt: "Abstract molecular structure with cyan and violet light",
+    src: "/images/products/bb20.jpg",
+    alt: "BPC-157 10mg + TB-500 10mg",
     className: "col-span-1 min-h-[160px] sm:min-h-[170px]",
   },
   {
-    src: "/images/feature-vials-neon.jpg",
-    alt: "Premium vials with cyan and magenta studio lighting",
+    src: "/images/products/cu-100.jpg",
+    alt: "GHK-CU 100mg",
     className: "col-span-1 min-h-[180px] sm:min-h-[200px]",
   },
   {

@@ -9,7 +9,7 @@ export function ProductCard({ product }: { product: IProduct }) {
   const image = product.images?.[0];
 
   return (
-    <article className="group glass-panel overflow-hidden rounded-2xl transition hover:border-accent/30 hover:shadow-[0_0_40px_rgba(34,211,238,0.08)]">
+    <article className="group glass-panel overflow-hidden rounded-2xl transition hover:border-accent/30 hover:shadow-[0_0_40px_rgba(var(--accent-rgb),0.12)]">
       <Link href={`/shop/${product.slug}`} className="block">
         <div className="relative aspect-[4/5] overflow-hidden bg-surface-elevated">
           {image ? (

@@ -13,10 +13,7 @@ export async function generateMetadata({ params }: Props) {
     await connectDB();
     const product = await Product.findOne({ slug, published: true }).lean();
     if (!product) return siteMetadata({ title: "Product" });
-    return siteMetadata({
-      title: product.title,
-      description: product.description?.slice(0, 160) || undefined,
-    });
+    return siteMetadata({ title: product.title });
   } catch {
     return siteMetadata({ title: "Product" });
   }
@@ -74,7 +71,6 @@ export default async function ProductPage({ params }: Props) {
           <p className="text-xs uppercase tracking-[0.2em] text-accent">{product.category}</p>
           <h1 className="mt-2 font-display text-4xl font-semibold text-white">{product.title}</h1>
           {product.sku && <p className="mt-2 text-sm text-muted">SKU: {product.sku}</p>}
-          <div className="prose-policy mt-6 text-sm">{product.description || "Description pending owner approval."}</div>
           <div className="mt-8">
             <ProductPurchasePanel product={serialized} />
           </div>

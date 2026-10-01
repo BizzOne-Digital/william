@@ -5,7 +5,7 @@ export function HomeIntroSection({ intro }: { intro: string }) {
   return (
     <section className="mx-auto w-full min-w-0 max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/10 shadow-[0_0_60px_rgba(0,229,255,0.08)] sm:aspect-[5/6]">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/10 shadow-[0_0_60px_rgba(var(--accent-rgb),0.1)] sm:aspect-[5/6]">
           <Image
             src="/images/feature-luxury-lab.jpg"
             alt="Premium laboratory interior with teal accent lighting"

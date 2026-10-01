@@ -23,7 +23,7 @@ export default async function AdminDiscountsPage() {
         <label className="flex items-center gap-2 text-sm sm:col-span-2">
           <input type="checkbox" name="active" defaultChecked /> Active
         </label>
-        <button type="submit" className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-slate-950 sm:col-span-2">
+        <button type="submit" className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white sm:col-span-2">
           Create code
         </button>
       </form>

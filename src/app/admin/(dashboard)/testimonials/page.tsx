@@ -22,7 +22,7 @@ export default async function AdminTestimonialsPage() {
         <label className="flex items-center gap-2 text-sm">
           <input type="checkbox" name="published" /> Publish on homepage
         </label>
-        <button type="submit" className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-slate-950">
+        <button type="submit" className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white">
           Save
         </button>
       </form>

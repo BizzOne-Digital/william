@@ -66,7 +66,7 @@ export function ShopFilters({
       </select>
       <button
         type="submit"
-        className="w-full rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-slate-950 hover:brightness-110 sm:w-auto lg:w-auto"
+        className="w-full rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:brightness-110 sm:w-auto lg:w-auto"
       >
         Apply
       </button>

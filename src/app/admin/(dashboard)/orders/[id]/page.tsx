@@ -67,7 +67,7 @@ export default async function AdminOrderDetailPage({
             ))}
           </select>
         </label>
-        <button type="submit" className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-slate-950">
+        <button type="submit" className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white">
           Update
         </button>
       </form>

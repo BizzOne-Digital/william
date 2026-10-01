@@ -6,7 +6,8 @@
   --surface: #0a0f1c;
   --surface-elevated: #111827;
   --muted: #8b9cb8;
-  --accent: #00f5ff;
+  --accent: #0778d6;
+  --accent-rgb: 7, 120, 214;
   --accent-violet: #8b5cf6;
   --border: rgba(148, 163, 184, 0.16);
   --glass: rgba(15, 23, 42, 0.55);
@@ -80,7 +81,7 @@ svg {
 }
 
 .text-gradient {
-  background: linear-gradient(120deg, #ffffff 0%, #22d3ee 45%, #a78bfa 100%);
+  background: linear-gradient(120deg, #ffffff 0%, #0778d6 45%, #a78bfa 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

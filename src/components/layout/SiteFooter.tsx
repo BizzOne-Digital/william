@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Mail, Phone } from "lucide-react";
-import { BRAND } from "@/lib/constants";
+import { BRAND, FOOTER_REFERRAL_LINE, FOOTER_RESEARCH_DISCLAIMER } from "@/lib/constants";
 import { getSiteSettings } from "@/lib/site-settings";
 import { Logo } from "@/components/brand/Logo";
 
@@ -106,7 +106,7 @@ export async function SiteFooter() {
             </p>
             <Link
               href="/shop"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-bold text-black shadow-[0_0_28px_rgba(0,245,255,0.25)] transition hover:brightness-110"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-bold text-white shadow-[0_0_28px_rgba(var(--accent-rgb),0.28)] transition hover:brightness-110"
             >
               Shop Now
               <ArrowRight className="h-4 w-4" strokeWidth={2.5} aria-hidden />
@@ -184,6 +184,13 @@ export async function SiteFooter() {
           </p>
           <p className="text-[11px] text-white/35 sm:text-xs">
             Adults 18+ · {BRAND.currency} · {BRAND.market}
+          </p>
+        </div>
+
+        <div className="mt-8 space-y-4 border-t border-white/[0.06] pt-8 text-center">
+          <p className="text-xs leading-relaxed text-white/45 sm:text-sm">{FOOTER_REFERRAL_LINE}</p>
+          <p className="mx-auto max-w-4xl text-[10px] leading-relaxed text-white/28 sm:text-[11px]">
+            {FOOTER_RESEARCH_DISCLAIMER}
           </p>
         </div>
       </div>

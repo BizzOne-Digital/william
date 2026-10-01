@@ -32,7 +32,7 @@ export default async function AdminOrdersPage({
           placeholder="Search order # or email"
           className="flex-1 rounded-xl border border-border bg-surface px-3 py-2 text-sm"
         />
-        <button className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-slate-950">
+        <button className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white">
           Search
         </button>
       </form>

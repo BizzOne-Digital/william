@@ -55,7 +55,7 @@ export function SiteHeader({ cartCount }: { cartCount: number }) {
               >
                 {l.label}
                 {active && (
-                  <span className="absolute -bottom-1.5 left-1/2 h-0.5 w-5 -translate-x-1/2 rounded-full bg-accent shadow-[0_0_10px_rgba(0,245,255,0.75)]" />
+                  <span className="absolute -bottom-1.5 left-1/2 h-0.5 w-5 -translate-x-1/2 rounded-full bg-accent shadow-[0_0_10px_rgba(var(--accent-rgb),0.65)]" />
                 )}
               </Link>
             );
@@ -70,7 +70,7 @@ export function SiteHeader({ cartCount }: { cartCount: number }) {
           >
             <ShoppingCart className="h-[1.4rem] w-[1.4rem]" strokeWidth={1.65} aria-hidden />
             {cartCount > 0 && (
-              <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 text-[10px] font-bold text-black">
+              <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 text-[10px] font-bold text-white">
                 {cartCount}
               </span>
             )}
@@ -78,7 +78,7 @@ export function SiteHeader({ cartCount }: { cartCount: number }) {
 
           <Link
             href="/shop"
-            className="hidden items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-black shadow-[0_0_28px_rgba(0,245,255,0.32)] transition hover:brightness-110 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-white shadow-[0_0_28px_rgba(var(--accent-rgb),0.32)] transition hover:brightness-110 sm:inline-flex"
           >
             Shop Now
             <ArrowRight className="h-4 w-4" strokeWidth={2.75} aria-hidden />
@@ -116,7 +116,7 @@ export function SiteHeader({ cartCount }: { cartCount: number }) {
               <Link
                 href="/shop"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-full bg-accent py-3 text-sm font-bold text-black"
+                className="flex items-center justify-center gap-2 rounded-full bg-accent py-3 text-sm font-bold text-white"
               >
                 Shop Now
                 <ArrowRight className="h-4 w-4" aria-hidden />

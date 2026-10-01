@@ -58,7 +58,7 @@ export default async function AdminSettingsPage() {
           <textarea name="policyPrivacy" defaultValue={settings.policies?.privacy ?? ""} rows={4} className="w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm" />
           <textarea name="policyTerms" defaultValue={settings.policies?.terms ?? ""} rows={4} className="w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm" />
         </fieldset>
-        <button type="submit" className="rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-slate-950">
+        <button type="submit" className="rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-white">
           Save settings
         </button>
       </form>

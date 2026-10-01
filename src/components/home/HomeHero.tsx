@@ -35,7 +35,7 @@ export function HomeHero() {
             <span className="text-accent">DROPZ</span>
           </h1>
 
-          <div className="mt-4 h-[3px] w-[3.25rem] rounded-sm bg-accent shadow-[0_0_18px_rgba(0,245,255,0.65)] sm:mt-5" />
+          <div className="mt-4 h-[3px] w-[3.25rem] rounded-sm bg-accent shadow-[0_0_18px_rgba(var(--accent-rgb),0.55)] sm:mt-5" />
 
           <p className="mt-6 text-lg font-semibold leading-snug text-white sm:mt-8 sm:text-xl lg:text-[1.35rem]">
             A refined destination for peptide research.
@@ -47,7 +47,7 @@ export function HomeHero() {
           <div className="mt-8 flex w-full min-w-0 flex-col gap-3 sm:mt-10 sm:flex-row sm:items-center">
             <Link
               href="/shop"
-              className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-bold text-black shadow-[0_0_40px_rgba(0,245,255,0.38)] transition hover:brightness-110 sm:w-auto sm:px-8 sm:text-[15px]"
+              className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-bold text-white shadow-[0_0_40px_rgba(var(--accent-rgb),0.38)] transition hover:brightness-110 sm:w-auto sm:px-8 sm:text-[15px]"
             >
               Explore Products
               <ArrowRight className="h-[18px] w-[18px] shrink-0" strokeWidth={2.75} aria-hidden />

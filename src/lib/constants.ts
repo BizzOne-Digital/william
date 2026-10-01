@@ -18,3 +18,8 @@ export const BRAND = {
 
 export const POLICY_REVIEW_NOTICE =
   "Draft for owner review — replace with your approved policy before going live.";
+
+export const FOOTER_REFERRAL_LINE = "Our greatest compliments are your referrals";
+
+export const FOOTER_RESEARCH_DISCLAIMER =
+  "All products sold are intended for in vitro laboratory research purposes only and are not for human consumption, medical use, or veterinary use. These products are not drugs, food additives, or cosmetics and have not been evaluated by Health Canada, the FDA, or any other regulatory authority.";

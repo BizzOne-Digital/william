@@ -137,7 +137,7 @@ export function AboutPageContent({
           </div>
 
           <div className="space-y-4 lg:sticky lg:top-24">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_40px_rgba(0,245,255,0.06)]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_40px_rgba(var(--accent-rgb),0.08)]">
               <Image
                 src="/images/feature-lab.jpg"
                 alt="Laboratory environment with glassware and teal lighting"
