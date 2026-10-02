@@ -1,3 +1,4 @@
+import { ceilPriceCAD } from "@/lib/constants";
 import type { IProduct } from "@/models/Product";
 
 export function getEffectivePrice(
@@ -7,8 +8,9 @@ export function getEffectivePrice(
   if (variantId && product.variants?.length) {
     const variant = product.variants.find((v) => String(v._id) === variantId);
     if (variant) {
-      const price = variant.priceCAD ?? product.priceCAD;
-      const sale = variant.salePriceCAD ?? product.salePriceCAD ?? null;
+      const price = ceilPriceCAD(variant.priceCAD ?? product.priceCAD);
+      const saleRaw = variant.salePriceCAD ?? product.salePriceCAD ?? null;
+      const sale = saleRaw != null ? ceilPriceCAD(saleRaw) : null;
       return {
         price,
         salePrice: sale != null && sale < price ? sale : null,
@@ -17,8 +19,9 @@ export function getEffectivePrice(
       };
     }
   }
-  const price = product.priceCAD;
-  const sale = product.salePriceCAD ?? null;
+  const price = ceilPriceCAD(product.priceCAD);
+  const saleRaw = product.salePriceCAD ?? null;
+  const sale = saleRaw != null ? ceilPriceCAD(saleRaw) : null;
   return {
     price,
     salePrice: sale != null && sale < price ? sale : null,

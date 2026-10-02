@@ -30,7 +30,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "RT-10",
     priceCAD: 70,
     imageFile: "rt-10.jpg",
-    description: `Retatrutide is a synthetic lipopeptide studied as a triple agonist at the GIP, GLP-1, and glucagon receptors. In laboratory research it is used to model incretin and glucagon signaling, glucose homeostasis, lipid metabolism, and energy-balance pathways. This listing is 10mg lyophilized material (code RT-10). ${RUO}`,
+    description: `Retatrutide is a research peptide that activates GIP, GLP-1, and glucagon receptors in the same molecule, making it useful for studying how these pathways work together in glucose, lipid, and energy-balance models. This vial contains 10mg (RT-10). ${RUO}`,
     featured: true,
     displayOrder: 1,
   },
@@ -40,7 +40,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "TSM10",
     priceCAD: 80,
     imageFile: "tsm10.jpg",
-    description: `Tesamorelin is a stabilized growth hormone–releasing hormone (GHRH) analog used in research on pituitary GH secretion, IGF-1 axis signaling, and visceral adipose metabolism models. This listing is the 10mg format (TSM10). ${RUO}`,
+    description: `Tesamorelin mimics growth hormone–releasing hormone and is commonly used in lab work on pituitary GH output, IGF-1 signaling, and fat-distribution research models. Supplied as 10mg (TSM10). ${RUO}`,
     displayOrder: 2,
   },
   {
@@ -49,7 +49,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "NJ500",
     priceCAD: 68,
     imageFile: "nj500.jpg",
-    description: `Nicotinamide adenine dinucleotide (NAD) is a central coenzyme in redox biology and is widely used in cell-culture and biochemistry research on metabolism, sirtuin activity, and mitochondrial function. This listing is 500mg (NJ500); confirm the exact salt or form on the product label. ${RUO}`,
+    description: `NAD supports redox reactions and mitochondrial metabolism in cell-based studies, including work on sirtuins and age-related pathway readouts. This material is listed at 500mg (NJ500); check the label for the exact chemical form. ${RUO}`,
     displayOrder: 3,
   },
   {
@@ -58,7 +58,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "NJ1000",
     priceCAD: 75,
     imageFile: "nj1000.jpg",
-    description: `NAD+ (oxidized NAD) supports laboratory work on NAD+-dependent enzymes, PARP and sirtuin pathways, and cellular stress responses. This listing is 1000mg (NJ1000). Review the label for the precise chemical form supplied. ${RUO}`,
+    description: `NAD+ is the oxidized coenzyme used when experiments require NAD+ as a substrate for PARP, sirtuin, or other NAD+-dependent enzymes. Listed at 1000mg (NJ1000); confirm form and grade on the product documentation. ${RUO}`,
     displayOrder: 4,
   },
   {
@@ -67,7 +67,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "CP-10",
     priceCAD: 70,
     imageFile: "cp-10.jpg",
-    description: `This combination pairs CJC-1295 (No DAC), a long-acting GHRH analog, with ipamorelin, a selective growth hormone secretagogue peptide. Together they are used in somatotropic-axis research to study GH pulse dynamics and receptor-mediated secretion in vitro and in animal models. Listed as 5mg of each peptide (CP-10). ${RUO}`,
+    description: `This kit combines CJC-1295 without DAC—a modified GHRH peptide—with ipamorelin, a selective GH secretagogue, so researchers can study complementary triggers on the growth-hormone axis. Each component is 5mg (CP-10). ${RUO}`,
     featured: true,
     displayOrder: 5,
   },
@@ -77,7 +77,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "BBKG80",
     priceCAD: 95,
     imageFile: "bbkg80.jpg",
-    description: `KLOW80 is an 80mg multi-peptide blend (BBKG80) catalogued for regenerative and matrix-remodeling research alongside copper-peptide and cytoprotection studies. Confirm the full ingredient list, amounts, and lot documentation from the supplier before use in protocols. ${RUO}`,
+    description: `KLOW80 is an 80mg blended product (BBKG80) used in research that spans copper peptides, extracellular matrix signaling, and multi-compound recovery models. Review the COA for the full ingredient list before designing a protocol. ${RUO}`,
     displayOrder: 6,
   },
   {
@@ -86,7 +86,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "BB10",
     priceCAD: 72,
     imageFile: "bb10.jpg",
-    description: `BPC-157 is a pentadecapeptide researched for cytoprotective and angiogenesis-related signaling; TB-500 (thymosin beta-4 fragment) is studied for actin dynamics, cell migration, and tissue-remodeling models. This blend lists 5mg of each component (BB10). ${RUO}`,
+    description: `BPC-157 is a synthetic peptide sequence related to gastric protective proteins; TB-500 research material maps to thymosin beta-4 biology and actin-linked cell movement. Together they support dual-mechanism studies on repair signaling—5mg of each (BB10). ${RUO}`,
     displayOrder: 7,
   },
   {
@@ -95,7 +95,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "BB20",
     priceCAD: 96,
     imageFile: "bb20.jpg",
-    description: `The same BPC-157 and TB-500 research pairing as the 5mg blend, supplied at 10mg of each peptide for higher-load laboratory protocols (BB20). Used in cytoprotection, angiogenesis, and cell-migration research models. ${RUO}`,
+    description: `A higher-strength version of the BPC-157 and TB-500 pairing for the same categories of cytoprotection, angiogenesis, and migration research, with 10mg of each peptide (BB20). ${RUO}`,
     featured: true,
     displayOrder: 8,
   },
@@ -105,7 +105,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "CU-100",
     priceCAD: 67,
     imageFile: "cu-100.jpg",
-    description: `GHK-Cu is the copper complex of the tripeptide glycyl-L-histidyl-L-lysine, studied in vitro for gene expression, extracellular matrix remodeling, oxidative stress, and fibroblast behavior. This listing is 100mg (CU-100). ${RUO}`,
+    description: `GHK-Cu links the GHK tripeptide to copper and is frequently used to examine collagen-related gene activity, fibroblast behavior, and oxidative stress in cultured systems. 100mg listing (CU-100). ${RUO}`,
     featured: true,
     displayOrder: 9,
   },
@@ -115,7 +115,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "MT-2",
     priceCAD: 66,
     imageFile: "mt-2.jpg",
-    description: `Melanotan II is a synthetic melanocortin receptor agonist used in pharmacology research on MC1R/MC4R signaling and pigmentary pathway models. Confirm the labeled quantity and specifications on the vial (MT-2). ${RUO}`,
+    description: `Melanotan II targets melanocortin receptors and is applied in pharmacology studies of pigmentation pathways and MC1R/MC4R activity. Product code MT-2; confirm the labeled quantity on your vial. ${RUO}`,
     displayOrder: 10,
   },
   {
@@ -124,7 +124,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "MS10",
     priceCAD: 66,
     imageFile: "ms-10.jpg",
-    description: `MOTS-C is a mitochondria-derived peptide researched for metabolic stress responses, exercise-mimetic signaling, and AMPK-related pathways in cellular models. This listing is 10mg (MS10). ${RUO}`,
+    description: `MOTS-C is encoded in mitochondrial DNA and is researched for its role in metabolic flexibility, AMPK-related signaling, and exercise-response models in cells. 10mg (MS10). ${RUO}`,
     displayOrder: 11,
   },
   {
@@ -133,7 +133,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "ARA10",
     priceCAD: 67,
     imageFile: "ara10.jpg",
-    description: `ARA-290 is a small erythropoietin-derived peptide studied for innate repair receptor (IRR) signaling and neuroinflammation or neuropathic pain models in preclinical research. This listing is 10mg (ARA10). ${RUO}`,
+    description: `ARA-290 is a compact peptide derived from erythropoietin biology and is used to explore innate repair receptor signaling and neuroinflammatory mechanisms in preclinical systems. 10mg (ARA10). ${RUO}`,
     displayOrder: 12,
   },
   {
@@ -142,7 +142,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "2S10",
     priceCAD: 72,
     imageFile: "2s10.jpg",
-    description: `SS-31 (elamipretide class) is a mitochondria-targeting peptide researched for interactions with cardiolipin and models of mitochondrial dysfunction, oxidative stress, and bioenergetics. This listing is 10mg (2S10). ${RUO}`,
+    description: `SS-31 concentrates in mitochondria and is studied for cardiolipin binding, electron-transport efficiency, and models of mitochondrial injury or aging. 10mg vial (2S10). ${RUO}`,
     displayOrder: 13,
   },
   {
@@ -151,7 +151,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "P41",
     priceCAD: 68,
     imageFile: "p41.jpg",
-    description: `PT-141 (bremelanotide class) is a synthetic melanocortin receptor agonist used in CNS and peripheral MC receptor pharmacology research. This listing is 10mg (P41). ${RUO}`,
+    description: `PT-141 is a melanocortin agonist peptide used in receptor-binding and central nervous system pharmacology research distinct from tanning-related MC pathways. 10mg (P41). ${RUO}`,
     displayOrder: 14,
   },
   {
@@ -160,7 +160,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "XA5(SX)",
     priceCAD: 63,
     imageFile: "xa5-sx.jpg",
-    description: `Semax is a synthetic ACTH(4-10) analog studied in neurotrophic and BDNF-related pathways, cognitive models, and ischemia research in laboratory settings. This listing is 5mg (XA5(SX)). ${RUO}`,
+    description: `Semax is a modified ACTH fragment studied for neurotrophic signaling, BDNF-linked pathways, and ischemia or cognition models in controlled laboratory settings. 5mg (XA5(SX)). ${RUO}`,
     displayOrder: 15,
   },
   {
@@ -169,7 +169,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "",
     priceCAD: 75,
     imageFile: "cartalax-20mg.jpg",
-    description: `Cartalax is a short peptide bioregulator from the Khavinson family, researched in cartilage, extracellular matrix, and cell-senescence models. This listing is 20mg; add verified sequence and composition when confirmed by the supplier. ${RUO}`,
+    description: `Cartalax belongs to the short-peptide bioregulator class and is used in research on cartilage cells, matrix maintenance, and senescence-related readouts. 20mg; obtain verified sequence data from the supplier when available. ${RUO}`,
     displayOrder: 16,
   },
   {
@@ -179,7 +179,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 20,
     imageFile: "bac-10ml.jpg",
     category: "Research supplies",
-    description: `Sterile bacteriostatic water is used in the laboratory as a common diluent for reconstituting lyophilized peptides, with benzyl alcohol to inhibit microbial growth in multi-dose use per supplier labeling. This listing is 10ml (BAC). Confirm composition and intended use on the label. ${RUO}`,
+    description: `Sterile bacteriostatic water is a standard diluent for reconstituting lyophilized peptides in the lab, typically with a preservative to limit bacterial growth in multi-use vials. 10ml (BAC); follow the supplier label for composition. ${RUO}`,
     displayOrder: 17,
   },
   {
@@ -189,7 +189,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 10,
     imageFile: "bac-3ml.jpg",
     category: "Research supplies",
-    description: `Same research-laboratory role as the 10ml format: diluent for peptide reconstitution protocols where a smaller volume is required. This listing is 3ml (BAC). Confirm composition on the supplier label. ${RUO}`,
+    description: `A smaller-volume bacteriostatic water option for reconstitution workflows that call for less diluent per vial. 3ml (BAC); confirm formulation on the label. ${RUO}`,
     displayOrder: 18,
   },
   {
@@ -199,7 +199,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 20,
     imageFile: "aa3-10ml.jpg",
     category: "Research supplies",
-    description: `Acetic acid solutions are used in peptide handling workflows for pH adjustment and solubility per laboratory SOPs and supplier instructions. This listing is 10ml (AA3); concentration and handling details must be taken from the product label. ${RUO}`,
+    description: `Acetic acid may be used in peptide solubility and pH-adjustment steps according to laboratory SOPs and the manufacturer’s instructions. 10ml (AA3); concentration must be confirmed from the vial label. ${RUO}`,
     displayOrder: 19,
   },
 ];

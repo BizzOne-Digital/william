@@ -9,6 +9,11 @@ export function getSiteUrl(): string {
 /** Flat tracked shipping (CAD) — also set in Admin → Settings and shipping policy. */
 export const SHIPPING_FLAT_RATE_CAD = 25.64;
 
+/** List and charge whole-dollar CAD (e.g. 16.57 → 17). */
+export function ceilPriceCAD(amount: number): number {
+  return Math.ceil(amount);
+}
+
 export const BRAND = {
   name: "Intense Dropz",
   email: "info@intensedropz.ca",

@@ -80,7 +80,7 @@ async function main() {
       description: item.description,
       category: item.category ?? "Research peptides",
       images: [imagePath],
-      priceCAD: item.priceCAD,
+      priceCAD: Math.ceil(item.priceCAD),
       stock: 100,
       featured: item.featured ?? false,
       displayOrder: item.displayOrder,
