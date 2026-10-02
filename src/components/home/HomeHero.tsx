@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calculator } from "lucide-react";
+import { Logo } from "@/components/brand/Logo";
 import { BRAND } from "@/lib/constants";
 
 export function HomeHero() {
@@ -30,12 +31,10 @@ export function HomeHero() {
             {BRAND.market} · {BRAND.currency}
           </p>
 
-          <h1 className="mt-4 font-display text-[clamp(2.15rem,11vw,5.75rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] break-words sm:mt-5">
-            <span className="text-white">INTENSE </span>
-            <span className="text-accent">DROPZ</span>
-          </h1>
-
-          <div className="mt-4 h-[3px] w-[3.25rem] rounded-sm bg-accent shadow-[0_0_18px_rgba(var(--accent-rgb),0.55)] sm:mt-5" />
+          <h1 className="sr-only">{BRAND.name}</h1>
+          <div className="mt-4 sm:mt-5">
+            <Logo variant="hero" />
+          </div>
 
           <p className="mt-6 text-lg font-semibold leading-snug text-white sm:mt-8 sm:text-xl lg:text-[1.35rem]">
             A refined destination for peptide research.

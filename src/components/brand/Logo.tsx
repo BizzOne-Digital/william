@@ -7,12 +7,13 @@ export const LOGO_ALT = "Intense Dropz — Repair. Rebuild. Renew.";
 
 type LogoProps = {
   compact?: boolean;
-  variant?: "default" | "header" | "footer";
+  variant?: "default" | "header" | "footer" | "hero";
 };
 
 export function Logo({ compact, variant = "default" }: LogoProps) {
   const isHeader = variant === "header";
   const isFooter = variant === "footer";
+  const isHero = variant === "hero";
 
   return (
     <Link
@@ -25,7 +26,8 @@ export function Logo({ compact, variant = "default" }: LogoProps) {
           isHeader && "px-0.5 py-0",
           compact && "px-1 py-0.5",
           isFooter && "px-0 py-0",
-          !isHeader && !compact && !isFooter && "px-1 py-0.5",
+          isHero && "px-0 py-0",
+          !isHeader && !compact && !isFooter && !isHero && "px-1 py-0.5",
         )}
       >
         <Image
@@ -33,13 +35,15 @@ export function Logo({ compact, variant = "default" }: LogoProps) {
           alt={LOGO_ALT}
           width={320}
           height={200}
-          priority={isHeader}
+          priority={isHeader || isHero}
           className={cn(
             "h-auto w-auto object-contain object-center transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transform-none",
             isHeader && "max-h-[3.75rem] max-w-[12.5rem] sm:max-h-[4.5rem] sm:max-w-[15rem]",
             compact && "max-h-14 max-w-[13rem]",
             isFooter && "max-h-[6.5rem] max-w-[16rem] sm:max-h-[7.5rem] sm:max-w-[18rem]",
-            !isHeader && !compact && !isFooter && "max-h-16 max-w-[14rem]",
+            isHero &&
+              "max-h-[5.5rem] max-w-[min(100%,18rem)] sm:max-h-[7.25rem] sm:max-w-[22rem] lg:max-h-[8.75rem] lg:max-w-[26rem]",
+            !isHeader && !compact && !isFooter && !isHero && "max-h-16 max-w-[14rem]",
           )}
         />
       </span>
