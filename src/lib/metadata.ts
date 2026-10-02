@@ -13,11 +13,11 @@ export function siteMetadata(overrides?: Metadata): Metadata {
     metadataBase: new URL(BRAND.url),
     icons: {
       icon: [
-        { url: "/favicon.png", type: "image/png", sizes: "32x32" },
-        { url: "/favicon.png", type: "image/png", sizes: "192x192" },
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon.png", type: "image/png", sizes: "512x512" },
       ],
-      shortcut: "/favicon.png",
-      apple: "/apple-touch-icon.png",
+      shortcut: "/favicon.ico",
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     },
     openGraph: {
       title: String(title),
