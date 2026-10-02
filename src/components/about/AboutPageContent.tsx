@@ -142,6 +142,7 @@ export function AboutPageContent({
                 src="/images/feature-lab.jpg"
                 alt="Laboratory environment with glassware and teal lighting"
                 fill
+                unoptimized
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
@@ -151,6 +152,7 @@ export function AboutPageContent({
                 src="/images/feature-droplets.jpg"
                 alt="Abstract liquid droplets with cyan light"
                 fill
+                unoptimized
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />

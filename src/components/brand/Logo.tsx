@@ -33,7 +33,8 @@ export function Logo({ compact, variant = "default" }: LogoProps) {
           alt={LOGO_ALT}
           width={320}
           height={200}
-          priority={isHeader}
+          priority={isHeader || isFooter}
+          unoptimized
           className={cn(
             "h-auto w-auto object-contain object-center transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transform-none",
             isHeader && "max-h-[3.75rem] max-w-[12.5rem] sm:max-h-[4.5rem] sm:max-w-[15rem]",

@@ -43,7 +43,7 @@ export default async function ShopPage({ searchParams }: { searchParams: SearchP
     <div className="mx-auto w-full min-w-0 max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="relative mb-10 overflow-hidden rounded-2xl border border-white/10">
         <div className="relative min-h-[160px] sm:min-h-[200px]">
-          <Image src="/images/feature-vials-neon.jpg" alt="" fill className="object-cover object-center" priority sizes="100vw" />
+          <Image src="/images/feature-vials-neon.jpg" alt="" fill unoptimized className="object-cover object-center" priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/25" />
           <div className="relative px-6 py-10 sm:px-10">
             <h1 className="font-display text-4xl font-bold text-white">Shop</h1>

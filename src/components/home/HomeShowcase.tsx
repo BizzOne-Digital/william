@@ -58,6 +58,7 @@ export function HomeShowcase() {
                 src={tile.src}
                 alt={tile.alt}
                 fill
+                unoptimized
                 className="object-cover transition duration-700 group-hover:scale-105 motion-reduce:transform-none"
                 sizes="(max-width: 1024px) 50vw, 25vw"
               />

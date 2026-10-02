@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calculator } from "lucide-react";
 import { BRAND } from "@/lib/constants";
+import { LOGO_ALT, LOGO_SRC } from "@/components/brand/Logo";
 
 export function HomeHero() {
   return (
@@ -12,6 +13,7 @@ export function HomeHero() {
         fill
         priority
         quality={95}
+        unoptimized
         className="object-cover object-[62%_center] sm:object-[68%_center] lg:object-[right_center]"
         sizes="100vw"
       />
@@ -30,12 +32,18 @@ export function HomeHero() {
             {BRAND.market} · {BRAND.currency}
           </p>
 
-          <h1 className="mt-4 font-display text-[clamp(2.15rem,11vw,5.75rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] break-words sm:mt-5">
-            <span className="text-white">INTENSE </span>
-            <span className="text-accent">DROPZ</span>
+          <h1 className="mt-4 sm:mt-5">
+            <span className="sr-only">{BRAND.name}</span>
+            <Image
+              src={LOGO_SRC}
+              alt={LOGO_ALT}
+              width={480}
+              height={300}
+              priority
+              unoptimized
+              className="h-auto w-full max-w-[min(100%,18rem)] object-contain object-left drop-shadow-[0_12px_40px_rgba(0,0,0,0.55)] sm:max-w-[22rem] lg:max-w-[26rem]"
+            />
           </h1>
-
-          <div className="mt-4 h-[3px] w-[3.25rem] rounded-sm bg-accent shadow-[0_0_18px_rgba(var(--accent-rgb),0.55)] sm:mt-5" />
 
           <p className="mt-6 text-lg font-semibold leading-snug text-white sm:mt-8 sm:text-xl lg:text-[1.35rem]">
             A refined destination for peptide research.

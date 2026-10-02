@@ -10,6 +10,7 @@ export function HomeIntroSection({ intro }: { intro: string }) {
             src="/images/feature-luxury-lab.jpg"
             alt="Premium laboratory interior with teal accent lighting"
             fill
+            unoptimized
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />

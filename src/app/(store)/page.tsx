@@ -76,6 +76,7 @@ export default async function HomePage() {
                   src="/images/feature-vials-neon.jpg"
                   alt=""
                   fill
+                  unoptimized
                   className="object-cover"
                   sizes="(max-width: 1280px) 100vw, 1280px"
                 />

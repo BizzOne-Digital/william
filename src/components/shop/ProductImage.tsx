@@ -33,7 +33,11 @@ export function ProductImage({ src, alt, className, sizes, priority }: Props) {
       className={className}
       sizes={sizes}
       priority={priority}
-      unoptimized={isStoredUploadUrl(displaySrc)}
+      unoptimized={
+        isStoredUploadUrl(displaySrc) ||
+        displaySrc.startsWith("/images/") ||
+        displaySrc === PRODUCT_IMAGE_PLACEHOLDER
+      }
       onError={() => {
         if (displaySrc !== PRODUCT_IMAGE_PLACEHOLDER) {
           setDisplaySrc(PRODUCT_IMAGE_PLACEHOLDER);

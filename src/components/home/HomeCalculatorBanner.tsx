@@ -10,6 +10,7 @@ export function HomeCalculatorBanner() {
           src="/images/feature-molecule.jpg"
           alt=""
           fill
+          unoptimized
           className="object-cover object-center"
           sizes="100vw"
         />
