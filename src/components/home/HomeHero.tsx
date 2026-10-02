@@ -32,20 +32,20 @@ export function HomeHero() {
             {BRAND.market} · {BRAND.currency}
           </p>
 
-          <h1 className="mt-4 sm:mt-5">
+          <h1 className="mt-3 sm:mt-4">
             <span className="sr-only">{BRAND.name}</span>
             <Image
               src={LOGO_SRC}
               alt={LOGO_ALT}
-              width={480}
-              height={300}
+              width={320}
+              height={200}
               priority
               unoptimized
-              className="h-auto w-full max-w-[min(100%,18rem)] object-contain object-left drop-shadow-[0_12px_40px_rgba(0,0,0,0.55)] sm:max-w-[22rem] lg:max-w-[26rem]"
+              className="h-auto w-full max-w-[9.5rem] object-contain object-left drop-shadow-[0_8px_28px_rgba(0,0,0,0.45)] sm:max-w-[11rem] md:max-w-[12.5rem] lg:max-w-[14rem]"
             />
           </h1>
 
-          <p className="mt-6 text-lg font-semibold leading-snug text-white sm:mt-8 sm:text-xl lg:text-[1.35rem]">
+          <p className="mt-5 text-lg font-semibold leading-snug text-white sm:mt-6 sm:text-xl lg:text-[1.35rem]">
             A refined destination for peptide research.
           </p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/55 sm:text-[15px] md:text-base">
