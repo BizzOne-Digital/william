@@ -73,7 +73,7 @@ async function main() {
 
   for (const item of CATALOG_PRODUCTS) {
     const imagePath = `/images/products/${item.imageFile}`;
-    const payload = {
+    const catalogFields = {
       title: item.title,
       slug: item.slug,
       sku: item.sku,
@@ -81,7 +81,6 @@ async function main() {
       category: item.category ?? "Research peptides",
       images: [imagePath],
       priceCAD: Math.ceil(item.priceCAD),
-      stock: 100,
       featured: item.featured ?? false,
       displayOrder: item.displayOrder,
       published: true,
@@ -89,10 +88,10 @@ async function main() {
 
     const existing = await Product.findOne({ slug: item.slug });
     if (existing) {
-      await Product.updateOne({ _id: existing._id }, { $set: payload });
-      console.log("Updated:", item.title);
+      await Product.updateOne({ _id: existing._id }, { $set: catalogFields });
+      console.log("Updated:", item.title, "(stock unchanged)");
     } else {
-      await Product.create(payload);
+      await Product.create({ ...catalogFields, stock: 100 });
       console.log("Created:", item.title);
     }
   }

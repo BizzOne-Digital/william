@@ -10,6 +10,7 @@ import Testimonial from "@/models/Testimonial";
 import DiscountCode from "@/models/DiscountCode";
 import SiteSettings from "@/models/SiteSettings";
 import { logAudit } from "@/lib/audit";
+import { deleteStoredUploadByUrl, deleteStoredUploadsIfUnreferenced } from "@/lib/uploads";
 
 async function adminSession() {
   const session = await auth();
@@ -40,6 +41,12 @@ const productSchema = z.object({
   displayOrder: z.coerce.number().int(),
   published: z.coerce.boolean(),
 });
+
+export async function deleteStoredUploadAction(url: string) {
+  await adminSession();
+  await deleteStoredUploadByUrl(url);
+  return { ok: true as const };
+}
 
 export async function saveProduct(formData: FormData) {
   const session = await adminSession();
@@ -76,30 +83,80 @@ export async function saveProduct(formData: FormData) {
   };
   delete (payload as { id?: string }).id;
 
-  let product;
+  let previousImages: string[] = [];
   if (parsed.data.id) {
-    product = await Product.findByIdAndUpdate(parsed.data.id, payload, { new: true });
-    await logAudit({
-      actorId: session.user.id,
-      actorEmail: session.user.email ?? undefined,
-      action: "product.update",
-      entityType: "product",
-      entityId: parsed.data.id,
-    });
-  } else {
-    product = await Product.create(payload);
-    await logAudit({
-      actorId: session.user.id,
-      actorEmail: session.user.email ?? undefined,
-      action: "product.create",
-      entityType: "product",
-      entityId: String(product._id),
-    });
+    const prev = await Product.findById(parsed.data.id).select("images").lean();
+    previousImages = prev?.images ?? [];
   }
 
+  let product;
+  try {
+    if (parsed.data.id) {
+      product = await Product.findByIdAndUpdate(parsed.data.id, payload, { new: true });
+      if (!product) return { ok: false as const, error: "Product not found." };
+      await logAudit({
+        actorId: session.user.id,
+        actorEmail: session.user.email ?? undefined,
+        action: "product.update",
+        entityType: "product",
+        entityId: parsed.data.id,
+      });
+    } else {
+      product = await Product.create(payload);
+      await logAudit({
+        actorId: session.user.id,
+        actorEmail: session.user.email ?? undefined,
+        action: "product.create",
+        entityType: "product",
+        entityId: String(product._id),
+      });
+    }
+  } catch (err) {
+    const code = err && typeof err === "object" && "code" in err ? (err as { code: number }).code : 0;
+    if (code === 11000) {
+      return { ok: false as const, error: "A product with this slug already exists. Choose a different slug or title." };
+    }
+    throw err;
+  }
+
+  const removedImages = previousImages.filter((url) => !images.includes(url));
+  await deleteStoredUploadsIfUnreferenced(removedImages);
+
   revalidatePath("/shop");
+  revalidatePath("/");
+  if (product?.slug) revalidatePath(`/shop/${product.slug}`);
   revalidatePath("/admin/products");
+  revalidatePath("/admin/inventory");
   return { ok: true as const, id: String(product?._id), error: undefined as string | undefined };
+}
+
+export async function updateProductStock(productId: string, stock: number) {
+  const session = await adminSession();
+  const parsed = z.coerce.number().int().min(0).safeParse(stock);
+  if (!parsed.success) return { ok: false as const, error: "Stock must be zero or greater." };
+
+  await connectDB();
+  const updated = await Product.findByIdAndUpdate(
+    productId,
+    { $set: { stock: parsed.data } },
+    { new: true },
+  );
+  if (!updated) return { ok: false as const, error: "Product not found." };
+
+  await logAudit({
+    actorId: session.user.id,
+    actorEmail: session.user.email ?? undefined,
+    action: "product.stock_update",
+    entityType: "product",
+    entityId: productId,
+    details: { stock: parsed.data, title: updated.title },
+  });
+
+  revalidatePath("/shop");
+  revalidatePath("/");
+  revalidatePath("/admin/products");
+  revalidatePath("/admin/inventory");
+  return { ok: true as const };
 }
 
 export async function deleteProduct(id: string) {
@@ -115,6 +172,7 @@ export async function deleteProduct(id: string) {
   });
   revalidatePath("/shop");
   revalidatePath("/admin/products");
+  revalidatePath("/admin/inventory");
   return { ok: true as const };
 }
 

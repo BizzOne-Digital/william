@@ -3,6 +3,7 @@ import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
 import { formatCAD } from "@/lib/product-utils";
 import { deleteProduct } from "@/app/admin/actions";
+import { AdminStockEditor } from "@/components/admin/AdminStockEditor";
 
 export default async function AdminProductsPage({
   searchParams,
@@ -22,12 +23,20 @@ export default async function AdminProductsPage({
     <div>
       <div className="mb-6 flex items-center justify-between gap-4">
         <h1 className="font-display text-3xl font-semibold text-white">Products</h1>
-        <Link
-          href="/admin/products/new"
-          className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white"
-        >
-          Add product
-        </Link>
+        <div className="flex flex-wrap gap-2">
+          <Link
+            href="/admin/inventory"
+            className="rounded-full border border-border px-4 py-2 text-sm font-semibold text-white/90 hover:border-accent/40"
+          >
+            Manage inventory
+          </Link>
+          <Link
+            href="/admin/products/new"
+            className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white"
+          >
+            Add product
+          </Link>
+        </div>
       </div>
       {items.length === 0 ? (
         <div className="glass-panel rounded-2xl p-10 text-center text-muted">
@@ -40,7 +49,7 @@ export default async function AdminProductsPage({
               <tr>
                 <th className="px-4 py-3">Title</th>
                 <th className="px-4 py-3">Price</th>
-                <th className="px-4 py-3">Stock</th>
+                <th className="px-4 py-3">Inventory</th>
                 <th className="px-4 py-3">Status</th>
                 <th className="px-4 py-3" />
               </tr>
@@ -50,7 +59,9 @@ export default async function AdminProductsPage({
                 <tr key={String(p._id)} className="border-t border-border/60">
                   <td className="px-4 py-3 font-medium text-white">{p.title}</td>
                   <td className="px-4 py-3">{formatCAD(p.priceCAD)}</td>
-                  <td className="px-4 py-3">{p.stock}</td>
+                  <td className="px-4 py-3">
+                    <AdminStockEditor productId={String(p._id)} initialStock={p.stock} compact />
+                  </td>
                   <td className="px-4 py-3">
                     {p.published ? (
                       <span className="text-emerald-300">Published</span>

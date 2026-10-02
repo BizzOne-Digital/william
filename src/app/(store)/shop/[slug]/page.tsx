@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
 import { siteMetadata } from "@/lib/metadata";
 import { ProductCoaLink } from "@/components/shop/ProductCoaLink";
 import { ProductPurchasePanel } from "@/components/shop/ProductPurchasePanel";
+import { ProductImage } from "@/components/shop/ProductImage";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -26,7 +26,7 @@ export default async function ProductPage({ params }: Props) {
   const product = await Product.findOne({ slug, published: true }).lean();
   if (!product) notFound();
 
-  const images = product.images?.length ? product.images : [];
+  const imageUrls = product.images?.length ? product.images : [];
   const serialized = {
     _id: String(product._id),
     priceCAD: product.priceCAD,
@@ -46,23 +46,19 @@ export default async function ProductPage({ params }: Props) {
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="space-y-4">
           <div className="relative aspect-square overflow-hidden rounded-3xl border border-border bg-surface-elevated">
-            {images[0] ? (
-              <Image src={images[0]} alt="" fill className="object-cover" priority sizes="(max-width:1024px) 100vw, 50vw" />
-            ) : (
-              <Image
-                src="/images/feature-vial-rock.jpg"
-                alt=""
-                fill
-                className="object-cover"
-                sizes="(max-width:1024px) 100vw, 50vw"
-              />
-            )}
+            <ProductImage
+              src={imageUrls[0]}
+              alt={product.title}
+              priority
+              className="object-cover"
+              sizes="(max-width:1024px) 100vw, 50vw"
+            />
           </div>
-          {images.length > 1 && (
+          {imageUrls.length > 1 && (
             <div className="grid grid-cols-4 gap-3">
-              {images.slice(1, 5).map((src) => (
-                <div key={src} className="relative aspect-square overflow-hidden rounded-xl border border-border">
-                  <Image src={src} alt="" fill className="object-cover" sizes="120px" />
+              {imageUrls.slice(1, 5).map((src) => (
+                <div key={src} className="relative aspect-square overflow-hidden rounded-xl border border-border bg-surface-elevated">
+                  <ProductImage src={src} alt="" className="object-cover" sizes="120px" />
                 </div>
               ))}
             </div>

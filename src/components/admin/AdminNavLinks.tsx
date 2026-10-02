@@ -7,6 +7,7 @@ import { cn } from "@/lib/cn";
 const links = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/products", label: "Products" },
+  { href: "/admin/inventory", label: "Inventory" },
   { href: "/admin/orders", label: "Orders" },
   { href: "/admin/testimonials", label: "Testimonials" },
   { href: "/admin/discounts", label: "Discount codes" },
@@ -23,7 +24,9 @@ export function AdminNavLinks() {
           href={l.href}
           className={cn(
             "rounded-lg px-3 py-2 text-sm text-muted hover:bg-white/5 hover:text-foreground",
-            pathname === l.href && "bg-white/5 text-accent",
+            (pathname === l.href ||
+              (l.href !== "/admin" && pathname.startsWith(`${l.href}/`))) &&
+              "bg-white/5 text-accent",
           )}
         >
           {l.label}

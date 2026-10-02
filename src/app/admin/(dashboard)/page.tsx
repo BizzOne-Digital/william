@@ -2,17 +2,22 @@ import Link from "next/link";
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
 import Order from "@/models/Order";
+import { LOW_STOCK_THRESHOLD } from "@/lib/stock";
+
 export default async function AdminDashboardPage() {
   await connectDB();
-  const [products, published, orders] = await Promise.all([
+  const [products, published, orders, lowStock, outOfStock] = await Promise.all([
     Product.countDocuments(),
     Product.countDocuments({ published: true }),
     Order.countDocuments({ deletedAt: null }),
+    Product.countDocuments({ stock: { $gt: 0, $lte: LOW_STOCK_THRESHOLD } }),
+    Product.countDocuments({ stock: { $lte: 0 } }),
   ]);
 
   const cards = [
     { label: "Products (draft + live)", value: products, href: "/admin/products" },
     { label: "Published products", value: published, href: "/admin/products" },
+    { label: "Low / out of stock", value: `${lowStock} / ${outOfStock}`, href: "/admin/inventory" },
     { label: "Orders", value: orders, href: "/admin/orders" },
   ];
 

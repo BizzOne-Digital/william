@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { saveProduct } from "@/app/admin/actions";
+import { AdminProductImagesField } from "@/components/admin/AdminProductImagesField";
 import { Button } from "@/components/ui/Button";
 
 type ProductData = {
@@ -22,33 +23,19 @@ type ProductData = {
 
 export function ProductForm({ product }: { product?: ProductData }) {
   const [message, setMessage] = useState<string | null>(null);
-  const [uploading, setUploading] = useState(false);
-  const [images, setImages] = useState((product?.images ?? []).join("\n"));
-
-  const upload = async (file: File) => {
-    setUploading(true);
-    setMessage(null);
-    const fd = new FormData();
-    fd.append("file", file);
-    const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
-    const data = await res.json();
-    setUploading(false);
-    if (!res.ok) {
-      setMessage(data.error ?? "Upload failed");
-      return;
-    }
-    setImages((prev) => (prev ? `${prev}\n${data.url}` : data.url));
-    setMessage("Image uploaded.");
-  };
+  const [images, setImages] = useState<string[]>(product?.images ?? []);
 
   return (
     <form
       onSubmit={async (e) => {
         e.preventDefault();
         const fd = new FormData(e.currentTarget);
-        fd.set("images", images);
+        fd.set("images", images.join("\n"));
         const res = await saveProduct(fd);
         setMessage(res.ok ? "Saved." : res.error ?? "Error");
+        if (res.ok && res.id && !product?._id) {
+          window.location.href = `/admin/products/${res.id}`;
+        }
       }}
       className="glass-panel max-w-2xl space-y-4 rounded-2xl p-6"
     >
@@ -69,23 +56,7 @@ export function ProductForm({ product }: { product?: ProductData }) {
         Description
         <textarea name="description" rows={6} defaultValue={product?.description} className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2" />
       </label>
-      <label className="block text-sm">
-        Image URLs (one per line)
-        <textarea value={images} onChange={(e) => setImages(e.target.value)} rows={4} className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2" />
-      </label>
-      <label className="block text-sm">
-        Upload image
-        <input
-          type="file"
-          accept="image/jpeg,image/png,image/webp,image/gif"
-          className="mt-1 block w-full text-sm"
-          onChange={(e) => {
-            const f = e.target.files?.[0];
-            if (f) upload(f);
-          }}
-        />
-      </label>
-      {uploading && <p className="text-xs text-muted">Uploading…</p>}
+      <AdminProductImagesField images={images} onChange={setImages} />
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-sm">
           SKU
@@ -100,8 +71,20 @@ export function ProductForm({ product }: { product?: ProductData }) {
           <input name="salePriceCAD" type="number" step="0.01" min="0" defaultValue={product?.salePriceCAD} className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2" />
         </label>
         <label className="block text-sm">
-          Stock
-          <input name="stock" type="number" min="0" defaultValue={product?.stock ?? 0} className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2" />
+          Units on hand (inventory)
+          <input
+            name="stock"
+            type="number"
+            min="0"
+            step="1"
+            required
+            defaultValue={product?.stock ?? 0}
+            className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2"
+          />
+          <span className="mt-1 block text-xs text-muted">
+            Shown on the product page and used at checkout. You can also update stock on the{" "}
+            <a href="/admin/inventory" className="text-accent hover:underline">Inventory</a> page.
+          </span>
         </label>
         <label className="block text-sm">
           Display order
@@ -115,7 +98,7 @@ export function ProductForm({ product }: { product?: ProductData }) {
         <input type="checkbox" name="published" defaultChecked={product?.published} /> Published (visible on storefront)
       </label>
       {message && <p className="text-sm text-accent">{message}</p>}
-      <Button type="submit">Save product</Button>
+      <Button type="submit">{product?._id ? "Save changes" : "Create product"}</Button>
     </form>
   );
 }
