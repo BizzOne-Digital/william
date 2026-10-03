@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   isStoredUploadUrl,
   PRODUCT_IMAGE_PLACEHOLDER,
@@ -19,11 +19,8 @@ type Props = {
 /** Storefront product photo with placeholder + fallback if the URL fails to load. */
 export function ProductImage({ src, alt, className, sizes, priority }: Props) {
   const resolved = resolveProductImageUrl(src);
-  const [displaySrc, setDisplaySrc] = useState(resolved);
-
-  useEffect(() => {
-    setDisplaySrc(resolveProductImageUrl(src));
-  }, [src]);
+  const [erroredSrc, setErroredSrc] = useState<string | null>(null);
+  const displaySrc = erroredSrc === resolved ? PRODUCT_IMAGE_PLACEHOLDER : resolved;
 
   return (
     <Image
@@ -39,8 +36,8 @@ export function ProductImage({ src, alt, className, sizes, priority }: Props) {
         displaySrc === PRODUCT_IMAGE_PLACEHOLDER
       }
       onError={() => {
-        if (displaySrc !== PRODUCT_IMAGE_PLACEHOLDER) {
-          setDisplaySrc(PRODUCT_IMAGE_PLACEHOLDER);
+        if (resolved !== PRODUCT_IMAGE_PLACEHOLDER) {
+          setErroredSrc(resolved);
         }
       }}
     />

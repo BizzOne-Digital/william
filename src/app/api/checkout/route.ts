@@ -161,34 +161,23 @@ export async function POST(req: Request) {
   }
 
   const base = BRAND.url.replace(/\/$/, "");
-  const lineItems = [
-    ...totals.items.map((i) => ({
-      name: i.title,
-      amountCents: Math.round(i.unitPriceCAD * 100),
-      quantity: i.quantity,
-    })),
-  ];
-  if (totals.shippingCAD > 0) {
-    lineItems.push({
-      name: "Shipping",
-      amountCents: Math.round(totals.shippingCAD * 100),
-      quantity: 1,
-    });
-  }
-  if (totals.taxCAD > 0) {
-    lineItems.push({
-      name: "Tax",
-      amountCents: Math.round(totals.taxCAD * 100),
-      quantity: 1,
-    });
-  }
-  if (totals.discountCAD > 0) {
-    lineItems.push({
-      name: "Discount",
-      amountCents: -Math.round(totals.discountCAD * 100),
-      quantity: 1,
-    });
-  }
+  const totalCents = Math.round(totals.totalCAD * 100);
+  const lineItems =
+    totals.discountCAD > 0
+      ? [{ name: `Order ${orderNumber}`, amountCents: totalCents, quantity: 1 }]
+      : [
+          ...totals.items.map((i) => ({
+            name: i.title,
+            amountCents: Math.round(i.unitPriceCAD * 100),
+            quantity: i.quantity,
+          })),
+          ...(totals.shippingCAD > 0
+            ? [{ name: "Shipping", amountCents: Math.round(totals.shippingCAD * 100), quantity: 1 }]
+            : []),
+          ...(totals.taxCAD > 0
+            ? [{ name: "Tax", amountCents: Math.round(totals.taxCAD * 100), quantity: 1 }]
+            : []),
+        ];
 
   const session = await createCheckoutSession({
     orderId: String(order._id),

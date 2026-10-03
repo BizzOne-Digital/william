@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { saveProduct } from "@/app/admin/actions";
 import { AdminProductImagesField } from "@/components/admin/AdminProductImagesField";
 import { Button } from "@/components/ui/Button";
@@ -22,6 +23,7 @@ type ProductData = {
 };
 
 export function ProductForm({ product }: { product?: ProductData }) {
+  const router = useRouter();
   const [message, setMessage] = useState<string | null>(null);
   const [images, setImages] = useState<string[]>(product?.images ?? []);
 
@@ -34,7 +36,7 @@ export function ProductForm({ product }: { product?: ProductData }) {
         const res = await saveProduct(fd);
         setMessage(res.ok ? "Saved." : res.error ?? "Error");
         if (res.ok && res.id && !product?._id) {
-          window.location.href = `/admin/products/${res.id}`;
+          router.push(`/admin/products/${res.id}`);
         }
       }}
       className="glass-panel max-w-2xl space-y-4 rounded-2xl p-6"

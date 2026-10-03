@@ -7,9 +7,7 @@ export type PaymentConfig = {
 
 export function getPaymentConfig(): PaymentConfig {
   const enabled =
-    process.env.PAYMENTS_ENABLED === "true" &&
-    Boolean(process.env.STRIPE_SECRET_KEY) &&
-    Boolean(process.env.STRIPE_WEBHOOK_SECRET);
+    process.env.PAYMENTS_ENABLED === "true" && Boolean(process.env.STRIPE_SECRET_KEY);
   return {
     enabled,
     provider: enabled ? "stripe" : "none",
@@ -33,3 +31,4 @@ export async function createCheckoutSession(params: {
 }
 
 export { getStripe, verifyStripeWebhook };
+export { syncOrderPaymentFromStripeSession } from "./sync-order-payment";

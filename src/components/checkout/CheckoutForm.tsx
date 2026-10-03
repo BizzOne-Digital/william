@@ -6,7 +6,13 @@ import { Button } from "@/components/ui/Button";
 import { formatCAD } from "@/lib/product-utils";
 import type { CartTotals } from "@/lib/pricing";
 
-export function CheckoutForm({ checkoutMessage }: { checkoutMessage: string }) {
+export function CheckoutForm({
+  checkoutMessage,
+  paymentsActive,
+}: {
+  checkoutMessage: string;
+  paymentsActive: boolean;
+}) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const cancelled = searchParams.get("cancelled");
@@ -73,12 +79,18 @@ export function CheckoutForm({ checkoutMessage }: { checkoutMessage: string }) {
       <form onSubmit={submit} className="glass-panel space-y-4 rounded-2xl p-6">
         {cancelled && (
           <p className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-100">
-            Payment was cancelled. You can try again when checkout is active.
+            Payment was cancelled. You can update your details and try again.
           </p>
         )}
-        <p className="rounded-lg border border-border bg-black/20 p-3 text-sm text-muted">
-          {checkoutMessage}
-        </p>
+        {paymentsActive ? (
+          <p className="rounded-lg border border-accent/25 bg-accent/10 p-3 text-sm text-white/85">
+            You will complete payment securely on Stripe after clicking Pay now.
+          </p>
+        ) : (
+          <p className="rounded-lg border border-border bg-black/20 p-3 text-sm text-muted">
+            {checkoutMessage}
+          </p>
+        )}
         <h2 className="font-display text-xl font-semibold text-white">Contact & shipping</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="text-sm sm:col-span-2">
@@ -116,16 +128,15 @@ export function CheckoutForm({ checkoutMessage }: { checkoutMessage: string }) {
         </div>
         {error && <p className="text-sm text-red-300">{error}</p>}
         <Button type="submit" disabled={loading} className="w-full sm:w-auto">
-          {loading ? "Processing…" : "Place order / continue"}
+          {loading ? "Redirecting to Stripe…" : paymentsActive ? "Pay now" : "Place order"}
         </Button>
       </form>
       <aside className="glass-panel h-fit rounded-2xl p-6 text-sm">
         <h3 className="font-display text-lg font-semibold text-white">Order total</h3>
         <p className="mt-4 text-2xl font-semibold">{formatCAD(totals.totalCAD)}</p>
-        <p className="mt-2 text-xs text-muted">
-          Totals are calculated on the server. Payment completes only via verified provider
-          webhooks when activated.
-        </p>
+        {paymentsActive && (
+          <p className="mt-2 text-xs text-muted">Tax, shipping, and discounts are included in this total.</p>
+        )}
       </aside>
     </div>
   );

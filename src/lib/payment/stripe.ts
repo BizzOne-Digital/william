@@ -48,3 +48,16 @@ export function verifyStripeWebhook(rawBody: Buffer, signature: string) {
   if (!client || !secret) throw new Error("Stripe webhook not configured");
   return client.webhooks.constructEvent(rawBody, signature, secret);
 }
+
+/** After Stripe redirect, confirm payment even if the webhook is slightly delayed. */
+export async function retrieveCheckoutSessionPayment(sessionId: string) {
+  const client = getStripe();
+  if (!client) return null;
+  const session = await client.checkout.sessions.retrieve(sessionId);
+  return {
+    orderId: session.metadata?.orderId ?? null,
+    orderNumber: session.metadata?.orderNumber ?? null,
+    paid: session.payment_status === "paid",
+    sessionId: session.id,
+  };
+}
