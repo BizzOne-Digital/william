@@ -58,42 +58,10 @@ export async function POST(req: Request) {
   }
 
   if (!checkoutAllowed) {
-    await connectDB();
-    const orderNumber = generateOrderNumber();
-    const order = await Order.create({
-      orderNumber,
-      email: parsed.data.email,
-      phone: parsed.data.phone,
-      shippingAddress: parsed.data.shippingAddress,
-      items: totals.items.map((i) => ({
-        productId: i.productId,
-        variantId: i.variantId,
-        title: i.title,
-        sku: i.sku,
-        unitPriceCAD: i.unitPriceCAD,
-        quantity: i.quantity,
-        lineTotalCAD: i.lineTotalCAD,
-      })),
-      subtotalCAD: totals.subtotalCAD,
-      discountCAD: totals.discountCAD,
-      shippingCAD: totals.shippingCAD,
-      taxCAD: totals.taxCAD,
-      totalCAD: totals.totalCAD,
-      discountCode: totals.discountValid ? totals.discountCode : null,
-      paymentStatus: "unavailable",
-      checkoutNote: settings.checkoutUnavailableMessage,
-    });
-
-    return NextResponse.json(
-      {
-        ok: false,
-        checkoutDisabled: true,
-        message: settings.checkoutUnavailableMessage,
-        orderId: String(order._id),
-        orderNumber: order.orderNumber,
-      },
-      { status: 503 },
-    );
+    const message = !payment.enabled
+      ? "Card payments are not configured yet. The site owner must add Stripe keys in the hosting environment (Vercel → Settings → Environment Variables)."
+      : settings.checkoutUnavailableMessage;
+    return NextResponse.json({ error: message }, { status: 503 });
   }
 
   await connectDB();

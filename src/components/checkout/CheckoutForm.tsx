@@ -1,19 +1,12 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { formatCAD } from "@/lib/product-utils";
 import type { CartTotals } from "@/lib/pricing";
 
-export function CheckoutForm({
-  checkoutMessage,
-  paymentsActive,
-}: {
-  checkoutMessage: string;
-  paymentsActive: boolean;
-}) {
-  const router = useRouter();
+export function CheckoutForm({ paymentsActive }: { paymentsActive: boolean }) {
   const searchParams = useSearchParams();
   const cancelled = searchParams.get("cancelled");
   const [totals, setTotals] = useState<CartTotals | null>(null);
@@ -51,14 +44,10 @@ export function CheckoutForm({
     });
     const data = await res.json();
     if (data.url) {
-      window.location.href = data.url;
+      window.location.assign(data.url);
       return;
     }
-    if (data.checkoutDisabled && data.orderId) {
-      router.push(`/order/${data.orderId}/confirmation?disabled=1`);
-      return;
-    }
-    setError(data.error ?? data.message ?? "Checkout unavailable.");
+    setError(data.error ?? data.message ?? "Unable to start payment. Please try again.");
     setLoading(false);
   };
 
@@ -80,15 +69,6 @@ export function CheckoutForm({
         {cancelled && (
           <p className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-100">
             Payment was cancelled. You can update your details and try again.
-          </p>
-        )}
-        {paymentsActive ? (
-          <p className="rounded-lg border border-accent/25 bg-accent/10 p-3 text-sm text-white/85">
-            You will complete payment securely on Stripe after clicking Pay now.
-          </p>
-        ) : (
-          <p className="rounded-lg border border-border bg-black/20 p-3 text-sm text-muted">
-            {checkoutMessage}
           </p>
         )}
         <h2 className="font-display text-xl font-semibold text-white">Contact & shipping</h2>
@@ -128,7 +108,7 @@ export function CheckoutForm({
         </div>
         {error && <p className="text-sm text-red-300">{error}</p>}
         <Button type="submit" disabled={loading} className="w-full sm:w-auto">
-          {loading ? "Redirecting to Stripe…" : paymentsActive ? "Pay now" : "Place order"}
+          {loading ? "Redirecting to Stripe…" : "Pay now"}
         </Button>
       </form>
       <aside className="glass-panel h-fit rounded-2xl p-6 text-sm">

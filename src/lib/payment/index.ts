@@ -6,8 +6,9 @@ export type PaymentConfig = {
 };
 
 export function getPaymentConfig(): PaymentConfig {
-  const enabled =
-    process.env.PAYMENTS_ENABLED === "true" && Boolean(process.env.STRIPE_SECRET_KEY);
+  const hasSecret = Boolean(process.env.STRIPE_SECRET_KEY?.trim());
+  const explicitlyDisabled = process.env.PAYMENTS_ENABLED === "false";
+  const enabled = hasSecret && !explicitlyDisabled;
   return {
     enabled,
     provider: enabled ? "stripe" : "none",

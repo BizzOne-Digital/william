@@ -128,7 +128,9 @@ export function CartClient() {
             <span>{formatCAD(totals.shippingCAD)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-muted">Tax</span>
+            <span className="text-muted">
+              Tax{totals.taxRatePercent > 0 ? ` (${totals.taxRatePercent}%)` : ""}
+            </span>
             <span>{formatCAD(totals.taxCAD)}</span>
           </div>
           <div className="flex justify-between border-t border-border pt-3 text-base font-semibold">

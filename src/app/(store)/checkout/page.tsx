@@ -15,10 +15,7 @@ export default async function CheckoutPage() {
     <div className="mx-auto w-full min-w-0 max-w-7xl px-4 py-12 sm:px-6">
       <h1 className="mb-8 font-display text-4xl font-semibold text-white">Checkout</h1>
       <Suspense fallback={<p className="text-muted">Loading…</p>}>
-        <CheckoutForm
-          checkoutMessage={settings.checkoutUnavailableMessage}
-          paymentsActive={paymentsActive}
-        />
+        <CheckoutForm paymentsActive={paymentsActive} />
       </Suspense>
     </div>
   );

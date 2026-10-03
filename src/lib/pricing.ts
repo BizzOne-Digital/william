@@ -25,6 +25,7 @@ export type CartTotals = {
   discountCAD: number;
   shippingCAD: number;
   taxCAD: number;
+  taxRatePercent: number;
   totalCAD: number;
   discountCode: string | null;
   discountError: string | null;
@@ -44,6 +45,7 @@ export async function calculateCartTotals(
     discountCAD: 0,
     shippingCAD: 0,
     taxCAD: 0,
+    taxRatePercent: settings.taxEnabled ? settings.taxRatePercent : 0,
     totalCAD: 0,
     discountCode: cart?.discountCode ?? null,
     discountError: null,
@@ -153,6 +155,7 @@ export async function calculateCartTotals(
     discountCAD,
     shippingCAD,
     taxCAD,
+    taxRatePercent: settings.taxEnabled ? settings.taxRatePercent : 0,
     totalCAD,
     discountCode: codeStr,
     discountError,

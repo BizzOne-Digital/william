@@ -9,6 +9,9 @@ export function getSiteUrl(): string {
 /** Flat tracked shipping (CAD) — also set in Admin → Settings and shipping policy. */
 export const SHIPPING_FLAT_RATE_CAD = 25.64;
 
+/** Ontario HST-style rate applied to subtotal + shipping when tax is enabled in settings. */
+export const DEFAULT_TAX_RATE_PERCENT = 13;
+
 /** List and charge whole-dollar CAD (e.g. 16.57 → 17). */
 export function ceilPriceCAD(amount: number): number {
   return Math.ceil(amount);
