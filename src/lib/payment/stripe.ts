@@ -1,12 +1,27 @@
 import Stripe from "stripe";
 
 let stripe: Stripe | null = null;
+let stripeKeyUsed: string | null = null;
+
+const STRIPE_SECRET_PREFIXES = ["sk_live_", "sk_test_", "rk_live_", "rk_test_"] as const;
+
+export function isStripeSecretKey(key: string): boolean {
+  return STRIPE_SECRET_PREFIXES.some((prefix) => key.startsWith(prefix));
+}
+
+function normalizeStripeSecretKey(raw: string | undefined): string | null {
+  if (!raw) return null;
+  const key = raw.trim().replace(/^['"]|['"]$/g, "");
+  if (!isStripeSecretKey(key)) return null;
+  return key;
+}
 
 export function getStripe(): Stripe | null {
-  const key = process.env.STRIPE_SECRET_KEY;
+  const key = normalizeStripeSecretKey(process.env.STRIPE_SECRET_KEY);
   if (!key) return null;
-  if (!stripe) {
+  if (!stripe || stripeKeyUsed !== key) {
     stripe = new Stripe(key);
+    stripeKeyUsed = key;
   }
   return stripe;
 }

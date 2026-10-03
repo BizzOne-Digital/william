@@ -37,18 +37,33 @@ export function CheckoutForm({ paymentsActive }: { paymentsActive: boolean }) {
         country: "CA",
       },
     };
-    const res = await fetch("/api/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    const data = await res.json();
-    if (data.url) {
-      window.location.assign(data.url);
-      return;
+
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      let data: { url?: string; error?: string; message?: string } = {};
+      try {
+        data = await res.json();
+      } catch {
+        setError("Server error. Please try again in a moment.");
+        return;
+      }
+
+      if (res.ok && data.url) {
+        window.location.href = data.url;
+        return;
+      }
+
+      setError(data.error ?? data.message ?? "Unable to start payment. Please try again.");
+    } catch {
+      setError("Network error. Check your connection and try again.");
+    } finally {
+      setLoading(false);
     }
-    setError(data.error ?? data.message ?? "Unable to start payment. Please try again.");
-    setLoading(false);
   };
 
   if (!totals) return <p className="text-muted">Loading checkout…</p>;
@@ -69,6 +84,12 @@ export function CheckoutForm({ paymentsActive }: { paymentsActive: boolean }) {
         {cancelled && (
           <p className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-100">
             Payment was cancelled. You can update your details and try again.
+          </p>
+        )}
+        {!paymentsActive && (
+          <p className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-100">
+            Live payments may not be configured on this server yet. If Pay now fails, the store owner must add Stripe
+            keys in Vercel and redeploy.
           </p>
         )}
         <h2 className="font-display text-xl font-semibold text-white">Contact & shipping</h2>
@@ -114,9 +135,7 @@ export function CheckoutForm({ paymentsActive }: { paymentsActive: boolean }) {
       <aside className="glass-panel h-fit rounded-2xl p-6 text-sm">
         <h3 className="font-display text-lg font-semibold text-white">Order total</h3>
         <p className="mt-4 text-2xl font-semibold">{formatCAD(totals.totalCAD)}</p>
-        {paymentsActive && (
-          <p className="mt-2 text-xs text-muted">Tax, shipping, and discounts are included in this total.</p>
-        )}
+        <p className="mt-2 text-xs text-muted">Includes shipping and tax where applicable.</p>
       </aside>
     </div>
   );
