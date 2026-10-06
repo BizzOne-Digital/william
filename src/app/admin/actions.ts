@@ -223,6 +223,69 @@ export async function updateOrderStatus(id: string, fulfillmentStatus: string) {
   return { ok: true as const };
 }
 
+async function restockOrderLines(order: {
+  items: { productId: unknown; variantId?: string | null; quantity: number }[];
+}) {
+  for (const line of order.items) {
+    const product = await Product.findById(line.productId);
+    if (!product) continue;
+    if (line.variantId && product.variants?.length) {
+      const v = product.variants.id(line.variantId);
+      if (v) v.stock += line.quantity;
+    } else {
+      product.stock += line.quantity;
+    }
+    await product.save();
+  }
+}
+
+export async function markOrderPaid(id: string) {
+  const session = await adminSession();
+  await connectDB();
+  const order = await Order.findById(id);
+  if (!order || order.deletedAt) return { ok: false as const, error: "Order not found" };
+  order.paymentStatus = "paid";
+  if (order.fulfillmentStatus === "new") order.fulfillmentStatus = "processing";
+  await order.save();
+  await logAudit({
+    actorId: session.user.id,
+    actorEmail: session.user.email ?? undefined,
+    action: "order.payment_paid",
+    entityType: "order",
+    entityId: id,
+  });
+  revalidatePath(`/admin/orders/${id}`);
+  revalidatePath("/admin/orders");
+  revalidatePath(`/order/${id}/payment`);
+  return { ok: true as const };
+}
+
+export async function cancelUnpaidOrder(id: string) {
+  const session = await adminSession();
+  await connectDB();
+  const order = await Order.findById(id);
+  if (!order || order.deletedAt) return { ok: false as const, error: "Order not found" };
+  if (order.paymentStatus === "paid") {
+    return { ok: false as const, error: "Order is already paid" };
+  }
+  await restockOrderLines(order);
+  order.paymentStatus = "failed";
+  order.fulfillmentStatus = "cancelled";
+  await order.save();
+  await logAudit({
+    actorId: session.user.id,
+    actorEmail: session.user.email ?? undefined,
+    action: "order.cancel_unpaid",
+    entityType: "order",
+    entityId: id,
+  });
+  revalidatePath(`/admin/orders/${id}`);
+  revalidatePath("/admin/orders");
+  revalidatePath("/admin/inventory");
+  revalidatePath(`/order/${id}/payment`);
+  return { ok: true as const };
+}
+
 export async function saveTestimonialForm(formData: FormData): Promise<void> {
   await saveTestimonial(formData);
 }

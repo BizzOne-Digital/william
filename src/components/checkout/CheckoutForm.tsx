@@ -6,7 +6,13 @@ import { Button } from "@/components/ui/Button";
 import { formatCAD } from "@/lib/product-utils";
 import type { CartTotals } from "@/lib/pricing";
 
-export function CheckoutForm({ paymentsActive }: { paymentsActive: boolean }) {
+export function CheckoutForm({
+  paymentsActive,
+  paymentProvider,
+}: {
+  paymentsActive: boolean;
+  paymentProvider: "stripe" | "etransfer" | "none";
+}) {
   const searchParams = useSearchParams();
   const cancelled = searchParams.get("cancelled");
   const [totals, setTotals] = useState<CartTotals | null>(null);
@@ -88,8 +94,13 @@ export function CheckoutForm({ paymentsActive }: { paymentsActive: boolean }) {
         )}
         {!paymentsActive && (
           <p className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-100">
-            Live payments may not be configured on this server yet. If Pay now fails, the store owner must add Stripe
-            keys in Vercel and redeploy.
+            Checkout is not configured on this server yet. Contact the store owner if placing an order fails.
+          </p>
+        )}
+        {paymentsActive && paymentProvider === "etransfer" && (
+          <p className="rounded-lg border border-border bg-surface/60 p-3 text-sm text-muted">
+            You will pay by <span className="text-foreground">Interac e-Transfer</span> after placing your order.
+            Payment instructions and your order number will be shown on the next page and emailed to you.
           </p>
         )}
         <h2 className="font-display text-xl font-semibold text-white">Contact & shipping</h2>
@@ -129,7 +140,13 @@ export function CheckoutForm({ paymentsActive }: { paymentsActive: boolean }) {
         </div>
         {error && <p className="text-sm text-red-300">{error}</p>}
         <Button type="submit" disabled={loading} className="w-full sm:w-auto">
-          {loading ? "Redirecting to Stripe…" : "Pay now"}
+          {loading
+            ? paymentProvider === "etransfer"
+              ? "Placing order…"
+              : "Redirecting to Stripe…"
+            : paymentProvider === "etransfer"
+              ? "Place order & view e-Transfer details"
+              : "Pay now"}
         </Button>
       </form>
       <aside className="glass-panel h-fit rounded-2xl p-6 text-sm">

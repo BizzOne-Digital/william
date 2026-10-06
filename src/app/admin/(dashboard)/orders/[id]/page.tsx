@@ -4,7 +4,9 @@ import Order from "@/models/Order";
 import { formatCAD } from "@/lib/product-utils";
 import {
   archiveOrder,
+  cancelUnpaidOrder,
   deleteOrderPermanent,
+  markOrderPaid,
   updateOrderStatus,
 } from "@/app/admin/actions";
 
@@ -28,6 +30,35 @@ export default async function AdminOrderDetailPage({
         <p>Payment: {order.paymentStatus}</p>
         <p>Provider: {order.paymentProvider ?? "—"}</p>
         <p>Reference: {order.paymentReference ?? "—"}</p>
+        {order.paymentDueAt && order.paymentStatus === "pending" && (
+          <p className="text-amber-200/90">
+            Pay by: {new Date(order.paymentDueAt).toLocaleString("en-CA", { timeZone: "America/Toronto" })}
+          </p>
+        )}
+        {order.paymentProvider === "etransfer" && order.paymentStatus === "pending" && (
+          <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-4">
+            <form
+              action={async () => {
+                "use server";
+                await markOrderPaid(id);
+              }}
+            >
+              <button type="submit" className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white">
+                Mark e-Transfer received (paid)
+              </button>
+            </form>
+            <form
+              action={async () => {
+                "use server";
+                await cancelUnpaidOrder(id);
+              }}
+            >
+              <button type="submit" className="rounded-full border border-amber-500/50 px-4 py-2 text-sm text-amber-100">
+                Cancel unpaid & restock
+              </button>
+            </form>
+          </div>
+        )}
         <ul className="mt-4 border-t border-border pt-4">
           {order.items.map((item, i) => (
             <li key={i} className="flex justify-between py-1">

@@ -41,6 +41,7 @@ const OrderSchema = new Schema(
     },
     paymentProvider: { type: String },
     paymentReference: { type: String },
+    paymentDueAt: { type: Date, default: null },
     fulfillmentStatus: {
       type: String,
       enum: ["new", "processing", "shipped", "delivered", "cancelled"],

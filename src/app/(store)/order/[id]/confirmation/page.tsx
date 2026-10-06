@@ -28,6 +28,8 @@ export default async function OrderConfirmationPage({ params, searchParams }: Pr
   const disabled = sp.disabled === "1" || order.paymentStatus === "unavailable";
   const paid = order.paymentStatus === "paid";
   const returnedFromStripe = Boolean(sp.session_id);
+  const etransfer = order.paymentProvider === "etransfer";
+  const etransferPending = etransfer && order.paymentStatus === "pending";
 
   return (
     <div className="mx-auto w-full min-w-0 max-w-2xl px-4 py-12 sm:px-6">
@@ -41,13 +43,26 @@ export default async function OrderConfirmationPage({ params, searchParams }: Pr
                 "Online payment is not activated. This record was saved for demonstration only."}
             </p>
           </>
+        ) : etransferPending ? (
+          <>
+            <h1 className="font-display text-3xl font-semibold text-white">Order placed</h1>
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              Order <span className="font-medium text-foreground">{order.orderNumber}</span> is reserved. Complete your
+              Interac e-Transfer using the instructions we sent to {order.email}.
+            </p>
+            <div className="mt-6">
+              <Button href={`/order/${id}/payment`} className="w-full sm:w-auto">
+                View e-Transfer instructions
+              </Button>
+            </div>
+          </>
         ) : paid || returnedFromStripe ? (
           <>
             <h1 className="font-display text-3xl font-semibold text-white">Thank you for your order!</h1>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Order <span className="font-medium text-foreground">{order.orderNumber}</span> is confirmed.
               {paid
-                ? ` A receipt was sent to ${order.email}.`
+                ? ` We will process your order shortly.`
                 : " Your payment is processing — we will email you when it is confirmed."}
             </p>
           </>

@@ -11,8 +11,13 @@ import {
   redeemDiscountForOrder,
 } from "@/lib/pricing";
 import { getSiteSettings } from "@/lib/site-settings";
-import { createCheckoutSession, getPaymentConfig } from "@/lib/payment";
-import { sendBusinessEmail } from "@/lib/email";
+import {
+  buildEtransferInstructions,
+  createCheckoutSession,
+  getEtransferPaymentDueAt,
+  getPaymentConfig,
+} from "@/lib/payment";
+import { sendBusinessEmail, sendCustomerEmail } from "@/lib/email";
 import { BRAND } from "@/lib/constants";
 
 export const maxDuration = 60;
@@ -62,7 +67,7 @@ export async function POST(req: Request) {
 
     if (!checkoutAllowed) {
       const message = !payment.enabled
-        ? "Card payments are not configured on the server. Add STRIPE_SECRET_KEY in Vercel environment variables, then redeploy."
+        ? "Checkout is not configured. Set PAYMENT_PROVIDER=etransfer (and ETRANSFER_EMAIL) or Stripe keys on the server, then redeploy."
         : settings.checkoutUnavailableMessage;
       return NextResponse.json({ error: message }, { status: 503 });
     }
@@ -85,6 +90,9 @@ export async function POST(req: Request) {
     }
 
     const orderNumber = generateOrderNumber();
+    const provider = payment.provider;
+    const paymentDueAt = provider === "etransfer" ? getEtransferPaymentDueAt() : null;
+
     const order = await Order.create({
       orderNumber,
       email: parsed.data.email,
@@ -106,30 +114,45 @@ export async function POST(req: Request) {
       totalCAD: totals.totalCAD,
       discountCode: totals.discountValid ? totals.discountCode : null,
       paymentStatus: "pending",
-      paymentProvider: "stripe",
+      paymentProvider: provider,
+      paymentDueAt,
     });
 
     const base = BRAND.url.replace(/\/$/, "");
     const totalCents = Math.round(totals.totalCAD * 100);
-    if (totalCents < 50) {
+    if (totalCents < 1) {
       await Order.findByIdAndDelete(order._id);
-      return NextResponse.json({ error: "Order total is too small to charge." }, { status: 400 });
+      return NextResponse.json({ error: "Order total is invalid." }, { status: 400 });
     }
 
-    const session = await createCheckoutSession({
-      orderId: String(order._id),
-      orderNumber,
-      email: parsed.data.email,
-      lineItems: [{ name: `Intense Dropz order ${orderNumber}`, amountCents: totalCents, quantity: 1 }],
-      successUrl: `${base}/order/${order._id}/confirmation?session_id={CHECKOUT_SESSION_ID}`,
-      cancelUrl: `${base}/checkout?cancelled=1`,
-    });
+    let redirectUrl: string;
 
-    if (!session.ok || !session.url) {
-      await Order.findByIdAndDelete(order._id);
-      const stripeMessage =
-        session.ok === false && "message" in session ? session.message : "Unable to start payment session.";
-      return NextResponse.json({ error: stripeMessage }, { status: 502 });
+    if (provider === "etransfer") {
+      redirectUrl = `${base}/order/${order._id}/payment`;
+    } else {
+      if (totalCents < 50) {
+        await Order.findByIdAndDelete(order._id);
+        return NextResponse.json({ error: "Order total is too small to charge." }, { status: 400 });
+      }
+
+      const session = await createCheckoutSession({
+        orderId: String(order._id),
+        orderNumber,
+        email: parsed.data.email,
+        lineItems: [{ name: `Intense Dropz order ${orderNumber}`, amountCents: totalCents, quantity: 1 }],
+        successUrl: `${base}/order/${order._id}/confirmation?session_id={CHECKOUT_SESSION_ID}`,
+        cancelUrl: `${base}/checkout?cancelled=1`,
+      });
+
+      if (!session.ok || !session.url) {
+        await Order.findByIdAndDelete(order._id);
+        const stripeMessage =
+          session.ok === false && "message" in session ? session.message : "Unable to start payment session.";
+        return NextResponse.json({ error: stripeMessage }, { status: 502 });
+      }
+
+      order.paymentReference = session.sessionId;
+      redirectUrl = session.url;
     }
 
     for (const line of totals.items) {
@@ -163,15 +186,31 @@ export async function POST(req: Request) {
       await cart.save();
     }
 
-    order.paymentReference = session.sessionId;
     await order.save();
 
-    void sendBusinessEmail({
-      subject: `New order ${orderNumber} — payment pending`,
-      text: `Order ${orderNumber} for ${parsed.data.email}. Total: ${totals.totalCAD} CAD. Awaiting payment confirmation via webhook.`,
-    }).catch((err) => console.error("[checkout email]", err));
+    if (provider === "etransfer") {
+      const instructions = buildEtransferInstructions({
+        orderNumber,
+        totalCAD: totals.totalCAD,
+        paymentPageUrl: redirectUrl,
+      });
+      void sendCustomerEmail({
+        to: parsed.data.email,
+        subject: `Order ${orderNumber} — e-Transfer instructions`,
+        text: instructions.text,
+      }).catch((err) => console.error("[checkout customer email]", err));
+      void sendBusinessEmail({
+        subject: `New order ${orderNumber} — e-Transfer pending`,
+        text: `Order ${orderNumber} for ${parsed.data.email}. Total: ${totals.totalCAD} CAD. Awaiting Interac e-Transfer to ${instructions.email}. Memo: ${orderNumber}.`,
+      }).catch((err) => console.error("[checkout email]", err));
+    } else {
+      void sendBusinessEmail({
+        subject: `New order ${orderNumber} — payment pending`,
+        text: `Order ${orderNumber} for ${parsed.data.email}. Total: ${totals.totalCAD} CAD. Awaiting payment confirmation via webhook.`,
+      }).catch((err) => console.error("[checkout email]", err));
+    }
 
-    return NextResponse.json({ ok: true, url: session.url, orderId: String(order._id) });
+    return NextResponse.json({ ok: true, url: redirectUrl, orderId: String(order._id) });
   } catch (err) {
     console.error("[checkout]", err);
     const message = err instanceof Error ? err.message : "Checkout failed. Please try again.";

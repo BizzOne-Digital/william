@@ -4,22 +4,40 @@ import {
   isStripeSecretKey,
   verifyStripeWebhook,
 } from "./stripe";
+import { getEtransferEmail } from "./etransfer";
+
+export type PaymentProvider = "stripe" | "etransfer" | "none";
 
 export type PaymentConfig = {
   enabled: boolean;
-  provider: "stripe" | "none";
+  provider: PaymentProvider;
 };
 
-export function getPaymentConfig(): PaymentConfig {
+function isStripeConfigured(): boolean {
   const secret = process.env.STRIPE_SECRET_KEY?.trim().replace(/^['"]|['"]$/g, "");
-  const hasSecret = Boolean(secret && isStripeSecretKey(secret));
-  const explicitlyDisabled = process.env.PAYMENTS_ENABLED === "false";
-  const enabled = hasSecret && !explicitlyDisabled;
-  return {
-    enabled,
-    provider: enabled ? "stripe" : "none",
-  };
+  return Boolean(secret && isStripeSecretKey(secret));
 }
+
+export function resolvePaymentProvider(): PaymentProvider {
+  const pref = process.env.PAYMENT_PROVIDER?.trim().toLowerCase();
+  const hasStripe = isStripeConfigured();
+  const hasEtransfer = Boolean(getEtransferEmail());
+
+  if (pref === "etransfer" && hasEtransfer) return "etransfer";
+  if (pref === "stripe" && hasStripe) return "stripe";
+  if (hasStripe && pref !== "etransfer") return "stripe";
+  if (hasEtransfer) return "etransfer";
+  return "none";
+}
+
+export function getPaymentConfig(): PaymentConfig {
+  const explicitlyDisabled = process.env.PAYMENTS_ENABLED === "false";
+  const provider = resolvePaymentProvider();
+  const enabled = provider !== "none" && !explicitlyDisabled;
+  return { enabled, provider: enabled ? provider : "none" };
+}
+
+export { getEtransferEmail, getEtransferPaymentHours, getEtransferPaymentDueAt, buildEtransferInstructions } from "./etransfer";
 
 export async function createCheckoutSession(params: {
   orderId: string;
