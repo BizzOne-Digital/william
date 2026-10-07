@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import mongoose from "mongoose";
 import Product from "../src/models/Product";
+import { getProductResearch } from "../src/content/product-research";
 import { ASSET_IMAGE_MAP, CATALOG_PRODUCTS } from "./catalog-products";
 
 function resolveAssetsDir(): string | null {
@@ -73,12 +74,13 @@ async function main() {
 
   for (const item of CATALOG_PRODUCTS) {
     const imagePath = `/images/products/${item.imageFile}`;
+    const research = getProductResearch(item.slug);
     const catalogFields = {
       title: item.title,
       slug: item.slug,
       sku: item.sku,
       description: item.description,
-      category: item.category ?? "Research peptides",
+      category: research?.researchCategory ?? item.category ?? "Research peptides",
       images: [imagePath],
       priceCAD: Math.ceil(item.priceCAD),
       featured: item.featured ?? false,
@@ -94,6 +96,15 @@ async function main() {
       await Product.create({ ...catalogFields, stock: 100 });
       console.log("Created:", item.title);
     }
+  }
+
+  const catalogSlugs = CATALOG_PRODUCTS.map((p) => p.slug);
+  const retired = await Product.updateMany(
+    { slug: { $nin: catalogSlugs }, published: true },
+    { $set: { published: false } },
+  );
+  if (retired.modifiedCount) {
+    console.log(`Unpublished ${retired.modifiedCount} product(s) no longer in catalog.`);
   }
 
   console.log(`Done. ${CATALOG_PRODUCTS.length} products in catalog.`);
