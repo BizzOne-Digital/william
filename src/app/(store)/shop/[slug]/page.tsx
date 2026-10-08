@@ -6,7 +6,6 @@ import { ProductCoaLink } from "@/components/shop/ProductCoaLink";
 import { ProductPurchasePanel } from "@/components/shop/ProductPurchasePanel";
 import { ProductImage } from "@/components/shop/ProductImage";
 import { ProductResearchSection } from "@/components/shop/ProductResearchSection";
-import { getProductResearch } from "@/content/product-research";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -29,8 +28,7 @@ export default async function ProductPage({ params }: Props) {
   if (!product) notFound();
 
   const imageUrls = product.images?.length ? product.images : [];
-  const research = getProductResearch(slug);
-  const categoryLabel = research?.researchCategory ?? product.category;
+  const categoryLabel = product.category;
   const serialized = {
     _id: String(product._id),
     priceCAD: product.priceCAD,
@@ -71,7 +69,6 @@ export default async function ProductPage({ params }: Props) {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-accent">{categoryLabel}</p>
           <h1 className="mt-2 font-display text-4xl font-semibold text-white">{product.title}</h1>
-          {product.sku && <p className="mt-2 text-sm text-muted">Code: {product.sku}</p>}
           <ProductResearchSection slug={slug} fallbackDescription={product.description} />
           <ProductCoaLink slug={slug} />
           <div className="mt-8">
