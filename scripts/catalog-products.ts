@@ -267,7 +267,21 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
   },
 ];
 
-/** Cursor asset filename fragment → catalog imageFile */
+/** Owner-branded photos not yet in the Cursor assets folder (add to ASSET_IMAGE_MAP when uploaded). */
+export const CATALOG_IMAGE_FILES_AWAITING_PHOTOS = [
+  "bc10.jpg",
+  "bt5.jpg",
+  "kp10.jpg",
+  "sk10.jpg",
+  "ks10.jpg",
+  "tr20.jpg",
+  "dsip-15mg.jpg",
+] as const;
+
+/**
+ * Cursor asset filename fragment → catalog imageFile.
+ * Fragment may be `image-xxxxxxxx` or just `xxxxxxxx` (matched inside asset filenames).
+ */
 export const ASSET_IMAGE_MAP: Record<string, string> = {
   "image-6dc3bbcf": "rt-10.jpg",
   "image-27c770c6": "tsm10.jpg",
@@ -283,7 +297,8 @@ export const ASSET_IMAGE_MAP: Record<string, string> = {
   "image-648d689b": "ara10.jpg",
   "image-09ab3c2e": "2s10.jpg",
   "image-505d78d4": "p41.jpg",
-  "image-24545d5f": "xa10-sx.jpg",
+  /** Only branded Semax photo on file is 5mg XA5(SX); used for XA10(SX) listing until a 10mg photo is supplied. */
+  "image-a0688f3a": "xa10-sx.jpg",
   "image-183140a2": "cartalax-20mg.jpg",
   "image-1ed82635": "bac-10ml.jpg",
   "image-4604d3d3": "bac-3ml.jpg",

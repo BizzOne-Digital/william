@@ -3,7 +3,12 @@ import path from "path";
 import mongoose from "mongoose";
 import Product from "../src/models/Product";
 import { formatProductResearchForDb } from "../src/content/product-research";
-import { ASSET_IMAGE_MAP, CATALOG_PRODUCTS } from "./catalog-products";
+import {
+  ASSET_IMAGE_MAP,
+  CATALOG_IMAGE_FILES_AWAITING_PHOTOS,
+  CATALOG_PRODUCTS,
+} from "./catalog-products";
+import crypto from "crypto";
 
 function resolveAssetsDir(): string | null {
   const candidates = [
@@ -33,7 +38,8 @@ function copyProductImages() {
   const files = fs.readdirSync(assetsDir).filter((f) => f.endsWith(".jpg"));
   let copied = 0;
   for (const [fragment, destName] of Object.entries(ASSET_IMAGE_MAP)) {
-    const source = files.find((f) => f.includes(fragment));
+    const needle = fragment.replace(/^image-/, "");
+    const source = files.find((f) => f.includes(needle));
     if (!source) {
       console.warn("Missing asset for", destName, fragment);
       continue;
@@ -44,20 +50,38 @@ function copyProductImages() {
   console.log(`Copied ${copied} product images to public/images/products/`);
 }
 
-/** Until owner photos are added, use a generic vial image for any missing catalog file. */
-function ensureProductImagePlaceholders() {
-  const outDir = path.join(process.cwd(), "public", "images", "products");
+function rockPlaceholderHash(): string | null {
   const fallback = path.join(process.cwd(), "public", "images", "feature-vial-rock.jpg");
-  if (!fs.existsSync(fallback)) return;
+  if (!fs.existsSync(fallback)) return null;
+  return crypto.createHash("sha256").update(fs.readFileSync(fallback)).digest("hex");
+}
 
-  fs.mkdirSync(outDir, { recursive: true });
-  for (const item of CATALOG_PRODUCTS) {
-    const dest = path.join(outDir, item.imageFile);
-    if (!fs.existsSync(dest)) {
-      fs.copyFileSync(fallback, dest);
-      console.log("Placeholder image:", item.imageFile);
+/** Remove generic rock copies so listings without real photos use the runtime placeholder. */
+function stripMisleadingProductPlaceholders() {
+  const outDir = path.join(process.cwd(), "public", "images", "products");
+  const rockHash = rockPlaceholderHash();
+  if (!rockHash || !fs.existsSync(outDir)) return;
+
+  for (const file of CATALOG_IMAGE_FILES_AWAITING_PHOTOS) {
+    const dest = path.join(outDir, file);
+    if (!fs.existsSync(dest)) continue;
+    const hash = crypto.createHash("sha256").update(fs.readFileSync(dest)).digest("hex");
+    if (hash === rockHash) {
+      fs.unlinkSync(dest);
+      console.log("Removed misleading placeholder:", file);
     }
   }
+}
+
+function resolveCatalogImagePath(imageFile: string): string[] {
+  const dest = path.join(process.cwd(), "public", "images", "products", imageFile);
+  if (!fs.existsSync(dest)) return [];
+  const rockHash = rockPlaceholderHash();
+  if (rockHash) {
+    const hash = crypto.createHash("sha256").update(fs.readFileSync(dest)).digest("hex");
+    if (hash === rockHash) return [];
+  }
+  return [`/images/products/${imageFile}`];
 }
 
 async function main() {
@@ -68,12 +92,11 @@ async function main() {
   }
 
   copyProductImages();
-  ensureProductImagePlaceholders();
+  stripMisleadingProductPlaceholders();
 
   await mongoose.connect(uri);
 
   for (const item of CATALOG_PRODUCTS) {
-    const imagePath = `/images/products/${item.imageFile}`;
     const researchDescription = formatProductResearchForDb(item.slug);
     const catalogFields = {
       title: item.title,
@@ -83,7 +106,7 @@ async function main() {
         ? `${researchDescription}\n\nFor in vitro laboratory research only. Not for human or veterinary use.`
         : item.description,
       category: item.category ?? "Research peptides",
-      images: [imagePath],
+      images: resolveCatalogImagePath(item.imageFile),
       priceCAD: Math.ceil(item.priceCAD),
       featured: item.featured ?? false,
       displayOrder: item.displayOrder,
