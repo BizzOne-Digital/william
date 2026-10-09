@@ -114,6 +114,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 75,
     imageFile: "bb10.jpg",
     description: `BPC-157 is a synthetic peptide sequence related to gastric protective proteins; TB-500 research material maps to thymosin beta-4 biology and actin-linked cell movement. Together they support dual-mechanism studies on repair signaling—5mg of each (BB10). ${RUO}`,
+    featured: true,
     displayOrder: 10,
   },
   {
@@ -123,7 +124,6 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 90,
     imageFile: "bb20.jpg",
     description: `A higher-strength version of the BPC-157 and TB-500 pairing for the same categories of cytoprotection, angiogenesis, and migration research, with 10mg of each peptide (BB20). ${RUO}`,
-    featured: true,
     displayOrder: 11,
   },
   {

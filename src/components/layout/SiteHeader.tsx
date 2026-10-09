@@ -36,7 +36,7 @@ export function SiteHeader({ cartCount }: { cartCount: number }) {
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/45 to-transparent" aria-hidden />
 
-      <div className="relative mx-auto flex h-[5.5rem] w-full min-w-0 max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8 sm:h-[6rem]">
+      <div className="relative mx-auto flex h-[6rem] w-full min-w-0 max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8 sm:h-[6.5rem]">
         <div className="min-w-0 shrink">
           <Logo variant="header" />
         </div>

@@ -3,6 +3,7 @@ import { TERMS_AND_CONDITIONS } from "@/content/terms-and-conditions";
 import {
   BRAND,
   DEFAULT_TAX_RATE_PERCENT,
+  HOME_INTRO_DEFAULT,
   POLICY_REVIEW_NOTICE,
   SHIPPING_FLAT_RATE_CAD,
 } from "@/lib/constants";
@@ -32,11 +33,7 @@ const SiteSettingsSchema = new Schema(
     contactEmail: { type: String, default: BRAND.email },
     contactPhone: { type: String, default: BRAND.phone },
     homeHero: { type: Schema.Types.Mixed, default: defaultHomeHero },
-    homeIntro: {
-      type: String,
-      default:
-        "Intense Dropz is designed to be fast, transparent, and mobile-ready — with tools that help you shop with confidence.",
-    },
+    homeIntro: { type: String, default: HOME_INTRO_DEFAULT },
     bookingAvailabilityMessage: {
       type: String,
       default:

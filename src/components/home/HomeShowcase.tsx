@@ -12,8 +12,8 @@ const tiles = [
     className: "col-span-1 min-h-[160px] sm:min-h-[170px]",
   },
   {
-    src: "/images/products/bb20.jpg",
-    alt: "BPC-157 10mg + TB-500 10mg",
+    src: "/images/products/bb10.jpg",
+    alt: "BPC-157 5mg + TB-500 5mg",
     className: "col-span-1 min-h-[160px] sm:min-h-[170px]",
   },
   {

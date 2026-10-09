@@ -29,7 +29,8 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   "cjc-1295-ipamorelin-cp-10": {
     description:
       "A two-peptide blend associated with growth-hormone-signaling research. Clinical recovery and muscle-building benefits for this blend remain unconfirmed. Reference: pubmed.ncbi.nlm.nih.gov",
-    reconstitution: "1 mL diluent (type not specified on source sheet).",
+    reconstitution:
+      "1 mL acetic acid diluent (AA water; e.g. Intense Dropz Acetic Acid AA3 or equivalent per your label)—not bacteriostatic water.",
   },
   "klow80-80mg-bbkg80": {
     description:
@@ -110,7 +111,8 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   "kisspeptin-10mg-ks10": {
     description:
       "A reproductive-signaling peptide investigated for GnRH release, reproductive-hormone regulation and fertility-related pathways. Reference: pubmed.ncbi.nlm.nih.gov",
-    reconstitution: "2 mL bacteriostatic water (confirm peptide form on your vial label).",
+    reconstitution:
+      "2 mL acetic acid diluent (AA water; e.g. Intense Dropz Acetic Acid AA3 or equivalent per your label)—not bacteriostatic water.",
   },
   "tirzepatide-20mg-tr20": {
     description:

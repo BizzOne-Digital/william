@@ -31,16 +31,17 @@ export function Logo({ compact, variant = "default" }: LogoProps) {
         <Image
           src={LOGO_SRC}
           alt={LOGO_ALT}
-          width={320}
-          height={200}
+          width={512}
+          height={512}
           priority={isHeader || isFooter}
           unoptimized
           className={cn(
             "h-auto w-auto object-contain object-center transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transform-none",
-            isHeader && "max-h-[3.75rem] max-w-[12.5rem] sm:max-h-[4.5rem] sm:max-w-[15rem]",
-            compact && "max-h-14 max-w-[13rem]",
-            isFooter && "max-h-[6.5rem] max-w-[16rem] sm:max-h-[7.5rem] sm:max-w-[18rem]",
-            !isHeader && !compact && !isFooter && "max-h-16 max-w-[14rem]",
+            isHeader &&
+              "max-h-[4.75rem] max-w-[15rem] sm:max-h-[5.25rem] sm:max-w-[17rem] md:max-h-[5.5rem] md:max-w-[18rem]",
+            compact && "max-h-16 max-w-[14rem] sm:max-h-[4.5rem] sm:max-w-[16rem]",
+            isFooter && "max-h-[7rem] max-w-[18rem] sm:max-h-[8rem] sm:max-w-[20rem]",
+            !isHeader && !compact && !isFooter && "max-h-[4.5rem] max-w-[16rem]",
           )}
         />
       </span>

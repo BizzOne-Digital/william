@@ -189,7 +189,7 @@ export async function SiteFooter() {
 
         <div className="mt-8 space-y-4 border-t border-white/[0.06] pt-8 text-center">
           <p className="text-xs leading-relaxed text-white/45 sm:text-sm">{FOOTER_REFERRAL_LINE}</p>
-          <p className="mx-auto max-w-4xl text-[10px] leading-relaxed text-white/28 sm:text-[11px]">
+          <p className="mx-auto max-w-4xl text-[10px] leading-relaxed text-white/42 sm:text-[11px]">
             {FOOTER_RESEARCH_DISCLAIMER}
           </p>
         </div>

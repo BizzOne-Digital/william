@@ -1,5 +1,5 @@
 import { connectDB } from "@/lib/mongodb";
-import { DEFAULT_TAX_RATE_PERCENT } from "@/lib/constants";
+import { DEFAULT_TAX_RATE_PERCENT, HOME_INTRO_DEFAULT } from "@/lib/constants";
 import SiteSettings, { type ISiteSettings } from "@/models/SiteSettings";
 
 export async function getSiteSettings(): Promise<ISiteSettings> {
@@ -18,6 +18,12 @@ export async function getSiteSettings(): Promise<ISiteSettings> {
   }
   if (!settings.checkoutEnabled) {
     settings.checkoutEnabled = true;
+    dirty = true;
+  }
+  const legacyHomeIntro =
+    "Intense Dropz is designed to be fast, transparent, and mobile-ready — with tools that help you shop with confidence.";
+  if (settings.homeIntro === legacyHomeIntro) {
+    settings.homeIntro = HOME_INTRO_DEFAULT;
     dirty = true;
   }
   if (dirty) await settings.save();

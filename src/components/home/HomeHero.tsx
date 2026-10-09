@@ -26,7 +26,7 @@ export function HomeHero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto flex min-h-[100svh] w-full min-w-0 max-w-7xl flex-col justify-center px-4 pb-24 pt-[5.75rem] sm:px-6 sm:pb-20 sm:pt-[6rem] lg:px-8">
+      <div className="relative mx-auto flex min-h-[100svh] w-full min-w-0 max-w-7xl flex-col justify-center px-4 pb-24 pt-[6rem] sm:px-6 sm:pb-20 sm:pt-[6.5rem] lg:px-8">
         <div className="w-full min-w-0 max-w-xl lg:max-w-2xl">
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/90 sm:text-[11px] sm:tracking-[0.35em]">
             {BRAND.market} · {BRAND.currency}
@@ -37,11 +37,11 @@ export function HomeHero() {
             <Image
               src={LOGO_SRC}
               alt={LOGO_ALT}
-              width={320}
-              height={200}
+              width={512}
+              height={512}
               priority
               unoptimized
-              className="h-auto w-full max-w-[9.5rem] object-contain object-left drop-shadow-[0_8px_28px_rgba(0,0,0,0.45)] sm:max-w-[11rem] md:max-w-[12.5rem] lg:max-w-[14rem]"
+              className="h-auto w-full max-w-[13rem] object-contain object-left drop-shadow-[0_8px_28px_rgba(0,0,0,0.45)] sm:max-w-[15rem] md:max-w-[17rem] lg:max-w-[19rem]"
             />
           </h1>
 
