@@ -21,18 +21,18 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   "nad-plus-500mg-nj500": {
     description:
       "A cellular coenzyme involved in energy metabolism. Investigated for NAD+ metabolism; injectable anti-aging benefits remain unconfirmed. Reference: pmc.ncbi.nlm.nih.gov",
-    reconstitution: "5 mL no-sting water (exact composition not specified on source sheet).",
+    reconstitution: "10 mL bacteriostatic water (BAC).",
   },
   "nad-plus-1000mg-nj1000": {
     description:
       "The same NAD+ coenzyme in a larger quantity, associated with research on cellular energy metabolism and NAD+ availability. Reference: pmc.ncbi.nlm.nih.gov",
-    reconstitution: "10 mL no-sting water (exact composition not specified on source sheet).",
+    reconstitution: "10 mL bacteriostatic water (BAC).",
   },
   "cjc-1295-ipamorelin-cp-10": {
     description:
       "A two-peptide blend associated with growth-hormone-signaling research. Clinical recovery and muscle-building benefits for this blend remain unconfirmed. Reference: pubmed.ncbi.nlm.nih.gov",
     reconstitution:
-      "1 mL acetic acid diluent (AA water; e.g. Intense Dropz Acetic Acid AA3 or equivalent per your label)—not bacteriostatic water.",
+      "Use either acetic acid (AA) water or bacteriostatic water (BAC), or half of each, for better dissolving of the peptide.",
   },
   "klow80-80mg-bbkg80": {
     description:
