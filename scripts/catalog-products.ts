@@ -273,13 +273,13 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     displayOrder: 26,
   },
   {
-    title: "Reconstitution Pen with Case",
+    title: "Injection Pen Starter Kit",
     slug: "reconstitution-pen-with-case",
     sku: "PEN-KIT",
     priceCAD: 64.99,
     imageFile: "pen-with-case.png",
     category: "Research supplies",
-    description: `Reconstitution pen with protective case. Select barrel color at checkout. ${RUO}`,
+    description: `Injection pen starter kit with reusable pen, cartridges, and needles. Select pen color at checkout. ${RUO}`,
     displayOrder: 27,
     variants: [
       { name: "Purple", sku: "PEN-PUR" },

@@ -121,6 +121,15 @@ Immune system signaling through cytokine modulation
 
 Research Use Notice: Selank is intended for laboratory and scientific research purposes only. Current evidence is still evolving, and additional high-quality human studies are needed to better understand its safety profile, mechanisms of action, and potential therapeutic applications.`,
 
+  "klow80-80mg-bbkg80": `KLOW is an 80mg multi-peptide research blend that combines four distinct compounds into a single vial: GHK-Cu, BPC-157, TB-500, and KPV.
+
+Component Breakdown (80mg Total Standard Vial)
+
+• GHK-Cu (50 mg): A natural copper-binding tripeptide (glycyl-histidyl-lysine) studied for extracellular matrix support, collagen synthesis, and gene expression linked to tissue remodeling. The copper ion gives the reconstituted liquid a characteristic blue color.
+• BPC-157 (10 mg): A synthetic 15-amino-acid peptide derived from a gastric protein, researched for its potential to support angiogenesis (new blood vessel growth) and tendon or gut repair.
+• TB-500 (10 mg): A synthetic fragment of thymosin beta-4 associated with cell migration, actin upregulation, and tissue repair dynamics.
+• KPV (10 mg): A tripeptide fragment (lysine-proline-valine) derived from α-MSH, targeted at modulating cellular inflammatory pathways (such as NF-κB) without affecting skin pigmentation.`,
+
   "bpc-157-tb-500-bb10": `The combination of BPC-157 and TB-500—often called the "Wolverine stack"—is an informal, experimental peptide pairing promoted online for tissue, tendon, ligament, and muscle recovery.
 
 • BPC-157 (Body Protection Compound-157): A synthetic 15-amino-acid sequence studied primarily as a localized repair agent that acts via blood-vessel growth (angiogenesis) and nitric-oxide signaling.
@@ -143,7 +152,17 @@ Online and in alternative recovery circles, TB-500 is heavily promoted as a rege
 
   "dsip-15mg": `DSIP (Delta Sleep-Inducing Peptide) is a specialized neuropeptide designed to target the most critical phase of physical recovery: Delta Wave Sleep. Unlike standard sleep aids that simply force sedation, DSIP works to optimize sleep architecture, increasing the time spent in deep, restorative sleep phases where muscle repair and hormonal regeneration occur. Beyond sleep, DSIP acts as a powerful neurological regulator. It helps modulate the body's acute stress response by lowering cortisol levels, making it the ultimate tool for the "wired but tired" individual who cannot shut off their brain at night. By resetting circadian rhythms and quieting physiological noise, DSIP promotes a profound sense of calm and recovery without the morning grogginess associated with synthetic sedatives.`,
 
-  "reconstitution-pen-with-case": `Reconstitution pen with protective case — designed for convenient peptide reconstitution workflows. Each kit includes one pen and a matching case. Multiple barrel colors are available; select your color at checkout.
+  "reconstitution-pen-with-case": `Injection Pen Starter Kit
 
-List price includes pen and case together. Color options may vary by batch; contact us if you need a specific color confirmed before ordering.`,
+Everything you need to get started in one convenient package. The Metabolic Peptides Injection Pen Starter Kit combines a reusable, precision-style pen with the essential accessories needed for a simple, organized setup.
+
+Starter Kit Includes:
+
+1 × Metabolic Peptides Reusable Injection Pen
+2 × Refillable Cartridges
+20 × Pen Needles (31G, 6 mm)
+
+The reusable pen features an adjustable dial and compact design, while the refillable cartridges make it easy to prepare and organize your research materials. The ultra-fine 32G pen needles are individually packaged for cleanliness and convenience.
+
+For research use only. Please refer to individual product information and handling.`,
 };
