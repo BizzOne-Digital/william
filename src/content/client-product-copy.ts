@@ -121,6 +121,16 @@ Immune system signaling through cytokine modulation
 
 Research Use Notice: Selank is intended for laboratory and scientific research purposes only. Current evidence is still evolving, and additional high-quality human studies are needed to better understand its safety profile, mechanisms of action, and potential therapeutic applications.`,
 
+  "tb-500-5mg-bt5": `TB-500 is a synthetic peptide fragment (a 7-amino-acid sequence) derived from thymosin beta-4, a natural protein found in human and animal cells.
+
+What It Is Supposed to Do
+
+Online and in alternative recovery circles, TB-500 is heavily promoted as a regenerative compound. Proponents claim it helps with:
+• Soft tissue and muscle repair by regulating actin (a protein cells use to move and rebuild tissue).
+• Angiogenesis, or the formation of new blood vessels to supply healing tissue.
+• Reducing inflammation and minimizing scar tissue.
+• Athletic recovery, often stacked with another experimental peptide called BPC-157 (sometimes called the "Wolverine Stack").`,
+
   "dsip-15mg": `DSIP (Delta Sleep-Inducing Peptide) is a specialized neuropeptide designed to target the most critical phase of physical recovery: Delta Wave Sleep. Unlike standard sleep aids that simply force sedation, DSIP works to optimize sleep architecture, increasing the time spent in deep, restorative sleep phases where muscle repair and hormonal regeneration occur. Beyond sleep, DSIP acts as a powerful neurological regulator. It helps modulate the body's acute stress response by lowering cortisol levels, making it the ultimate tool for the "wired but tired" individual who cannot shut off their brain at night. By resetting circadian rhythms and quieting physiological noise, DSIP promotes a profound sense of calm and recovery without the morning grogginess associated with synthetic sedatives.`,
 
   "reconstitution-pen-with-case": `Reconstitution pen with protective case — designed for convenient peptide reconstitution workflows. Each kit includes one pen and a matching case. Multiple barrel colors are available; select your color at checkout.
