@@ -277,32 +277,24 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     slug: "reconstitution-pen-with-case",
     sku: "PEN-KIT",
     priceCAD: 64.99,
-    imageFile: "pen-with-case.jpg",
+    imageFile: "pen-with-case.png",
     category: "Research supplies",
     description: `Reconstitution pen with protective case. Select barrel color at checkout. ${RUO}`,
     displayOrder: 27,
     variants: [
-      { name: "Black", sku: "PEN-BLK" },
-      { name: "Blue", sku: "PEN-BLU" },
-      { name: "Pink", sku: "PEN-PNK" },
       { name: "Purple", sku: "PEN-PUR" },
+      { name: "White", sku: "PEN-WHT" },
       { name: "Red", sku: "PEN-RED" },
-      { name: "Teal", sku: "PEN-TEL" },
+      { name: "Blue", sku: "PEN-BLU" },
+      { name: "Gold", sku: "PEN-GLD" },
+      { name: "Silver", sku: "PEN-SLV" },
+      { name: "Black", sku: "PEN-BLK" },
     ],
   },
 ];
 
 /** Owner-branded photos not yet in the Cursor assets folder (add to ASSET_IMAGE_MAP when uploaded). */
-export const CATALOG_IMAGE_FILES_AWAITING_PHOTOS = [
-  "bc10.jpg",
-  "bt5.jpg",
-  "kp10.jpg",
-  "sk10.jpg",
-  "ks10.jpg",
-  "tr20.jpg",
-  "dsip-15mg.jpg",
-  "pen-with-case.jpg",
-] as const;
+export const CATALOG_IMAGE_FILES_AWAITING_PHOTOS = [] as const;
 
 /**
  * Cursor asset filename fragment → catalog imageFile.
@@ -323,10 +315,17 @@ export const ASSET_IMAGE_MAP: Record<string, string> = {
   "image-648d689b": "ara10.jpg",
   "image-09ab3c2e": "2s10.jpg",
   "image-505d78d4": "p41.jpg",
-  /** Only branded Semax photo on file is 5mg XA5(SX); used for XA10(SX) listing until a 10mg photo is supplied. */
-  "image-a0688f3a": "xa10-sx.jpg",
+  "image-0b22eeb9": "xa10-sx.jpg",
+  "image-aa26851f": "bc10.jpg",
+  "image-d139be98": "kp10.jpg",
+  "image-0513c039": "bt5.jpg",
+  "image-1bec7e0c": "sk10.jpg",
+  "image-382b1b14": "ks10.jpg",
+  "image-70df75d1": "tr20.jpg",
+  "image-64d93468": "dsip-15mg.jpg",
   "image-183140a2": "cartalax-20mg.jpg",
   "image-1ed82635": "bac-10ml.jpg",
   "image-4604d3d3": "bac-3ml.jpg",
   "image-28b952c7": "aa3-10ml.jpg",
+  "628ae39f": "pen-with-case.png",
 };
