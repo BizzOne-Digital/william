@@ -8,22 +8,22 @@ const pillars = [
   {
     icon: Sparkles,
     title: "Premium presentation",
-    text: "A polished storefront designed to showcase your approved products with clarity — on mobile, tablet, and desktop.",
+    text: "A polished storefront that presents the catalog clearly — on mobile, tablet, and desktop.",
   },
   {
     icon: Shield,
     title: "Transparent shopping",
-    text: "Published listings, server-calculated totals, and checkout that activates only when you and your payment provider are ready.",
+    text: "Published listings, server-calculated totals, and secure checkout with clear order confirmation.",
   },
   {
     icon: Layers,
-    title: "Built for your catalog",
-    text: "Draft products stay in admin until you publish. No invented pricing, reviews, or product claims on the live site.",
+    title: "Curated catalog",
+    text: "Products are listed with the details we publish on each page — pricing, availability, and research-oriented descriptions.",
   },
   {
     icon: Globe,
     title: "Canada-first",
-    text: `Serving customers in ${BRAND.market} with ${BRAND.currency} pricing on verified product pages when your catalog goes live.`,
+    text: `Serving customers in ${BRAND.market} with ${BRAND.currency} pricing on product pages and at checkout.`,
   },
 ];
 
@@ -58,15 +58,14 @@ export function AboutPageContent({
             <div>
               <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">Who we are</h2>
               <p className="mt-4 leading-relaxed text-white/65">
-                <strong className="font-semibold text-white/90">{BRAND.name}</strong> is building a
-                trustworthy ecommerce experience for adults in {BRAND.market} — with
-                honest product information, clear policies, and tools that support informed
-                decisions.
+                <strong className="font-semibold text-white/90">{BRAND.name}</strong> is a Canadian
+                ecommerce destination for adults who want a straightforward way to browse research
+                materials — with clear product information, published policies, and tools that support
+                informed decisions.
               </p>
               <p className="mt-4 leading-relaxed text-white/65">
-                This website is ready for your approved catalog, imagery, and legal copy. Until
-                products are published and checkout is activated, the shop demonstrates the
-                experience without presenting unverified claims or live sales.
+                We focus on a consistent shopping experience: accurate listings, transparent checkout,
+                and responsive support when you have questions about an order or the catalog.
               </p>
             </div>
 
@@ -86,8 +85,7 @@ export function AboutPageContent({
               <ul className="mt-5 space-y-3 text-sm leading-relaxed text-white/65 sm:text-base">
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
-                  Browse published products with search, filters, and availability shown on each
-                  listing.
+                  Browse published products with search, filters, and availability on each listing.
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
@@ -95,11 +93,11 @@ export function AboutPageContent({
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
-                  Contact requests are stored securely and routed to the business team.
+                  Contact requests are stored securely and routed to our team.
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
-                  Checkout and payments go live only after catalog, policies, and provider approval.
+                  Checkout with totals, shipping, and tax shown before you place an order.
                 </li>
               </ul>
             </div>
@@ -107,7 +105,7 @@ export function AboutPageContent({
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm sm:p-8">
               <h3 className="font-display text-lg font-bold text-white">Get in touch</h3>
               <p className="mt-2 text-sm text-white/55">
-                Questions about the brand, catalog, or when shopping goes live?
+                Questions about the brand, catalog, or an order?
               </p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
@@ -167,8 +165,7 @@ export function AboutPageContent({
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Our approach</p>
             <h2 className="mt-3 font-display text-3xl font-bold text-white">Designed with intention</h2>
             <p className="mt-3 text-white/60">
-              Every section of this experience is built to stay honest until you approve what goes
-              public.
+              A consistent experience from browse to checkout — built for clarity and trust.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -184,8 +181,7 @@ export function AboutPageContent({
             ))}
           </div>
           <p className="mt-10 text-center text-xs text-white/40">
-            For adults 18+. Product authorization and regulatory compliance remain the
-            responsibility of the business before live sales.
+            For adults 18+. Products are for laboratory research only — not for human or veterinary use.
           </p>
         </div>
       </section>

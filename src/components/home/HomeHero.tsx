@@ -71,7 +71,7 @@ export function HomeHero() {
         </div>
 
         <p className="mt-10 text-[10px] leading-relaxed text-white/40 sm:absolute sm:bottom-8 sm:left-6 sm:mt-0 sm:max-w-md sm:text-xs lg:left-8">
-          For adults 18+ · Product details coming soon
+          For adults 18+ · Research use only
         </p>
       </div>
     </section>

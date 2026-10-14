@@ -43,8 +43,8 @@ export function HomeShowcase() {
             Precision. Atmosphere. Intensity.
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-white/60 sm:text-base">
-            A premium look and feel across the experience — ready for your approved product photography
-            when the catalog goes live.
+            A premium look and feel across the experience — built around the Intense Dropz catalog and
+            brand photography.
           </p>
         </div>
 

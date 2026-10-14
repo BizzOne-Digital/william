@@ -83,10 +83,9 @@ export default async function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
               </div>
               <div className="px-6 py-10 text-center">
-                <p className="font-display text-xl font-bold text-white">Catalog coming soon</p>
+                <p className="font-display text-xl font-bold text-white">Featured products</p>
                 <p className="mx-auto mt-3 max-w-lg text-sm text-white/60">
-                  Your storefront is ready. Once products, pricing, and policies are approved, publish
-                  items from the admin portal to activate featured listings.
+                  Browse the full catalog in the shop — new highlights appear here as they are featured.
                 </p>
                 <Button className="mt-6" variant="secondary" href="/shop">
                   Browse shop
@@ -104,7 +103,7 @@ export default async function HomePage() {
             "Browse published products with live availability.",
             "Add items to a cart that persists across visits.",
             "Review totals, shipping, and tax at checkout.",
-            "Pay only when checkout and payments are activated.",
+            "Complete checkout and follow payment instructions to confirm your order.",
           ].map((step, i) => (
             <li key={step} className="glass-panel rounded-2xl p-5">
               <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-accent/15 text-sm font-bold text-accent">

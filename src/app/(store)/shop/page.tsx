@@ -61,7 +61,7 @@ export default async function ShopPage({ searchParams }: { searchParams: SearchP
         <div className="glass-panel mt-8 rounded-2xl px-6 py-16 text-center">
           <p className="text-lg text-white">No published products yet</p>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted">
-            When your catalog is ready, publish products from the admin portal to activate the shop.
+            Check back soon — new listings are added as they become available.
           </p>
         </div>
       )}
