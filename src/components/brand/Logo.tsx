@@ -35,10 +35,11 @@ export function Logo({ compact, variant = "default" }: LogoProps) {
           height={512}
           priority={isHeader || isFooter}
           unoptimized
+          sizes={isHeader ? "(min-width: 640px) 256px, 208px" : undefined}
           className={cn(
             "h-auto w-auto object-contain object-center transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transform-none",
             isHeader &&
-              "max-h-[4.75rem] max-w-[15rem] sm:max-h-[5.25rem] sm:max-w-[17rem] md:max-h-[5.5rem] md:max-w-[18rem]",
+              "max-h-[4.25rem] max-w-[14rem] sm:max-h-[5rem] sm:max-w-[16rem] [image-rendering:-webkit-optimize-contrast]",
             compact && "max-h-16 max-w-[14rem] sm:max-h-[4.5rem] sm:max-w-[16rem]",
             isFooter && "max-h-[7rem] max-w-[18rem] sm:max-h-[8rem] sm:max-w-[20rem]",
             !isHeader && !compact && !isFooter && "max-h-[4.5rem] max-w-[16rem]",

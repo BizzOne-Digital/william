@@ -1,3 +1,5 @@
+import { CLIENT_PRODUCT_DESCRIPTIONS } from "@/content/client-product-copy";
+
 export type ProductResearchProfile = {
   researchCategory?: string;
   description: string;
@@ -127,11 +129,20 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
 };
 
 export function getProductResearch(slug: string): ProductResearchProfile | null {
-  return PRODUCT_RESEARCH_BY_SLUG[slug] ?? null;
+  const base = PRODUCT_RESEARCH_BY_SLUG[slug];
+  const clientDescription = CLIENT_PRODUCT_DESCRIPTIONS[slug];
+  if (!base && !clientDescription) return null;
+
+  return {
+    researchCategory: base?.researchCategory,
+    description: clientDescription ?? base!.description,
+    reconstitution: base?.reconstitution ?? "",
+  };
 }
 
 export function formatProductResearchForDb(slug: string): string | null {
   const p = getProductResearch(slug);
   if (!p) return null;
+  if (!p.reconstitution.trim()) return p.description;
   return `${p.description}\n\nReconstitution (reference): ${p.reconstitution}`;
 }

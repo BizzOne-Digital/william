@@ -26,16 +26,25 @@ export function ProductResearchSection({
     );
   }
 
+  const paragraphs = profile.description.trim().split(/\n\n+/).filter(Boolean);
+  const showReconstitution = profile.reconstitution.trim().length > 0;
+
   return (
     <div className="mt-6 space-y-5 border-t border-border pt-6 text-sm text-muted">
       <div>
         <p className="text-xs font-medium uppercase tracking-[0.15em] text-accent">Description / research purpose</p>
-        <p className="mt-2 leading-relaxed text-foreground/90">{profile.description}</p>
+        <div className="mt-2 space-y-3 leading-relaxed text-foreground/90">
+          {paragraphs.map((para) => (
+            <p key={para.slice(0, 48)}>{para}</p>
+          ))}
+        </div>
       </div>
-      <div>
-        <p className="text-xs font-medium uppercase tracking-[0.15em] text-accent">Reconstitution (reference)</p>
-        <p className="mt-2 leading-relaxed">{profile.reconstitution}</p>
-      </div>
+      {showReconstitution && (
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.15em] text-accent">Reconstitution (reference)</p>
+          <p className="mt-2 leading-relaxed">{profile.reconstitution}</p>
+        </div>
+      )}
       <p className="text-xs leading-relaxed">{RUO}</p>
     </div>
   );

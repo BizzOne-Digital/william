@@ -1,4 +1,10 @@
 /** Owner catalog — image files live in public/images/products/ */
+export type CatalogVariant = {
+  name: string;
+  sku?: string;
+  stock?: number;
+};
+
 export type CatalogProduct = {
   title: string;
   slug: string;
@@ -9,6 +15,7 @@ export type CatalogProduct = {
   category?: string;
   featured?: boolean;
   displayOrder: number;
+  variants?: CatalogVariant[];
 };
 
 const RUO =
@@ -265,6 +272,24 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     description: `Acetic acid may be used in peptide solubility and pH-adjustment steps according to laboratory SOPs and the manufacturer’s instructions. 10ml (AA3); concentration must be confirmed from the vial label. ${RUO}`,
     displayOrder: 26,
   },
+  {
+    title: "Reconstitution Pen with Case",
+    slug: "reconstitution-pen-with-case",
+    sku: "PEN-KIT",
+    priceCAD: 64.99,
+    imageFile: "pen-with-case.jpg",
+    category: "Research supplies",
+    description: `Reconstitution pen with protective case. Select barrel color at checkout. ${RUO}`,
+    displayOrder: 27,
+    variants: [
+      { name: "Black", sku: "PEN-BLK" },
+      { name: "Blue", sku: "PEN-BLU" },
+      { name: "Pink", sku: "PEN-PNK" },
+      { name: "Purple", sku: "PEN-PUR" },
+      { name: "Red", sku: "PEN-RED" },
+      { name: "Teal", sku: "PEN-TEL" },
+    ],
+  },
 ];
 
 /** Owner-branded photos not yet in the Cursor assets folder (add to ASSET_IMAGE_MAP when uploaded). */
@@ -276,6 +301,7 @@ export const CATALOG_IMAGE_FILES_AWAITING_PHOTOS = [
   "ks10.jpg",
   "tr20.jpg",
   "dsip-15mg.jpg",
+  "pen-with-case.jpg",
 ] as const;
 
 /**

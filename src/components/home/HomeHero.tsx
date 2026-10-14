@@ -41,7 +41,7 @@ export function HomeHero() {
               height={512}
               priority
               unoptimized
-              className="h-auto w-full max-w-[13rem] object-contain object-left drop-shadow-[0_8px_28px_rgba(0,0,0,0.45)] sm:max-w-[15rem] md:max-w-[17rem] lg:max-w-[19rem]"
+              className="h-auto w-full max-w-[9.5rem] object-contain object-left drop-shadow-[0_8px_28px_rgba(0,0,0,0.45)] sm:max-w-[11rem] md:max-w-[12rem] lg:max-w-[13.5rem]"
             />
           </h1>
 

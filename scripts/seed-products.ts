@@ -98,7 +98,13 @@ async function main() {
 
   for (const item of CATALOG_PRODUCTS) {
     const researchDescription = formatProductResearchForDb(item.slug);
-    const catalogFields = {
+    const variantSeed = item.variants?.map((v) => ({
+      name: v.name,
+      sku: v.sku ?? item.sku,
+      stock: v.stock ?? 100,
+    }));
+
+    const catalogFields: Record<string, unknown> = {
       title: item.title,
       slug: item.slug,
       sku: item.sku,
@@ -107,7 +113,7 @@ async function main() {
         : item.description,
       category: item.category ?? "Research peptides",
       images: resolveCatalogImagePath(item.imageFile),
-      priceCAD: Math.ceil(item.priceCAD),
+      priceCAD: item.priceCAD,
       featured: item.featured ?? false,
       displayOrder: item.displayOrder,
       published: true,
@@ -115,10 +121,22 @@ async function main() {
 
     const existing = await Product.findOne({ slug: item.slug });
     if (existing) {
+      if (variantSeed?.length) {
+        const mergedVariants = variantSeed.map((v) => {
+          const prev = existing.variants?.find((e) => e.name === v.name);
+          return { ...v, stock: prev?.stock ?? v.stock };
+        });
+        catalogFields.variants = mergedVariants;
+        catalogFields.stock = 0;
+      }
       await Product.updateOne({ _id: existing._id }, { $set: catalogFields });
       console.log("Updated:", item.title, "(stock unchanged)");
     } else {
-      await Product.create({ ...catalogFields, stock: 100 });
+      await Product.create({
+        ...catalogFields,
+        stock: variantSeed?.length ? 0 : 100,
+        variants: variantSeed ?? [],
+      });
       console.log("Created:", item.title);
     }
   }

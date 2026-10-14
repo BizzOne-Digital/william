@@ -14,6 +14,8 @@ export const DEFAULT_TAX_RATE_PERCENT = 13;
 
 /** List and charge whole-dollar CAD (e.g. 16.57 → 17). */
 export function ceilPriceCAD(amount: number): number {
+  if (!Number.isFinite(amount)) return 0;
+  if (amount % 1 !== 0) return Math.round(amount * 100) / 100;
   return Math.ceil(amount);
 }
 
