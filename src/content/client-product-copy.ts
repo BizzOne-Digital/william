@@ -121,6 +121,16 @@ Immune system signaling through cytokine modulation
 
 Research Use Notice: Selank is intended for laboratory and scientific research purposes only. Current evidence is still evolving, and additional high-quality human studies are needed to better understand its safety profile, mechanisms of action, and potential therapeutic applications.`,
 
+  "bpc-157-tb-500-bb10": `The combination of BPC-157 and TB-500—often called the "Wolverine stack"—is an informal, experimental peptide pairing promoted online for tissue, tendon, ligament, and muscle recovery.
+
+• BPC-157 (Body Protection Compound-157): A synthetic 15-amino-acid sequence studied primarily as a localized repair agent that acts via blood-vessel growth (angiogenesis) and nitric-oxide signaling.
+• TB-500: A synthetic fragment (Ac-LKKTETQ) of the natural protein thymosin beta-4, studied as a systemic component that regulates actin and supports cell migration and soft-tissue repair across the whole body.`,
+
+  "bpc-157-tb-500-bb20": `The combination of BPC-157 and TB-500—often called the "Wolverine stack"—is an informal, experimental peptide pairing promoted online for tissue, tendon, ligament, and muscle recovery.
+
+• BPC-157 (Body Protection Compound-157): A synthetic 15-amino-acid sequence studied primarily as a localized repair agent that acts via blood-vessel growth (angiogenesis) and nitric-oxide signaling.
+• TB-500: A synthetic fragment (Ac-LKKTETQ) of the natural protein thymosin beta-4, studied as a systemic component that regulates actin and supports cell migration and soft-tissue repair across the whole body.`,
+
   "tb-500-5mg-bt5": `TB-500 is a synthetic peptide fragment (a 7-amino-acid sequence) derived from thymosin beta-4, a natural protein found in human and animal cells.
 
 What It Is Supposed to Do
