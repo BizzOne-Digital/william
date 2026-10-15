@@ -4,6 +4,12 @@ export type ProductResearchProfile = {
   researchCategory?: string;
   description: string;
   reconstitution: string;
+  referenceCardImage?: string;
+};
+
+/** Optional protocol / reference card shown on the product page (owner-supplied). */
+export const PRODUCT_REFERENCE_CARD_BY_SLUG: Record<string, string> = {
+  "cjc-1295-ipamorelin-cp-10": "/images/products/cp-10-reference-card.jpg",
 };
 
 /** Shop copy: research purpose + reconstitution reference (not dosing advice). */
@@ -31,8 +37,7 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   "cjc-1295-ipamorelin-cp-10": {
     description:
       "A two-peptide blend associated with growth-hormone-signaling research. Clinical recovery and muscle-building benefits for this blend remain unconfirmed. Reference: pubmed.ncbi.nlm.nih.gov",
-    reconstitution:
-      "You can use AA water or BAC water or half of each so the peptide disolves easier.",
+    reconstitution: "1 mL of BAC water, or 0.5 mL of AA and 0.5 mL of BAC water.",
   },
   "klow80-80mg-bbkg80": {
     description:
@@ -133,10 +138,13 @@ export function getProductResearch(slug: string): ProductResearchProfile | null 
   const clientDescription = CLIENT_PRODUCT_DESCRIPTIONS[slug];
   if (!base && !clientDescription) return null;
 
+  const referenceCardImage = PRODUCT_REFERENCE_CARD_BY_SLUG[slug];
+
   return {
     researchCategory: base?.researchCategory,
     description: clientDescription ?? base!.description,
     reconstitution: base?.reconstitution ?? "",
+    referenceCardImage,
   };
 }
 

@@ -3,6 +3,14 @@
  * Reconstitution volumes stay in product-research.ts unless noted here.
  */
 export const CLIENT_PRODUCT_DESCRIPTIONS: Record<string, string> = {
+  "cjc-1295-ipamorelin-cp-10": `CJC-1295 (no DAC) + Ipamorelin (GHRH + GHRP) — Growth hormone optimization research blend.
+
+This combination is studied for how it may mimic pulsatile growth hormone (GH) signaling: CJC-1295 without DAC as a GHRH analogue paired with ipamorelin as a selective GH secretagogue. The no-DAC form is associated with shorter GH pulses that more closely mirror natural secretion patterns in research models.
+
+Areas commonly referenced in educational materials for this pairing include muscle growth signaling, metabolism and fat utilization pathways, recovery, sleep-related hormonal rhythms, and extracellular matrix / skin-quality research (collagen-related pathways).
+
+This listing is CJC-1295 (No DAC) 5 mg + Ipamorelin 5 mg (CP-10). See the reference card below for the full compound overview chart.`,
+
   "ara-290-10mg-ara10": `ARA-290, also known as Cibinetide, is an investigational, synthetic 11-amino acid peptide derived from the structure of erythropoietin (EPO). It was specifically engineered to retain the tissue-protective, regenerative, and anti-inflammatory properties of EPO without triggering red blood cell production (non-erythropoietic). This design avoids the cardiovascular risks, like thickened blood or clotting, associated with full-length EPO.`,
 
   "retatrutide-10mg-rt-10": `Retatrutide is the revolutionary "Triple Agonist" peptide that is currently redefining the limits of fat loss. While earlier compounds like Semaglutide target only one or two pathways, Retatrutide activates all three—GLP-1, GIP, and Glucagon—to create the ultimate metabolic storm. The addition of the Glucagon receptor is the game-changer: it actively ramps up your basal metabolic rate and increases thermogenesis, meaning you burn significantly more calories at rest. This unique mechanism allows for unparalleled weight loss speed while preventing the chronic lethargy and fatigue often associated with other diet drugs, making it the undisputed, high-energy successor to Tirzepatide.`,

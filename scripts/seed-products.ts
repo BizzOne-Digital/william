@@ -112,7 +112,10 @@ async function main() {
         ? `${researchDescription}\n\nFor in vitro laboratory research only. Not for human or veterinary use.`
         : item.description,
       category: item.category ?? "Research peptides",
-      images: resolveCatalogImagePath(item.imageFile),
+      images: [
+        ...resolveCatalogImagePath(item.imageFile),
+        ...(item.extraImageFiles ?? []).flatMap((file) => resolveCatalogImagePath(file)),
+      ],
       priceCAD: item.priceCAD,
       featured: item.featured ?? false,
       displayOrder: item.displayOrder,

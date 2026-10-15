@@ -16,6 +16,8 @@ export type CatalogProduct = {
   featured?: boolean;
   displayOrder: number;
   variants?: CatalogVariant[];
+  /** Extra filenames in public/images/products/ (e.g. protocol cards). */
+  extraImageFiles?: string[];
 };
 
 const RUO =
@@ -77,6 +79,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     description: `This kit combines CJC-1295 without DAC—a modified GHRH peptide—with ipamorelin, a selective GH secretagogue, so researchers can study complementary triggers on the growth-hormone axis. Each component is 5mg (CP-10). ${RUO}`,
     featured: true,
     displayOrder: 5,
+    extraImageFiles: ["cp-10-reference-card.jpg"],
   },
   {
     title: "KLOW80 80mg",
@@ -368,6 +371,7 @@ export const ASSET_IMAGE_MAP: Record<string, string> = {
   "image-4604d3d3": "bac-3ml.jpg",
   "image-28b952c7": "aa3-10ml.jpg",
   "628ae39f": "pen-with-case.png",
+  "07c7bfae": "cp-10-reference-card.jpg",
   "42d55f1b": "insulin-syringes-10-pack.png",
   "eb83647f": "insulin-syringes-100-box.jpg",
   "da0ef150": "alcohol-prep-pads-200.jpg",
