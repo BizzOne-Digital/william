@@ -20,9 +20,11 @@ export async function getSiteSettings(): Promise<ISiteSettings> {
     settings.checkoutEnabled = true;
     dirty = true;
   }
-  const legacyHomeIntro =
-    "Intense Dropz is designed to be fast, transparent, and mobile-ready — with tools that help you shop with confidence.";
-  if (settings.homeIntro === legacyHomeIntro) {
+  const legacyHomeIntros = [
+    "Intense Dropz is designed to be fast, transparent, and mobile-ready — with tools that help you shop with confidence.",
+    "Intense Dropz is our public brand. Our online experience is designed to be fast, transparent, and mobile-ready—with tools that help you shop with confidence.",
+  ];
+  if (legacyHomeIntros.includes(settings.homeIntro)) {
     settings.homeIntro = HOME_INTRO_DEFAULT;
     dirty = true;
   }

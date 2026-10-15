@@ -3,6 +3,8 @@
  * Reconstitution volumes stay in product-research.ts unless noted here.
  */
 export const CLIENT_PRODUCT_DESCRIPTIONS: Record<string, string> = {
+  "ara-290-10mg-ara10": `ARA-290, also known as Cibinetide, is an investigational, synthetic 11-amino acid peptide derived from the structure of erythropoietin (EPO). It was specifically engineered to retain the tissue-protective, regenerative, and anti-inflammatory properties of EPO without triggering red blood cell production (non-erythropoietic). This design avoids the cardiovascular risks, like thickened blood or clotting, associated with full-length EPO.`,
+
   "retatrutide-10mg-rt-10": `Retatrutide is the revolutionary "Triple Agonist" peptide that is currently redefining the limits of fat loss. While earlier compounds like Semaglutide target only one or two pathways, Retatrutide activates all three—GLP-1, GIP, and Glucagon—to create the ultimate metabolic storm. The addition of the Glucagon receptor is the game-changer: it actively ramps up your basal metabolic rate and increases thermogenesis, meaning you burn significantly more calories at rest. This unique mechanism allows for unparalleled weight loss speed while preventing the chronic lethargy and fatigue often associated with other diet drugs, making it the undisputed, high-energy successor to Tirzepatide.`,
 
   "tesamorelin-10mg-tsm10": `Tesamorelin is a synthetic analogue of Growth Hormone–Releasing Hormone (GHRH 1–44), engineered to work with your body's own systems rather than override them. By binding directly to GHRH receptors in the pituitary, it drives pulsatile GH release — the natural rhythm your body already uses — while elevating IGF-1 to support lean muscle growth, fat metabolism, and body composition.

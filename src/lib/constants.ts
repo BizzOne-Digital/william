@@ -34,7 +34,7 @@ export const POLICY_REVIEW_NOTICE =
 
 /** Home → “The experience” section body (editable in Admin → Settings). */
 export const HOME_INTRO_DEFAULT =
-  "Intense Dropz is our public brand. Our online experience is designed to be fast, transparent, and mobile-ready—with tools that help you shop with confidence.";
+  "Intense Dropz is our public brand! Our online experience is designed to be fast, transparent, and mobile-ready — with tools that help you shop with confidence.";
 
 export const FOOTER_REFERRAL_LINE = "Our greatest compliments are your referrals";
 
