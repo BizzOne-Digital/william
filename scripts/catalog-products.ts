@@ -30,7 +30,7 @@ const RUO =
  * - Melanotan II quantity (MT-2)
  * - Cartalax specifications
  * - Bacteriostatic Water 10ml & 3ml formulation (BAC)
- * - Acetic Acid concentration (AA3)
+ * - Acetic Acid SKUs (AA10 10 ml, AA3 3 ml)
  */
 export const CATALOG_PRODUCTS: CatalogProduct[] = [
   {
@@ -50,7 +50,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 80,
     imageFile: "tsm10.jpg",
     description: `Tesamorelin mimics growth hormone–releasing hormone and is commonly used in lab work on pituitary GH output, IGF-1 signaling, and fat-distribution research models. Supplied as 10mg (TSM10). ${RUO}`,
-    displayOrder: 2,
+    displayOrder: 8,
   },
   {
     title: "NAD+ 500mg",
@@ -59,7 +59,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 70,
     imageFile: "nj500.jpg",
     description: `NAD supports redox reactions and mitochondrial metabolism in cell-based studies, including work on sirtuins and age-related pathway readouts. This material is listed at 500mg (NJ500); check the label for the exact chemical form. ${RUO}`,
-    displayOrder: 3,
+    displayOrder: 9,
   },
   {
     title: "NAD+ 1000mg",
@@ -68,7 +68,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 80,
     imageFile: "nj1000.jpg",
     description: `NAD+ is the oxidized coenzyme used when experiments require NAD+ as a substrate for PARP, sirtuin, or other NAD+-dependent enzymes. Listed at 1000mg (NJ1000); confirm form and grade on the product documentation. ${RUO}`,
-    displayOrder: 4,
+    displayOrder: 10,
   },
   {
     title: "CJC-1295 (No DAC) 5mg + Ipamorelin 5mg",
@@ -78,7 +78,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     imageFile: "cp-10.jpg",
     description: `This kit combines CJC-1295 without DAC—a modified GHRH peptide—with ipamorelin, a selective GH secretagogue, so researchers can study complementary triggers on the growth-hormone axis. Each component is 5mg (CP-10). ${RUO}`,
     featured: true,
-    displayOrder: 5,
+    displayOrder: 2,
   },
   {
     title: "KLOW80 80mg",
@@ -87,7 +87,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 110,
     imageFile: "bbkg80.jpg",
     description: `KLOW80 is an 80mg blended product (BBKG80) used in research that spans copper peptides, extracellular matrix signaling, and multi-compound recovery models. Review the COA for the full ingredient list before designing a protocol. ${RUO}`,
-    displayOrder: 6,
+    displayOrder: 11,
   },
   {
     title: "BPC-157 10mg",
@@ -96,7 +96,8 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 65,
     imageFile: "bc10.jpg",
     description: `BPC-157 is a synthetic peptide sequence related to gastric protective proteins and is studied in models of cytoprotection, angiogenesis, and tissue-repair signaling. 10mg (BC10). ${RUO}`,
-    displayOrder: 7,
+    featured: true,
+    displayOrder: 3,
   },
   {
     title: "TB-500 5mg",
@@ -105,7 +106,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 70,
     imageFile: "bt5.jpg",
     description: `TB-500 research material maps to thymosin beta-4 biology and actin-linked cell movement in migration and wound-healing models. 5mg (BT5). ${RUO}`,
-    displayOrder: 8,
+    displayOrder: 12,
   },
   {
     title: "KPV 10mg",
@@ -114,7 +115,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 55,
     imageFile: "kp10.jpg",
     description: `KPV is a tripeptide fragment studied in inflammatory and antimicrobial pathway research in cultured systems. 10mg (KP10). ${RUO}`,
-    displayOrder: 9,
+    displayOrder: 13,
   },
   {
     title: "BPC-157 5mg + TB-500 5mg",
@@ -123,8 +124,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 75,
     imageFile: "bb10.jpg",
     description: `BPC-157 is a synthetic peptide sequence related to gastric protective proteins; TB-500 research material maps to thymosin beta-4 biology and actin-linked cell movement. Together they support dual-mechanism studies on repair signaling—5mg of each (BB10). ${RUO}`,
-    featured: true,
-    displayOrder: 10,
+    displayOrder: 6,
   },
   {
     title: "BPC-157 10mg + TB-500 10mg",
@@ -133,7 +133,16 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 90,
     imageFile: "bb20.jpg",
     description: `BPC-157 and TB-500 blend — 10 mg of each peptide (BB20). ${RUO}`,
-    displayOrder: 11,
+    displayOrder: 7,
+  },
+  {
+    title: "GHK-Cu 50mg",
+    slug: "ghk-cu-50mg-cu-50",
+    sku: "CU-50",
+    priceCAD: 50,
+    imageFile: "cu-50.jpg",
+    description: `GHK-Cu copper peptide — 50 mg vial (CU-50). ${RUO}`,
+    displayOrder: 4,
   },
   {
     title: "GHK-Cu 100mg",
@@ -143,16 +152,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     imageFile: "cu-100.jpg",
     description: `GHK-Cu links the GHK tripeptide to copper and is frequently used to examine collagen-related gene activity, fibroblast behavior, and oxidative stress in cultured systems. 100mg listing (CU-100). ${RUO}`,
     featured: true,
-    displayOrder: 12,
-  },
-  {
-    title: "GHK-Cu 50mg",
-    slug: "ghk-cu-50mg-cu-50",
-    sku: "CU-50",
-    priceCAD: 50,
-    imageFile: "cu-50.jpg",
-    description: `GHK-Cu copper peptide — 50 mg listing (CU-50). ${RUO}`,
-    displayOrder: 13,
+    displayOrder: 5,
   },
   {
     title: "Melanotan II 10mg",
@@ -176,7 +176,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     title: "ARA-290 10mg",
     slug: "ara-290-10mg-ara10",
     sku: "ARA10",
-    priceCAD: 25.99,
+    priceCAD: 67,
     imageFile: "ara10.jpg",
     description: `ARA-290 is a compact peptide derived from erythropoietin biology and is used to explore innate repair receptor signaling and neuroinflammatory mechanisms in preclinical systems. 10mg (ARA10). ${RUO}`,
     displayOrder: 16,
@@ -254,16 +254,6 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     displayOrder: 24,
   },
   {
-    title: "Bacteriostatic Water 10ml",
-    slug: "bacteriostatic-water-bac-10ml",
-    sku: "BAC",
-    priceCAD: 20,
-    imageFile: "bac-10ml.jpg",
-    category: "Research supplies",
-    description: `Sterile bacteriostatic water is a standard diluent for reconstituting lyophilized peptides in the lab, typically with a preservative to limit bacterial growth in multi-use vials. 10ml (BAC); follow the supplier label for composition. ${RUO}`,
-    displayOrder: 25,
-  },
-  {
     title: "Bacteriostatic Water 3ml",
     slug: "bacteriostatic-water-bac-3ml",
     sku: "BAC",
@@ -271,26 +261,36 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     imageFile: "bac-3ml.jpg",
     category: "Research supplies",
     description: `A smaller-volume bacteriostatic water option for reconstitution workflows that call for less diluent per vial. 3ml (BAC); confirm formulation on the label. ${RUO}`,
+    displayOrder: 25,
+  },
+  {
+    title: "Bacteriostatic Water 10ml",
+    slug: "bacteriostatic-water-bac-10ml",
+    sku: "BAC",
+    priceCAD: 20,
+    imageFile: "bac-10ml.jpg",
+    category: "Research supplies",
+    description: `Sterile bacteriostatic water is a standard diluent for reconstituting lyophilized peptides in the lab, typically with a preservative to limit bacterial growth in multi-use vials. 10ml (BAC); follow the supplier label for composition. ${RUO}`,
     displayOrder: 26,
   },
   {
     title: "Acetic Acid 3ml",
     slug: "acetic-acid-aa3-3ml",
-    sku: "AA3-3",
+    sku: "AA3",
     priceCAD: 10,
     imageFile: "aa3-3ml.jpg",
     category: "Research supplies",
-    description: `Acetic acid diluent for laboratory peptide workflows. 3 ml (AA3-3). ${RUO}`,
+    description: `Acetic acid diluent for laboratory peptide workflows. 3 ml (AA3). ${RUO}`,
     displayOrder: 27,
   },
   {
     title: "Acetic Acid 10ml",
-    slug: "acetic-acid-aa3-10ml",
-    sku: "AA3",
+    slug: "acetic-acid-aa10-10ml",
+    sku: "AA10",
     priceCAD: 20,
-    imageFile: "aa3-10ml.jpg",
+    imageFile: "aa10-10ml.jpg",
     category: "Research supplies",
-    description: `Acetic acid diluent for laboratory peptide workflows. 10 ml (AA3). ${RUO}`,
+    description: `Acetic acid diluent for laboratory peptide workflows. 10 ml (AA10). ${RUO}`,
     displayOrder: 28,
   },
   {
@@ -397,7 +397,6 @@ export const ASSET_IMAGE_MAP: Record<string, string> = {
   "image-183140a2": "cartalax-20mg.jpg",
   "image-1ed82635": "bac-10ml.jpg",
   "image-4604d3d3": "bac-3ml.jpg",
-  "image-28b952c7": "aa3-10ml.jpg",
   "628ae39f": "pen-with-case.png",
   "42d55f1b": "insulin-syringes-10-pack.png",
   "eb83647f": "insulin-syringes-100-box.jpg",

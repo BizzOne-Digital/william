@@ -37,7 +37,7 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   "klow80-80mg-bbkg80": {
     description:
       "The sheet lists BPC-157, TB4, GHK-Cu and KPV. Individual components are investigated for repair-related, collagen and inflammatory pathways.",
-    reconstitution: "3 mL bacteriostatic water (BAC) or no-sting water.",
+    reconstitution: "3 mL bacteriostatic water (BAC).",
   },
   "bpc-157-10mg-bc10": {
     description:
@@ -118,7 +118,7 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
     description:
       "A reproductive-signaling peptide investigated for GnRH release, reproductive-hormone regulation and fertility-related pathways.",
     reconstitution:
-      "2 mL acetic acid (AA) water (e.g. Intense Dropz Acetic Acid AA3)—not bacteriostatic water.",
+      "2 mL. You can use BAC water or AA water or 0.5 mL of each to make it easier to dissolve.",
   },
   "tirzepatide-20mg-tr20": {
     description:

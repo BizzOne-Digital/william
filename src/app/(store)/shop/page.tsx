@@ -17,7 +17,7 @@ export default async function ShopPage({ searchParams }: { searchParams: SearchP
   const sp = await searchParams;
   const q = sp.q?.trim() ?? "";
   const category = sp.category?.trim() ?? "";
-  const sort = sp.sort ?? "featured";
+  const sort = sp.sort ?? "catalog";
 
   let products: import("@/models/Product").IProduct[] = [];
   let categories: string[] = [];
@@ -31,7 +31,7 @@ export default async function ShopPage({ searchParams }: { searchParams: SearchP
     if (sort === "price-asc") query = query.sort({ priceCAD: 1 });
     else if (sort === "price-desc") query = query.sort({ priceCAD: -1 });
     else if (sort === "newest") query = query.sort({ createdAt: -1 });
-    else query = query.sort({ featured: -1, displayOrder: 1, createdAt: -1 });
+    else query = query.sort({ displayOrder: 1, createdAt: -1 });
 
     products = (await query.lean()) as import("@/models/Product").IProduct[];
     categories = await Product.distinct("category", { published: true });

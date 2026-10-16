@@ -21,7 +21,7 @@ export function ShopFilters({
     const params = new URLSearchParams();
     if (q.trim()) params.set("q", q.trim());
     if (category) params.set("category", category);
-    if (sort && sort !== "featured") params.set("sort", sort);
+    if (sort && sort !== "catalog") params.set("sort", sort);
     router.push(`/shop?${params.toString()}`);
   };
 
@@ -59,7 +59,7 @@ export function ShopFilters({
         className="w-full min-w-0 rounded-xl border border-border bg-surface px-3 py-2.5 text-sm"
         aria-label="Sort"
       >
-        <option value="featured">Featured</option>
+        <option value="catalog">Catalog order</option>
         <option value="newest">Newest</option>
         <option value="price-asc">Price: low to high</option>
         <option value="price-desc">Price: high to low</option>

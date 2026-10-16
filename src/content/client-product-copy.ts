@@ -55,6 +55,8 @@ For research purposes only. Not intended for human consumption. Not evaluated by
 
   "kpv-10mg-kp10": `KPV is a potent bioactive peptide derived from alpha-melanocyte-stimulating hormone, specifically formulated for maximum systemic bioavailability. Unlike oral versions that primarily target the digestive tract, the injectable route ensures rapid delivery into the bloodstream, making it the superior choice for combating whole-body inflammation, autoimmune flares, and Mast Cell Activation (MCAS). Renowned for its dual-action capability, KPV acts as both a powerful anti-inflammatory and a broad-spectrum antimicrobial agent. It works to "cool down" an overactive immune system, reducing chronic redness, irritation (psoriasis/eczema), and allergic reactions while simultaneously helping the body eliminate pathogens like Candida and bacteria. Whether used for accelerating wound healing, stabilizing histamine responses, or supporting recovery from chronic illness, KPV is the master regulator for total-body immune balance.`,
 
+  "ghk-cu-50mg-cu-50": `GHK-Cu 50mg (CU-50) — the same copper-binding tripeptide as our 100 mg listing, in a 50 mg format for smaller research quantities.`,
+
   "ghk-cu-100mg-cu-100": `GHK-Cu is a naturally occurring copper peptide often hailed as a "genetic reset button" for its unique ability to modulate over 4,000 human genes to a younger, healthier state. While famous in the cosmetic world for tightening loose skin, reversing sun damage, and stimulating new hair growth by massively upregulating collagen production, its benefits go far deeper than aesthetics. GHK-Cu is a potent remodeling agent that aggressively breaks down scar tissue (fibrosis), repairs damaged DNA, and reduces systemic inflammation. This makes it an essential compound for anyone looking to not only look younger but to physically heal old injuries, improve lung/liver function, and restore optimal biological signaling.`,
 
   "melanotan-ii-mt-2": `Melanotan 2 is a potent synthetic peptide designed to replicate the body's natural alpha-melanocyte-stimulating hormone (α-MSH). Its primary power lies in stimulating deep, systemic melanin production, allowing users to achieve a dark, natural tan with a fraction of the usual UV exposure—effectively providing a "biological shield" against sunburn and photo-aging. Beyond its cosmetic applications, MT-2 is widely utilized as a "lifestyle peptide" for its distinct physiological bonuses: it significantly amplifies libido and sexual arousal while simultaneously acting as an appetite suppressant, making it a dual-threat for those looking to improve their physique and complexion simultaneously.
@@ -149,7 +151,9 @@ Component Breakdown (80mg Total Standard Vial)
 • BPC-157 (Body Protection Compound-157): A synthetic 15-amino-acid sequence studied primarily as a localized repair agent that acts via blood-vessel growth (angiogenesis) and nitric-oxide signaling.
 • TB-500: A synthetic fragment (Ac-LKKTETQ) of the natural protein thymosin beta-4, studied as a systemic component that regulates actin and supports cell migration and soft-tissue repair across the whole body.`,
 
-  "bpc-157-tb-500-bb20": `The combination of BPC-157 and TB-500—often called the "Wolverine stack"—is an informal, experimental peptide pairing promoted online for tissue, tendon, ligament, and muscle recovery.
+  "bpc-157-tb-500-bb20": `BPC-157 10mg + TB-500 10mg (BB20)
+
+The combination of BPC-157 and TB-500—often called the "Wolverine stack"—is an informal, experimental peptide pairing promoted online for tissue, tendon, ligament, and muscle recovery.
 
 • BPC-157 (Body Protection Compound-157): A synthetic 15-amino-acid sequence studied primarily as a localized repair agent that acts via blood-vessel growth (angiogenesis) and nitric-oxide signaling.
 • TB-500: A synthetic fragment (Ac-LKKTETQ) of the natural protein thymosin beta-4, studied as a systemic component that regulates actin and supports cell migration and soft-tissue repair across the whole body.`,
@@ -172,11 +176,9 @@ Everything you need to get started in one convenient package. The Metabolic Pept
 
 Starter Kit Includes:
 
-1 × Metabolic Peptides Reusable Injection Pen
-2 × Refillable Cartridges
-20 × Pen Needles (31G, 6 mm)
+1 × Metabolic Peptides Reusable Injection Pen, 2 × Refillable Cartridges, 20 × Pen Needles (31G, 6 mm)
 
-The reusable pen features an adjustable dial and compact design, while the refillable cartridges make it easy to prepare and organize your research materials. The ultra-fine 32G pen needles are individually packaged for cleanliness and convenience.
+The reusable pen features an adjustable dial and compact design, while the refillable cartridges make it easy to prepare and organize your research materials. The ultra-fine 31G pen needles are individually packaged for cleanliness and convenience.
 
-For research use only. Please refer to individual product information and handling.`,
+Intense Dropz is our public brand! Our online experience is designed to be fast, transparent, and mobile-ready — with tools that help you shop with confidence.`,
 };
