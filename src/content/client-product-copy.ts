@@ -146,14 +146,16 @@ Component Breakdown (80mg Total Standard Vial)
 • TB-500 (10 mg): A synthetic fragment of thymosin beta-4 associated with cell migration, actin upregulation, and tissue repair dynamics.
 • KPV (10 mg): A tripeptide fragment (lysine-proline-valine) derived from α-MSH, targeted at modulating cellular inflammatory pathways (such as NF-κB) without affecting skin pigmentation.`,
 
-  "bpc-157-tb-500-bb10": `The combination of BPC-157 and TB-500—often called the "Wolverine stack"—is an informal, experimental peptide pairing promoted online for tissue, tendon, ligament, and muscle recovery.
+  "bpc-157-tb-500-bb10": `The Wolverine Stack — 10 mg total (5 mg BPC-157 + 5 mg TB-500).
+
+The combination of BPC-157 and TB-500 is an informal, experimental peptide pairing promoted online for tissue, tendon, ligament, and muscle recovery.
 
 • BPC-157 (Body Protection Compound-157): A synthetic 15-amino-acid sequence studied primarily as a localized repair agent that acts via blood-vessel growth (angiogenesis) and nitric-oxide signaling.
 • TB-500: A synthetic fragment (Ac-LKKTETQ) of the natural protein thymosin beta-4, studied as a systemic component that regulates actin and supports cell migration and soft-tissue repair across the whole body.`,
 
-  "bpc-157-tb-500-bb20": `BPC-157 10mg + TB-500 10mg (BB20)
+  "bpc-157-tb-500-bb20": `The Wolverine Stack — 20 mg total (10 mg BPC-157 + 10 mg TB-500).
 
-The combination of BPC-157 and TB-500—often called the "Wolverine stack"—is an informal, experimental peptide pairing promoted online for tissue, tendon, ligament, and muscle recovery.
+The combination of BPC-157 and TB-500 is an informal, experimental peptide pairing promoted online for tissue, tendon, ligament, and muscle recovery.
 
 • BPC-157 (Body Protection Compound-157): A synthetic 15-amino-acid sequence studied primarily as a localized repair agent that acts via blood-vessel growth (angiogenesis) and nitric-oxide signaling.
 • TB-500: A synthetic fragment (Ac-LKKTETQ) of the natural protein thymosin beta-4, studied as a systemic component that regulates actin and supports cell migration and soft-tissue repair across the whole body.`,

@@ -72,7 +72,7 @@ export default async function ProductPage({ params }: Props) {
           <ProductResearchSection slug={slug} fallbackDescription={product.description} />
           <ProductCoaLink slug={slug} />
           <div className="mt-8">
-            <ProductPurchasePanel product={serialized} />
+            <ProductPurchasePanel product={serialized} slug={slug} />
           </div>
         </div>
       </div>

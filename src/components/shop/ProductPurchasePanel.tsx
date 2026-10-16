@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { formatCAD, getEffectivePrice } from "@/lib/product-utils";
 import { AddToCartButton } from "@/components/shop/AddToCartButton";
+import { getProductCallout } from "@/content/product-callouts";
 
 type Variant = {
   _id: string;
@@ -20,7 +21,14 @@ type ProductShape = {
   variants?: Variant[];
 };
 
-export function ProductPurchasePanel({ product }: { product: ProductShape }) {
+export function ProductPurchasePanel({
+  product,
+  slug,
+}: {
+  product: ProductShape;
+  slug?: string;
+}) {
+  const callout = slug ? getProductCallout(slug) : null;
   const variants = useMemo(() => product.variants ?? [], [product.variants]);
   const [variantId, setVariantId] = useState<string | null>(
     variants[0] ? String(variants[0]._id) : null,
@@ -47,6 +55,14 @@ export function ProductPurchasePanel({ product }: { product: ProductShape }) {
 
   return (
     <div className="glass-panel space-y-6 rounded-2xl p-6">
+      {callout && (
+        <div className="border-b border-border pb-4">
+          <p className="font-display text-lg font-semibold text-accent">{callout.headline}</p>
+          {callout.subline && (
+            <p className="mt-1 text-sm text-muted">{callout.subline}</p>
+          )}
+        </div>
+      )}
       <div>
         <p className="text-sm text-muted">Price (CAD)</p>
         <div className="mt-1 flex items-baseline gap-3">

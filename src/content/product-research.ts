@@ -56,12 +56,12 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   },
   "bpc-157-tb-500-bb10": {
     description:
-      "A blend containing 10 mg total peptide material. Its components are studied in tissue-repair models; human benefits for the combination remain unconfirmed.",
+      "The Wolverine Stack — 10 mg total (5 mg BPC-157 + 5 mg TB-500). Studied in tissue-repair models; human benefits for the combination remain unconfirmed.",
     reconstitution: "2 mL bacteriostatic water (BAC).",
   },
   "bpc-157-tb-500-bb20": {
     description:
-      "A blend containing 20 mg total peptide material, associated with research involving repair-related cell activity and tissue-injury models.",
+      "The Wolverine Stack — 20 mg total (10 mg BPC-157 + 10 mg TB-500), associated with research involving repair-related cell activity and tissue-injury models.",
     reconstitution: "2 mL bacteriostatic water (BAC).",
   },
   "ghk-cu-100mg-cu-100": {
