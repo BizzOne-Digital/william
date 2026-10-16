@@ -1,4 +1,4 @@
-/** Return & Refund Policy — adapted for Intense Dropz / William Taylor (October 2026). */
+/** Return & Refund Policy — Intense Dropz (October 2026). */
 export const RETURN_REFUND_POLICY = `Return & Refund Policy
 
 Last updated: October, 2026
@@ -6,8 +6,6 @@ Last updated: October, 2026
 Due to the nature of the products sold by Intense Dropz, all sales are considered final once an order has been processed or shipped.
 
 By placing an order on intensedropz.ca, you agree to the terms of this Return & Refund Policy.
-
-Intense Dropz is operated by William Taylor.
 
 No Returns or Exchanges
 
@@ -70,9 +68,9 @@ Products sold by Intense Dropz are intended for research use only and are not fo
 
 Contact
 
-For return, refund, or order issue questions, contact:
+For order issue questions, contact:
 
-Intense Dropz (William Taylor)
+Intense Dropz
 Email: info@intensedropz.ca
 Telephone: 226-499-8539
 `;
