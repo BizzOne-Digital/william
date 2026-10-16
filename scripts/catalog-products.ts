@@ -79,7 +79,6 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     description: `This kit combines CJC-1295 without DAC—a modified GHRH peptide—with ipamorelin, a selective GH secretagogue, so researchers can study complementary triggers on the growth-hormone axis. Each component is 5mg (CP-10). ${RUO}`,
     featured: true,
     displayOrder: 5,
-    extraImageFiles: ["cp-10-reference-card.jpg"],
   },
   {
     title: "KLOW80 80mg",
@@ -133,7 +132,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     sku: "BB20",
     priceCAD: 90,
     imageFile: "bb20.jpg",
-    description: `A higher-strength version of the BPC-157 and TB-500 pairing for the same categories of cytoprotection, angiogenesis, and migration research, with 10mg of each peptide (BB20). ${RUO}`,
+    description: `BPC-157 and TB-500 blend — 10 mg of each peptide (BB20). ${RUO}`,
     displayOrder: 11,
   },
   {
@@ -147,13 +146,22 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     displayOrder: 12,
   },
   {
+    title: "GHK-Cu 50mg",
+    slug: "ghk-cu-50mg-cu-50",
+    sku: "CU-50",
+    priceCAD: 50,
+    imageFile: "cu-50.jpg",
+    description: `GHK-Cu copper peptide — 50 mg listing (CU-50). ${RUO}`,
+    displayOrder: 13,
+  },
+  {
     title: "Melanotan II 10mg",
     slug: "melanotan-ii-mt-2",
     sku: "MT-2",
     priceCAD: 55,
     imageFile: "mt-2.jpg",
     description: `Melanotan II targets melanocortin receptors and is applied in pharmacology studies of pigmentation pathways and MC1R/MC4R activity. 10mg (MT-2). ${RUO}`,
-    displayOrder: 13,
+    displayOrder: 14,
   },
   {
     title: "MOTS-C 10mg",
@@ -162,7 +170,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 55,
     imageFile: "ms-10.jpg",
     description: `MOTS-C is encoded in mitochondrial DNA and is researched for its role in metabolic flexibility, AMPK-related signaling, and exercise-response models in cells. 10mg (MS10). ${RUO}`,
-    displayOrder: 14,
+    displayOrder: 15,
   },
   {
     title: "ARA-290 10mg",
@@ -171,7 +179,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 25.99,
     imageFile: "ara10.jpg",
     description: `ARA-290 is a compact peptide derived from erythropoietin biology and is used to explore innate repair receptor signaling and neuroinflammatory mechanisms in preclinical systems. 10mg (ARA10). ${RUO}`,
-    displayOrder: 15,
+    displayOrder: 16,
   },
   {
     title: "SS-31 10mg",
@@ -180,7 +188,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 72,
     imageFile: "2s10.jpg",
     description: `SS-31 concentrates in mitochondria and is studied for cardiolipin binding, electron-transport efficiency, and models of mitochondrial injury or aging. 10mg vial (2S10). ${RUO}`,
-    displayOrder: 16,
+    displayOrder: 17,
   },
   {
     title: "PT-141 10mg",
@@ -189,7 +197,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 65,
     imageFile: "p41.jpg",
     description: `PT-141 is a melanocortin agonist peptide used in receptor-binding and central nervous system pharmacology research distinct from tanning-related MC pathways. 10mg (P41). ${RUO}`,
-    displayOrder: 17,
+    displayOrder: 18,
   },
   {
     title: "Semax 10mg",
@@ -198,7 +206,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 60,
     imageFile: "xa10-sx.jpg",
     description: `Semax is a modified ACTH fragment studied for neurotrophic signaling, BDNF-linked pathways, and ischemia or cognition models in controlled laboratory settings. 10mg (XA10(SX)). ${RUO}`,
-    displayOrder: 18,
+    displayOrder: 19,
   },
   {
     title: "Cartalax 20mg",
@@ -207,7 +215,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 60,
     imageFile: "cartalax-20mg.jpg",
     description: `Cartalax belongs to the short-peptide bioregulator class and is used in research on cartilage cells, matrix maintenance, and senescence-related readouts. 20mg; obtain verified sequence data from the supplier when available. ${RUO}`,
-    displayOrder: 19,
+    displayOrder: 20,
   },
   {
     title: "Selank 10mg",
@@ -216,7 +224,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 55,
     imageFile: "sk10.jpg",
     description: `Selank is a synthetic tuftsin-derived peptide studied in anxiolytic and immunomodulatory pathway research in preclinical models. 10mg (SK10). ${RUO}`,
-    displayOrder: 20,
+    displayOrder: 21,
   },
   {
     title: "Kisspeptin 10mg",
@@ -225,7 +233,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 55,
     imageFile: "ks10.jpg",
     description: `Kisspeptin activates the KISS1R receptor and is used in reproductive endocrinology and GnRH pulse research models. 10mg (KS10). ${RUO}`,
-    displayOrder: 21,
+    displayOrder: 22,
   },
   {
     title: "Tirzepatide 20mg",
@@ -234,7 +242,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 100,
     imageFile: "tr20.jpg",
     description: `Tirzepatide is a dual GIP/GLP-1 receptor agonist researched for incretin signaling, glucose homeostasis, and metabolic pathway studies. 20mg (TR20). ${RUO}`,
-    displayOrder: 22,
+    displayOrder: 23,
   },
   {
     title: "DSIP 15mg",
@@ -243,7 +251,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 65,
     imageFile: "dsip-15mg.jpg",
     description: `Delta sleep-inducing peptide (DSIP) is studied in circadian, stress-response, and neuromodulatory research models. 15mg (DSIP15). ${RUO}`,
-    displayOrder: 23,
+    displayOrder: 24,
   },
   {
     title: "Bacteriostatic Water 10ml",
@@ -253,7 +261,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     imageFile: "bac-10ml.jpg",
     category: "Research supplies",
     description: `Sterile bacteriostatic water is a standard diluent for reconstituting lyophilized peptides in the lab, typically with a preservative to limit bacterial growth in multi-use vials. 10ml (BAC); follow the supplier label for composition. ${RUO}`,
-    displayOrder: 24,
+    displayOrder: 25,
   },
   {
     title: "Bacteriostatic Water 3ml",
@@ -263,7 +271,17 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     imageFile: "bac-3ml.jpg",
     category: "Research supplies",
     description: `A smaller-volume bacteriostatic water option for reconstitution workflows that call for less diluent per vial. 3ml (BAC); confirm formulation on the label. ${RUO}`,
-    displayOrder: 25,
+    displayOrder: 26,
+  },
+  {
+    title: "Acetic Acid 3ml",
+    slug: "acetic-acid-aa3-3ml",
+    sku: "AA3-3",
+    priceCAD: 10,
+    imageFile: "aa3-3ml.jpg",
+    category: "Research supplies",
+    description: `Acetic acid diluent for laboratory peptide workflows. 3 ml (AA3-3). ${RUO}`,
+    displayOrder: 27,
   },
   {
     title: "Acetic Acid 10ml",
@@ -272,8 +290,8 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 20,
     imageFile: "aa3-10ml.jpg",
     category: "Research supplies",
-    description: `Acetic acid may be used in peptide solubility and pH-adjustment steps according to laboratory SOPs and the manufacturer’s instructions. 10ml (AA3); concentration must be confirmed from the vial label. ${RUO}`,
-    displayOrder: 26,
+    description: `Acetic acid diluent for laboratory peptide workflows. 10 ml (AA3). ${RUO}`,
+    displayOrder: 28,
   },
   {
     title: "Injection Pen Starter Kit",
@@ -283,7 +301,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     imageFile: "pen-with-case.png",
     category: "Research supplies",
     description: `Injection pen starter kit with reusable pen, cartridges, and needles. Select pen color at checkout. ${RUO}`,
-    displayOrder: 27,
+    displayOrder: 29,
     variants: [
       { name: "Purple", sku: "PEN-PUR" },
       { name: "White", sku: "PEN-WHT" },
@@ -302,7 +320,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     imageFile: "insulin-syringes-10-pack.png",
     category: "Research supplies",
     description: `Sterile insulin syringes, 1.0 mL (U-100), 31G needle, 6 mm length. Ten syringes per pack. ${RUO}`,
-    displayOrder: 28,
+    displayOrder: 30,
   },
   {
     title: "Insulin Syringes — 1.0 mL, 6 mm, 31G (100 Box)",
@@ -312,7 +330,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     imageFile: "insulin-syringes-100-box.jpg",
     category: "Research supplies",
     description: `Sterile insulin syringes, 1.0 mL (U-100), 31G needle, 6 mm length. Box of 100 individually packaged syringes. ${RUO}`,
-    displayOrder: 29,
+    displayOrder: 31,
   },
   {
     title: "Alcohol Prep Pads (200 Box)",
@@ -322,7 +340,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     imageFile: "alcohol-prep-pads-200.jpg",
     category: "Research supplies",
     description: `Technologist Choice™ alcohol prep pads — isopropyl alcohol 70% v/v, sterile, 200 per box. Soft 2-ply cotton pads for research handling. ${RUO}`,
-    displayOrder: 30,
+    displayOrder: 32,
   },
   {
     title: "Insulin Pen Needles — 31G, 6 mm (100 Box)",
@@ -332,7 +350,17 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     imageFile: "insulin-pen-needles-100.jpg",
     category: "Research supplies",
     description: `Single-use insulin pen needles, 31G (0.25 mm) × 6 mm. Box of 100 sterile needles for use with compatible injection pens. ${RUO}`,
-    displayOrder: 31,
+    displayOrder: 33,
+  },
+  {
+    title: "Refillable Pen Cartridge",
+    slug: "refillable-pen-cartridge",
+    sku: "PEN-CART",
+    priceCAD: 3,
+    imageFile: "pen-cartridge.png",
+    category: "Research supplies",
+    description: `Refillable cartridge for compatible injection pens. Sold per cartridge. ${RUO}`,
+    displayOrder: 34,
   },
 ];
 
@@ -371,9 +399,9 @@ export const ASSET_IMAGE_MAP: Record<string, string> = {
   "image-4604d3d3": "bac-3ml.jpg",
   "image-28b952c7": "aa3-10ml.jpg",
   "628ae39f": "pen-with-case.png",
-  "07c7bfae": "cp-10-reference-card.jpg",
   "42d55f1b": "insulin-syringes-10-pack.png",
   "eb83647f": "insulin-syringes-100-box.jpg",
   "da0ef150": "alcohol-prep-pads-200.jpg",
   "661dbfc1": "insulin-pen-needles-100.jpg",
+  "4674e061": "pen-cartridge.png",
 };

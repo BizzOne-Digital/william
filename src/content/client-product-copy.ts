@@ -9,7 +9,7 @@ This combination is studied for how it may mimic pulsatile growth hormone (GH) s
 
 Areas commonly referenced in educational materials for this pairing include muscle growth signaling, metabolism and fat utilization pathways, recovery, sleep-related hormonal rhythms, and extracellular matrix / skin-quality research (collagen-related pathways).
 
-This listing is CJC-1295 (No DAC) 5 mg + Ipamorelin 5 mg (CP-10). See the reference card below for the full compound overview chart.`,
+This listing is CJC-1295 (No DAC) 5 mg + Ipamorelin 5 mg (CP-10).`,
 
   "ara-290-10mg-ara10": `ARA-290, also known as Cibinetide, is an investigational, synthetic 11-amino acid peptide derived from the structure of erythropoietin (EPO). It was specifically engineered to retain the tissue-protective, regenerative, and anti-inflammatory properties of EPO without triggering red blood cell production (non-erythropoietic). This design avoids the cardiovascular risks, like thickened blood or clotting, associated with full-length EPO.`,
 
@@ -25,7 +25,9 @@ For anyone serious about performance, vitality, or healthy aging, Tesamorelin is
 
 The problem is unavoidable: NAD+ levels decline with age, stress, and metabolic demand. The result is a gradual erosion of the very systems that support cellular vitality, recovery, and cognitive performance. Replenishment isn't a luxury — it's a logical response to a well-documented biological reality.
 
-By supporting sirtuin activity, enhancing the body's natural repair pathways, and promoting efficient energy metabolism, NAD+ delivers improvements you can feel — mental clarity, sustained energy, and long-term cellular resilience — without stimulants or hormone-based mechanisms. It works at the foundation, reinforcing the systems that everything else depends on.`,
+By supporting sirtuin activity, enhancing the body's natural repair pathways, and promoting efficient energy metabolism, NAD+ delivers improvements you can feel — mental clarity, sustained energy, and long-term cellular resilience — without stimulants or hormone-based mechanisms. It works at the foundation, reinforcing the systems that everything else depends on.
+
+Reconstitute with 5 mL bacteriostatic water (BAC).`,
 
   "nad-plus-1000mg-nj1000": `NAD+ (Nicotinamide Adenine Dinucleotide) is one of the most essential coenzymes in the human body — present in every cell, driving the processes that keep you energized, sharp, and resilient. At its core, NAD+ powers mitochondrial function, converting nutrients into ATP while fueling the enzymatic reactions your body depends on for metabolic efficiency and genomic stability.
 
@@ -79,6 +81,8 @@ Important: This guide is for educational purposes only and is not medical advice
   "pt-141-10mg-p41": `PT-141 (Bremelanotide) is a peptide that works by acting on melanocortin receptors in the central nervous system — influencing the signaling pathways tied to mood, stress response, and neurological balance. Unlike compounds that rely on hormonal or vascular mechanisms, PT-141 operates at the neural level, supporting emotional well-being and overall vitality from the inside out.
 
 Research has also explored its role in sexual wellness, where it modulates the neural pathways associated with desire and motivation rather than producing stimulant-based effects. The result is a compound that promotes resilience, balanced mood, and functional wellness — without touching hormone-driven mechanisms.`,
+
+  "tirzepatide-20mg-tr20": `Tirzepatide is a synthetic, once-weekly injectable medication that acts as a dual GIP (glucose-dependent insulinotropic polypeptide) and GLP-1 (glucagon-like peptide-1) receptor agonist. It is often referred to as a "twincretin" because it mimics these two natural gut hormones to regulate blood sugar, digestion, and appetite.`,
 
   "kisspeptin-10mg-ks10": `Kisspeptin is a naturally occurring peptide that plays a critical role in stimulating the release of gonadotropin-releasing hormone (GnRH), which in turn triggers the secretion of luteinizing hormone (LH) and follicle-stimulating hormone (FSH) from the pituitary gland. These hormones are essential for reproductive function and sex hormone production. Within the realm of performance enhancement and wellness, Kisspeptin is gaining attention for its ability to support natural testosterone production, improve fertility parameters, and potentially aid in hormonal balance. Beyond reproductive health, Kisspeptin may contribute to enhanced mood, improved libido, and better overall endocrine function, making it a promising option for those seeking to optimize hormonal health without directly administering anabolic hormones.`,
 
