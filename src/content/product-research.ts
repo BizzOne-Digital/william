@@ -118,7 +118,7 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
     description:
       "A reproductive-signaling peptide investigated for GnRH release, reproductive-hormone regulation and fertility-related pathways.",
     reconstitution:
-      "2 mL. You can use BAC water or AA water or 0.5 mL of each to make it easier to dissolve.",
+      "2 mL. You can use BAC water or AA water, or 1 mL of each to make it easier to dissolve.",
   },
   "tirzepatide-20mg-tr20": {
     description:
