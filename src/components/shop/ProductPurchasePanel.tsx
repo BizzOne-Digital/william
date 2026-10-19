@@ -56,10 +56,12 @@ export function ProductPurchasePanel({
   return (
     <div className="glass-panel space-y-6 rounded-2xl p-6">
       {callout && (
-        <div className="border-b border-border pb-4">
-          <p className="font-display text-lg font-semibold text-accent">{callout.headline}</p>
+        <div className="rounded-xl border border-accent/35 bg-accent/10 px-4 py-3">
+          <p className="font-display text-xl font-semibold tracking-tight text-accent sm:text-2xl">
+            {callout.headline}
+          </p>
           {callout.subline && (
-            <p className="mt-1 text-sm text-muted">{callout.subline}</p>
+            <p className="mt-1 text-sm font-medium text-foreground/80">{callout.subline}</p>
           )}
         </div>
       )}

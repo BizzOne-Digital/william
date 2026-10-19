@@ -16,7 +16,7 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   "tesamorelin-10mg-tsm10": {
     description:
       "A GHRH analogue that stimulates growth hormone release. Clinical evidence focuses on excess abdominal fat in HIV-associated lipodystrophy.",
-    reconstitution: "2 mL bacteriostatic water (BAC).",
+    reconstitution: "1 mL bacteriostatic water (BAC).",
   },
   "nad-plus-500mg-nj500": {
     description:
@@ -32,7 +32,7 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
     description:
       "A two-peptide blend associated with growth-hormone-signaling research. Clinical recovery and muscle-building benefits for this blend remain unconfirmed.",
     reconstitution:
-      "1 mL. You can use AA water or BAC water or 0.5 AA water and 0.5 BAC water; the peptide disolves easier.",
+      "2 mL bacteriostatic water (BAC), or 1 mL acetic-acid water and 1 mL BAC water.",
   },
   "klow80-80mg-bbkg80": {
     description:
@@ -42,7 +42,7 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   "bpc-157-10mg-bc10": {
     description:
       "A research peptide investigated for tendon-cell activity and repair-related processes, predominantly in laboratory and animal studies.",
-    reconstitution: "1 mL bacteriostatic water (BAC).",
+    reconstitution: "2–4 mL bacteriostatic water (BAC); see educational guide for concentration math.",
   },
   "tb-500-5mg-bt5": {
     description:
@@ -52,7 +52,7 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   "kpv-10mg-kp10": {
     description:
       "A three-amino-acid peptide derived from alpha-MSH. Investigated for inflammatory signaling and intestinal inflammation in experimental models.",
-    reconstitution: "1 mL bacteriostatic water (BAC).",
+    reconstitution: "2 mL bacteriostatic water (BAC).",
   },
   "bpc-157-tb-500-bb10": {
     description:
@@ -72,7 +72,7 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   "ghk-cu-50mg-cu-50": {
     description:
       "A copper-binding tripeptide investigated for collagen synthesis, connective-tissue remodeling and wound biology.",
-    reconstitution: "2 mL bacteriostatic water (BAC).",
+    reconstitution: "3 mL bacteriostatic water (BAC).",
   },
   "melanotan-ii-mt-2": {
     description:

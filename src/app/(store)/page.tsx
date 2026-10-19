@@ -10,7 +10,7 @@ import { ProductCard } from "@/components/shop/ProductCard";
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
 import Testimonial from "@/models/Testimonial";
-import { getSiteSettings } from "@/lib/site-settings";
+import { getHomeIntroText, getSiteSettings } from "@/lib/site-settings";
 import { BRAND } from "@/lib/constants";
 import { PeptideCalculator } from "@/components/calculator/PeptideCalculator";
 
@@ -49,7 +49,7 @@ export default async function HomePage() {
     <>
       <HomeHero />
 
-      <HomeIntroSection intro={settings.homeIntro} />
+      <HomeIntroSection intro={getHomeIntroText(settings.homeIntro)} />
 
       <HomeShowcase />
 

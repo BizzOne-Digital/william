@@ -17,17 +17,56 @@ function parsePositive(value: string): number | null {
   return n;
 }
 
+function allFieldsEmpty(strengthMg: string, waterMl: string, doseMg: string) {
+  return !strengthMg.trim() && !waterMl.trim() && !doseMg.trim();
+}
+
+type CalcResult =
+  | {
+      idle: true;
+      error: null;
+      concentration: number;
+      volumeMl: number;
+      volumeUl: number;
+      dose: number;
+      strength: number;
+      water: number;
+    }
+  | {
+      idle?: false;
+      error: string | null;
+      concentration?: number;
+      volumeMl?: number;
+      volumeUl?: number;
+      dose?: number;
+      strength?: number;
+      water?: number;
+    };
+
 export function PeptideCalculator() {
   const [strengthMg, setStrengthMg] = useState("5");
   const [waterMl, setWaterMl] = useState("2");
   const [doseMg, setDoseMg] = useState("0.25");
 
-  const result = useMemo(() => {
+  const result = useMemo((): CalcResult => {
+    if (allFieldsEmpty(strengthMg, waterMl, doseMg)) {
+      return {
+        idle: true,
+        error: null,
+        concentration: 0,
+        volumeMl: 0,
+        volumeUl: 0,
+        dose: 0,
+        strength: 0,
+        water: 0,
+      };
+    }
+
     const strength = parsePositive(strengthMg);
     const water = parsePositive(waterMl);
     const dose = parsePositive(doseMg);
     if (strength == null || water == null || dose == null) {
-      return { error: "Enter valid positive numbers for all fields." as string | null };
+      return { error: "Enter valid positive numbers for all fields." };
     }
     if (strength > 1_000_000 || water > 1_000 || dose > 1_000_000) {
       return { error: "Values exceed supported range." };
@@ -59,9 +98,9 @@ export function PeptideCalculator() {
   }, [strengthMg, waterMl, doseMg]);
 
   const reset = () => {
-    setStrengthMg("5");
-    setWaterMl("2");
-    setDoseMg("0.25");
+    setStrengthMg("");
+    setWaterMl("");
+    setDoseMg("");
   };
 
   return (
@@ -113,14 +152,17 @@ export function PeptideCalculator() {
       <div className="space-y-6">
         <div className="glass-panel rounded-2xl p-6 sm:p-8">
           <h3 className="font-display text-xl font-semibold text-white">Results</h3>
-          {"error" in result && result.error && !("concentration" in result && result.concentration) ? (
+          {result.error && !result.concentration ? (
             <p className="mt-4 text-sm text-red-300">{result.error}</p>
-          ) : "concentration" in result && result.concentration ? (
+          ) : result.concentration != null ? (
             <div className="mt-4 space-y-4 text-sm">
               {result.error && (
                 <p className="rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-red-200">
                   {result.error}
                 </p>
+              )}
+              {result.idle && (
+                <p className="text-xs text-muted">All fields cleared — enter values to calculate.</p>
               )}
               <div className="overflow-x-auto rounded-xl bg-black/25 p-4 font-mono text-[12px] leading-relaxed text-slate-200 sm:text-[13px]">
                 <div>
@@ -132,7 +174,7 @@ export function PeptideCalculator() {
                   <>
                     <div className="mt-3">
                       Draw volume (mL) = {result.dose?.toFixed(4)} mg dose ÷{" "}
-                      {result.concentration.toFixed(4)} mg/mL
+                      {result.concentration > 0 ? result.concentration.toFixed(4) : "0.0000"} mg/mL
                     </div>
                     <div className="text-accent">= {result.volumeMl?.toFixed(4)} mL</div>
                     <div className="mt-3 text-muted">

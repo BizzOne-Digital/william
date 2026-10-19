@@ -69,11 +69,11 @@ export default async function ProductPage({ params }: Props) {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-accent">{categoryLabel}</p>
           <h1 className="mt-2 font-display text-4xl font-semibold text-white">{product.title}</h1>
-          <ProductResearchSection slug={slug} fallbackDescription={product.description} />
-          <ProductCoaLink slug={slug} />
-          <div className="mt-8">
+          <div className="mt-6">
             <ProductPurchasePanel product={serialized} slug={slug} />
           </div>
+          <ProductResearchSection slug={slug} fallbackDescription={product.description} />
+          <ProductCoaLink slug={slug} />
         </div>
       </div>
     </div>
