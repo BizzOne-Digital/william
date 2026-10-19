@@ -384,6 +384,411 @@ const PRODUCT_EDUCATIONAL_GUIDES: Record<string, ProductEducationalGuide> = {
     ],
     closingDisclaimer: EDU_CLOSING_DEFAULT,
   },
+  "mots-c-10mg-ms-10": {
+    sections: [
+      {
+        title: "Reconstitution steps",
+        paragraphs: [
+          "Remove the vial from refrigerator storage and allow to equilibrate at room temperature for 15–20 minutes.",
+          "Wipe top of peptide and bacteriostatic water with alcohol to disinfect.",
+          "Draw 1.0 mL bacteriostatic water with a sterile syringe. All our vials are vacuum sealed, so when inserting syringe to add bacteriostatic water hold plunger so it does not shoot the water into the peptide or vial.",
+          "Inject slowly down the vial wall; avoid foaming.",
+          "Gently swirl/roll until dissolved—solution should be clear (do not shake).",
+          "Refrigerate at 2–8 °C (35.6–46.4 °F).",
+        ],
+      },
+      {
+        title: "When to take: the morning pre-workout window",
+        paragraphs: [
+          "Optimal timing: Administer in the morning, 30–60 minutes before training.",
+          "MOTS-c is most effective when paired with activity. It primes your mitochondria to handle workout stress and accelerates fat oxidation (burning fat for fuel).",
+          "Fasted cardio: If you perform fasted morning cardio, MOTS-c helps protect muscle tissue from being broken down for energy, encouraging the body to tap into stored fat instead.",
+        ],
+      },
+      {
+        title: "MOTS-c (10 mg) dosage guide",
+        paragraphs: [
+          "After reconstituting with 1 mL bacteriostatic water (10 mg/mL):",
+          "Beginner dosage (2.5 mg): Draw to the 25-unit mark. Ideal for beginners, those sensitive to metabolic shifts, or daily micro-pulsing protocols.",
+          "Intermediate dosage (5 mg): Draw to the 50-unit mark. Ideal for significant athletic performance and metabolic maintenance.",
+        ],
+      },
+      {
+        title: "Protocol and cycle length",
+        paragraphs: [
+          "Frequency: Administer 2 times per week (e.g., Tue/Thurs).",
+          "Cycle length: A typical cycle lasts 4 to 6 weeks, followed by a 4-week break.",
+        ],
+      },
+      {
+        title: "Administration tips",
+        paragraphs: [
+          "Volume management: A 5 mg dose is 0.5 mL on a 1 mL reconstitution—some users split across two injection sites for comfort and absorption.",
+          "The lactic sensation: A mild warmth or pump at the injection site can occur with metabolic activation. Sites with more subcutaneous fat, such as the outer glute or upper-outer thigh, are often more comfortable.",
+          "Insulin sensitivity: MOTS-c drives glucose into working muscle. If you are on a hard cut or low-carb diet, monitor energy; a small piece of fruit pre-workout may help balance increased glucose demand.",
+        ],
+      },
+    ],
+    closingDisclaimer:
+      "This guide is for educational purposes only and is not medical advice. MOTS-c is an experimental compound for research use only. Not for human consumption.",
+  },
+  "ara-290-10mg-ara10": {
+    sections: [
+      {
+        title: "Overview",
+        paragraphs: [
+          "ARA-290 (cibinetide) is a non-erythropoietic peptide derived from erythropoietin (EPO), evaluated in research for small fiber neuropathy and nerve repair. Reconstitution and dosing require careful calculations on a standard U-100 insulin syringe.",
+        ],
+      },
+      {
+        title: "Reconstitution instructions",
+        paragraphs: [
+          "ARA-290 arrives as lyophilized powder mixed with bacteriostatic water (BAC water) for multi-dose vials.",
+          "Prep: Allow the peptide vial to reach room temperature (approx. 15–20 minutes). Clean the rubber stoppers of both the BAC water and peptide vials with an alcohol swab.",
+          "Introduce water: Draw the desired amount of BAC water into a sterile syringe. Slowly inject the water into the ARA-290 vial.",
+          "Dissolve: Swirl or roll the vial gently until the powder completely dissolves into a clear solution. Avoid vigorous shaking.",
+        ],
+      },
+      {
+        title: "Dosage and protocol overview",
+        paragraphs: [
+          "Standard trial dosage: 4 mg per day in many studies evaluating sarcoidosis and diabetic small fiber neuropathy.",
+          "Alternative schedules: Some models explore 2 mg daily or 4 mg injected 4 times per week.",
+          "Standard cycle length: Often administered daily for 28 days (4 weeks). Extended research cycles sometimes span up to 12 weeks.",
+          "Route of administration: Primarily subcutaneous injection into the anterior thigh or abdomen.",
+        ],
+      },
+      {
+        title: "Reconstitution and syringe math (10 mg vial)",
+        paragraphs: [
+          "On a U-100 insulin syringe, 1 mL = 100 units.",
+          "10 mg vial + 1.0 mL BAC → 10 mg/mL → 4 mg dose = 0.40 mL (40 units).",
+          "10 mg vial + 2.0 mL BAC → 5 mg/mL → 4 mg dose = 0.80 mL (80 units).",
+          "16 mg vial + 2.0 mL BAC → 8 mg/mL → 4 mg dose = 0.50 mL (50 units).",
+        ],
+      },
+      {
+        title: "Storage and stability",
+        paragraphs: [
+          "Once reconstituted, store refrigerated at 2–8°C (36–46°F) and protect from direct light.",
+          "Reconstituted ARA-290 is ideally used within 14 to 28 days when kept cold; at room temperature it can degrade within 24 hours.",
+        ],
+      },
+    ],
+    closingDisclaimer: EDU_CLOSING_DEFAULT,
+  },
+  "ss-31-10mg-2s10": {
+    sections: [
+      {
+        title: "Reconstitution steps",
+        paragraphs: [
+          "Remove the vial from refrigerator storage and allow to equilibrate at room temperature for 15–20 minutes.",
+          "Wipe top of peptide and bacteriostatic water with alcohol to disinfect.",
+          "Draw 1.0 mL bacteriostatic water with a sterile syringe. All our vials are vacuum sealed, so when inserting syringe to add bacteriostatic water hold plunger so it does not shoot the water into the peptide or vial.",
+          "Inject slowly down the vial wall; avoid foaming.",
+          "Gently swirl/roll until dissolved—solution should be clear (do not shake).",
+          "Refrigerate at 2–8 °C (35.6–46.4 °F).",
+        ],
+      },
+      {
+        title: "SS-31 (10 mg) dosage guide",
+        paragraphs: [
+          "After reconstituting this 10 mg vial with 1 mL of bacteriostatic water, the concentration is 10 mg/mL. Frequency: administer daily.",
+          "Low dosage (1 mg): Draw to the 10-unit mark. Ideal for baseline mitochondrial support and cellular energy maintenance.",
+          "The ideal range (2.5 mg): Draw to the 25-unit mark. Ideal for standard recovery for muscle fatigue, neuroprotection, and metabolic support.",
+          "High dosage (5 mg): Draw to the 50-unit mark. Ideal for intensive protocols targeting acute oxidative stress or significant tissue repair.",
+        ],
+      },
+      {
+        title: "Protocol and cycle length",
+        paragraphs: [
+          "SS-31 is a mitochondria-targeting peptide most effective in structured cycles to support cellular respiration and ATP production.",
+          "Cycle length: A typical cycle lasts 4 to 12 weeks. For many, a 4-week cycle is sufficient, followed by a 4-week break.",
+        ],
+      },
+      {
+        title: "Administration tips",
+        paragraphs: [
+          "Start low, go slow: Begin with 1 mg (10 units) during your first week, then adjust upward as needed.",
+          "Tapering off: Many users reduce dosage gradually during the final week of a cycle.",
+          "Hydration: Drink plenty of water throughout your cycle as metabolic shifts can increase hydration needs.",
+        ],
+      },
+    ],
+    closingDisclaimer: EDU_CLOSING_DEFAULT,
+  },
+  "pt-141-10mg-p41": {
+    sections: [
+      {
+        title: "Reconstitution steps",
+        paragraphs: [
+          "Remove the vial from refrigerator storage and allow to equilibrate at room temperature for 15–20 minutes.",
+          "Draw 1.0 mL bacteriostatic water with a sterile syringe.",
+          "Wipe top of peptide and bacteriostatic water with alcohol to disinfect.",
+          "Inject slowly down the vial wall; avoid foaming. All our vials are vacuum sealed, so when inserting syringe to add bacteriostatic water hold plunger so it does not shoot the water into the peptide or vial.",
+          "Gently swirl/roll until dissolved (do not shake).",
+          "Refrigerate at 2–8 °C (35.6–46.4 °F).",
+        ],
+      },
+      {
+        title: "PT-141 (10 mg) dosage guide",
+        paragraphs: [
+          "After reconstituting with 1 mL (10 mg/mL):",
+          "0.5 mg (low dose): Draw to the 5-unit mark.",
+          "1.0 mg (standard dose): Draw to the 10-unit mark.",
+          "1.5 mg (high dose): Draw to the 15-unit mark.",
+          "2.0 mg (maximum dose): Draw to the 20-unit mark.",
+        ],
+      },
+      {
+        title: "Protocol and timing",
+        paragraphs: [
+          "Unlike fast-acting oral medications, PT-141 works on a longer ramp-up cycle and requires advance planning.",
+          "The window: Administer 4–6 hours before sexual activity. Peak effects often occur around the 6-hour mark and can persist for up to 24–48 hours.",
+          "Frequency: Use as needed, but limit to 2–3 times per week to reduce receptor desensitization.",
+        ],
+      },
+      {
+        title: "Administration tips",
+        paragraphs: [
+          "Managing nausea: Temporary nausea 30–60 minutes post-injection is common. OTC anti-nausea support or ginger, hydration, and slower titration may help.",
+          "The slow load for new users: Start at 1 mg (10 units). If needed, wait 48 hours before stepping up to 1.5 mg—do not double-dose the same night.",
+          "Blood pressure awareness: PT-141 can temporarily elevate blood pressure. Begin at the lowest dose if you monitor blood pressure closely.",
+        ],
+      },
+    ],
+    closingDisclaimer: EDU_CLOSING_DEFAULT,
+  },
+  "semax-10mg-xa10-sx": {
+    sections: [
+      {
+        title: "Reconstitution steps",
+        paragraphs: [
+          "Remove the vial from refrigerator storage and allow to equilibrate at room temperature for 15–20 minutes.",
+          "Wipe top of peptide and bacteriostatic water with alcohol to disinfect.",
+          "Draw 3.0 mL (3 × 1 mL syringe) bacteriostatic water with a sterile syringe. All our vials are vacuum sealed, so when inserting syringe to add bacteriostatic water hold plunger so it does not shoot the water into the peptide or vial.",
+          "Inject slowly down the vial wall; avoid foaming.",
+          "Gently swirl/roll until dissolved—solution should be clear (do not shake).",
+          "Refrigerate at 2–8 °C (35.6–46.4 °F).",
+        ],
+      },
+      {
+        title: "Semax (10 mg) guide",
+        paragraphs: [
+          "After reconstituting this 10 mg vial with 3 mL of bacteriostatic water:",
+          "Low (250 mcg): Draw to the 7.5-unit mark. Ideal for beginners or a subtle mood and focus boost.",
+          "The ideal spot (500 mcg): Draw to the 15-unit mark. Ideal for cognitive enhancement, clearing brain fog, and intense study or work sessions.",
+          "High (1 mg): Draw to the 30-unit mark. Ideal for acute recovery support or high-demand neurological tasks. May feel overstimulating if taken late in the day.",
+        ],
+      },
+      {
+        title: "Protocol and cycle length",
+        paragraphs: [
+          "Frequency: Administer once daily.",
+          "Cycle length: A typical cycle lasts 4 weeks.",
+          "The break: Take a 2 to 4-week break between cycles.",
+        ],
+      },
+      {
+        title: "Administration tips",
+        paragraphs: [
+          "Start low, go slow: Consider 100 mcg (3 units) for the first few days to assess mental lift.",
+          "Tapering off: Lower dosage over the final 3 days of a cycle rather than stopping abruptly.",
+          "Storage: Refrigerate once mixed; protect from light and do not shake during reconstitution.",
+          "Hydration: Proper water intake supports increased metabolic activity in the brain.",
+        ],
+      },
+      {
+        title: "When to take",
+        paragraphs: [
+          "Administer in the morning or early afternoon to support alertness without disrupting sleep.",
+        ],
+      },
+    ],
+    closingDisclaimer: EDU_CLOSING_DEFAULT,
+  },
+  "cartalax-20mg": {
+    sections: [
+      {
+        title: "Reconstitution steps",
+        paragraphs: [
+          "Remove the vial from refrigerator storage and allow to equilibrate at room temperature for 30 or more minutes.",
+          "Remove protective plastic cap; wipe top of peptide and bacteriostatic water with alcohol to disinfect.",
+          "Draw 3.0 mL bacteriostatic water with a sterile syringe. All our vials are vacuum sealed, so when inserting syringe to add bacteriostatic water hold plunger so it does not shoot the water into the peptide or vial.",
+          "Inject very slowly down the inside vial wall; avoid foaming.",
+          "Gently swirl/roll until dissolved—solution should be clear (do not shake).",
+          "Refrigerate at 2–8 °C (35.6–46.4 °F).",
+        ],
+      },
+      {
+        title: "Standard / gradual approach",
+        paragraphs: [
+          "Frequency: Subcutaneous, once daily.",
+          "Cycle length: 8–12 weeks; optional extension to 16 weeks, with 4 weeks off.",
+          "Weeks 1–2: 2,000 mcg (2.0 mg) daily — 30 units (0.30 mL).\nWeeks 3–4: 3,000 mcg (3.0 mg) daily — 45 units (0.45 mL).\nWeeks 5–8: 4,000 mcg (4.0 mg) daily — 60 units (0.60 mL).\nWeeks 9–12: 5,000 mcg (5.0 mg) daily — 75 units (0.75 mL).",
+          "From a research-protocol standpoint, morning or evening is reasonable; consistency day to day matters more than clock time.",
+        ],
+      },
+      {
+        title: "How this works",
+        paragraphs: [
+          "Cartalax (Ala-Glu-Asp) is among the Khavinson bioregulatory peptides—ultrashort peptides studied for interactions with gene expression at nanomolar concentrations. The sequence corresponds to a motif in type XI collagen, important for cartilage integrity.",
+        ],
+      },
+      {
+        title: "Potential benefits and limitations",
+        paragraphs: [
+          "Preclinical literature describes fibroblast proliferation support, extracellular matrix homeostasis, and general tolerability in observational settings; mild injection-site reactions may occur.",
+          "Limitations: No large-scale human RCTs; most data derive from in vitro or rodent models.",
+        ],
+      },
+    ],
+    closingDisclaimer: EDU_CLOSING_DEFAULT,
+  },
+  "selank-10mg-sk10": {
+    sections: [
+      {
+        title: "Mixing steps",
+        paragraphs: [
+          "Remove the vial from refrigerator and allow to equilibrate at room temperature for 15–20 minutes.",
+          "Wipe top of peptide and bacteriostatic water with alcohol to disinfect.",
+          "Draw 3.0 mL (3 × 1 mL syringe) bacteriostatic water with a sterile syringe. All our vials are vacuum sealed, so when inserting syringe to add bacteriostatic water hold plunger so it does not shoot the water into the peptide or vial.",
+          "Inject slowly down the vial wall; avoid foaming.",
+          "Gently swirl/roll until dissolved—solution should be clear (do not shake).",
+          "Refrigerate at 2–8 °C (35.6–46.4 °F).",
+        ],
+      },
+      {
+        title: "Timing considerations for Selank",
+        paragraphs: [
+          "Research protocols use varied schedules; timing may depend on study goals.",
+          "Some researchers use morning administration when investigating stress resilience and cognitive performance; others use evening administration when exploring relaxation and sleep quality.",
+        ],
+      },
+      {
+        title: "Evening administration",
+        paragraphs: [
+          "Supporting relaxation: Selank may promote a calmer mental state after a stressful day.",
+          "Mental quieting: Investigated for reducing mental tension and excessive worry via stress-related neurotransmitter pathways.",
+          "Minimal sedative effects: Research has not demonstrated pronounced sedation; calm without feeling drugged.",
+        ],
+      },
+      {
+        title: "Selank (10 mg) quick dosage guide",
+        paragraphs: [
+          "After reconstituting this 10 mg vial with 3 mL of bacteriostatic water, concentration is approximately 3.33 mg/mL (~33 mcg per unit).",
+          "Low dosage (100 mcg): Draw to the 3-unit mark. Ideal for light anxiety relief and a calm, focused state.",
+          "The sweet spot (250 mcg): Draw to the 7.5-unit mark. Ideal for stress management, mood enhancement, and cognitive stability.",
+          "Advanced dosage (500 mcg): Draw to the 15-unit mark. Ideal for intensive support during high-stress periods.",
+        ],
+      },
+      {
+        title: "Protocol and cycle length",
+        paragraphs: [
+          "Frequency: Administer once daily.",
+          "Cycle length: A typical cycle lasts 2 to 4 weeks.",
+          "The break: Take a 2 to 4-week break between cycles.",
+        ],
+      },
+      {
+        title: "Administration tips",
+        paragraphs: [
+          "Start low, go slow: Begin at 100 mcg (3 units) for the first few days.",
+          "Hydration: Proper water intake supports metabolic and neurological shifts.",
+        ],
+      },
+    ],
+    closingDisclaimer: EDU_CLOSING_DEFAULT,
+  },
+  "kisspeptin-10mg-ks10": {
+    sections: [
+      {
+        title: "Reconstitution steps",
+        paragraphs: [
+          "Remove the vial from refrigerator storage and allow to equilibrate at room temperature for 15–20 minutes.",
+          "Wipe top of peptide and bacteriostatic water with alcohol to disinfect.",
+          "Draw 3.0 mL bacteriostatic water with a sterile syringe. All our vials are vacuum sealed, so when inserting syringe to add bacteriostatic water hold plunger so it does not shoot the water into the peptide or vial.",
+          "Inject slowly down the vial wall; avoid foaming.",
+          "Gently swirl/roll until dissolved—solution should be clear (do not shake).",
+          "Refrigerate at 2–8 °C (35.6–46.4 °F).",
+        ],
+      },
+      {
+        title: "When to take",
+        paragraphs: [
+          "Kisspeptin is typically taken once daily; consistent timing matters more than the exact hour.",
+          "Evening or nighttime dosing is often preferred to align with natural hormonal signaling rhythms.",
+        ],
+      },
+      {
+        title: "Kisspeptin-10 (10 mg) dosage guide",
+        paragraphs: [
+          "After reconstituting this 10 mg vial with 3 mL of bacteriostatic water, the concentration is 3.33 mg/mL.",
+          "Low dosage (100 mcg): Draw to the 3-unit mark. Ideal for maintaining baseline hormonal signaling.",
+          "The ideal spot (200 mcg): Draw to the 6-unit mark. Ideal for stimulating natural testosterone and LH production.",
+          "High dosage (500 mcg): Draw to the 15-unit mark. Ideal for intensive axis reboot protocols.",
+        ],
+      },
+      {
+        title: "For men: the axis reboot cycle",
+        paragraphs: [
+          "Cycle length: 10 to 14 days of continuous use, followed by a minimum 14-day break.",
+          "Frequency: Usually once daily (at night) or twice daily (morning and night).",
+          "Maintenance option: 2–3 times per week for up to 8 weeks, then a 4-week break.",
+        ],
+      },
+      {
+        title: "For women: the hormonal harmony cycle",
+        paragraphs: [
+          "Cycle length: 5 to 10 days, often during the follicular phase (starting around day 3 or 5) in fertility research.",
+          "The break: Usually discontinued after ovulation until the next cycle begins.",
+          "Restart protocol: 10 days on, 20 days off until the cycle returns.",
+        ],
+      },
+    ],
+    closingDisclaimer: EDU_CLOSING_DEFAULT,
+  },
+  "dsip-15mg": {
+    sections: [
+      {
+        title: "Reconstitution steps",
+        paragraphs: [
+          "Remove the vial from refrigerator storage and allow to equilibrate at room temperature for 15–20 minutes.",
+          "Wipe top of peptide and bacteriostatic water with alcohol to disinfect.",
+          "Draw 2.0 mL bacteriostatic water with a sterile syringe. All our vials are vacuum sealed, so when inserting syringe to add bacteriostatic water hold plunger so it does not shoot the water into the peptide or vial.",
+          "Inject slowly down the vial wall; avoid foaming.",
+          "Gently swirl/roll until dissolved—solution should be clear (do not shake).",
+          "Refrigerate at 2–8 °C (35.6–46.4 °F).",
+        ],
+      },
+      {
+        title: "DSIP (15 mg) dosage guide",
+        paragraphs: [
+          "After reconstituting this 15 mg vial with 2 mL of bacteriostatic water:",
+          "Low dosage (100 mcg): Draw to the 6-unit mark. Ideal for subtle relaxation and minor sleep disruptions.",
+          "The ideal range (250 mcg): Draw to the 15-unit mark. Ideal for deep, restorative slow-wave sleep and managing high cortisol.",
+          "High dosage (500 mcg): Draw to the 30-unit mark. Ideal for advanced recovery protocols or significant insomnia.",
+        ],
+      },
+      {
+        title: "Protocol and timing",
+        paragraphs: [
+          "The pulse strategy: DSIP is most effective 2 to 3 times per week. Every-other-day or pre-stress-day use helps maintain potency.",
+          "Optimal timing: Administer 30 to 60 minutes before bed.",
+          "Cycle length: 4 to 6 weeks to reset a broken sleep schedule, followed by a 2-week break.",
+        ],
+      },
+      {
+        title: "Administration tips",
+        paragraphs: [
+          "Sleep latency: DSIP may not cause immediate drowsiness like a sleeping pill. Follow your normal bedtime routine without re-dosing.",
+          "Morning after clarity: Grogginess may indicate deep recovery debt—lower dose slightly and allow 7–8 hours of sleep.",
+          "Synergy with GH secretagogues: DSIP pairs with nighttime Ipamorelin in some protocols to support GH release during delta-wave sleep.",
+        ],
+      },
+    ],
+    closingDisclaimer: EDU_CLOSING_DEFAULT,
+  },
 };
 
 export function getProductEducationalGuide(slug: string): ProductEducationalGuide | null {

@@ -102,23 +102,22 @@ export const PRODUCT_RESEARCH_BY_SLUG: Record<string, ProductResearchProfile> = 
   "semax-10mg-xa10-sx": {
     description:
       "An ACTH-fragment analogue investigated for neurotrophic-factor expression, brain-cell signaling and neuroprotection in experimental models.",
-    reconstitution: "1 mL bacteriostatic water (BAC).",
+    reconstitution: "3 mL bacteriostatic water (BAC).",
   },
   "cartalax-20mg": {
     description:
       "A short synthetic peptide commonly identified as Ala-Glu-Asp, proposed for bone and cartilage research.",
-    reconstitution: "2 mL bacteriostatic water (BAC).",
+    reconstitution: "3 mL bacteriostatic water (BAC).",
   },
   "selank-10mg-sk10": {
     description:
       "A tuftsin analogue investigated for anxiety-related effects and neurotransmitter signaling, including GABA-associated pathways.",
-    reconstitution: "1 mL bacteriostatic water (BAC).",
+    reconstitution: "3 mL bacteriostatic water (BAC).",
   },
   "kisspeptin-10mg-ks10": {
     description:
       "A reproductive-signaling peptide investigated for GnRH release, reproductive-hormone regulation and fertility-related pathways.",
-    reconstitution:
-      "2 mL. You can use BAC water or AA water, or 1 mL of each to make it easier to dissolve.",
+    reconstitution: "3 mL bacteriostatic water (BAC).",
   },
   "tirzepatide-20mg-tr20": {
     description:
