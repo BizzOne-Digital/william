@@ -36,7 +36,7 @@ export const POLICY_REVIEW_NOTICE =
 export const HOME_INTRO_DEFAULT =
   "Intense Dropz is our public brand! Our online experience is designed to be fast, transparent, and mobile-ready — with tools that help you shop with confidence.";
 
-export const FOOTER_REFERRAL_LINE = "Our greatest compliments are your referrals";
+export const FOOTER_REFERRAL_LINE = "The greatest compliment you can give us is a referral";
 
 export const FOOTER_RESEARCH_DISCLAIMER =
   "All products sold are intended for in vitro laboratory research purposes only and are not for human consumption, medical use, or veterinary use. These products are not drugs, food additives, or cosmetics and have not been evaluated by Health Canada, the FDA, or any other regulatory authority.";
