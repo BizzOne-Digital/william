@@ -300,7 +300,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     priceCAD: 64.99,
     imageFile: "pen-with-case.png",
     category: "Research supplies",
-    description: `Injection pen starter kit with reusable pen, cartridges, and needles. Select pen color at checkout. ${RUO}`,
+    description: `Injection pen starter kit. Includes: reusable injection pen, 2 refillable cartridges, 20 pen needles (31G, 6 mm). Select pen color at checkout. ${RUO}`,
     displayOrder: 29,
     variants: [
       { name: "Purple", sku: "PEN-PUR" },

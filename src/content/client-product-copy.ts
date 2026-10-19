@@ -174,11 +174,15 @@ Online and in alternative recovery circles, TB-500 is heavily promoted as a rege
 
   "reconstitution-pen-with-case": `Injection Pen Starter Kit
 
-Everything you need to get started in one convenient package. The Metabolic Peptides Injection Pen Starter Kit combines a reusable, precision-style pen with the essential accessories needed for a simple, organized setup.
+Everything you need to get started in one convenient package. This injection pen starter kit combines a reusable, precision-style pen with the essential accessories needed for a simple, organized setup.
 
-Starter Kit Includes:
+Starter kit includes:
 
-1 × Metabolic Peptides Reusable Injection Pen, 2 × Refillable Cartridges, 20 × Pen Needles (31G, 6 mm)
+• 1 × Reusable injection pen (select color at checkout)
+
+• 2 × Refillable cartridges
+
+• 20 × Pen needles — 31G, 6 mm
 
 The reusable pen features an adjustable dial and compact design, while the refillable cartridges make it easy to prepare and organize your research materials. The ultra-fine 31G pen needles are individually packaged for cleanliness and convenience.
 

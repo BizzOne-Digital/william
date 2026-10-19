@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getProductCallout } from "@/content/product-callouts";
 import { formatCAD, getEffectivePrice } from "@/lib/product-utils";
 import { ProductImage } from "@/components/shop/ProductImage";
 import type { IProduct } from "@/models/Product";
@@ -7,6 +8,7 @@ export function ProductCard({ product }: { product: IProduct }) {
   const pricing = getEffectivePrice(product);
   const displayPrice = pricing.salePrice ?? pricing.price;
   const rawImage = product.images?.[0];
+  const callout = getProductCallout(product.slug);
 
   return (
     <article className="group glass-panel overflow-hidden rounded-2xl transition hover:border-accent/30 hover:shadow-[0_0_40px_rgba(var(--accent-rgb),0.12)]">
@@ -27,6 +29,9 @@ export function ProductCard({ product }: { product: IProduct }) {
         <div className="space-y-2 p-4">
           <p className="text-[11px] uppercase tracking-[0.18em] text-accent/90">{product.category}</p>
           <h3 className="font-display text-lg font-semibold text-white">{product.title}</h3>
+          {callout && (
+            <p className="text-sm font-semibold text-accent">{callout.headline}</p>
+          )}
           <div className="flex items-baseline gap-2">
             <span className="text-base font-semibold text-foreground">{formatCAD(displayPrice)}</span>
             {pricing.salePrice != null && (

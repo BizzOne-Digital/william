@@ -29,12 +29,11 @@ const PRODUCT_EDUCATIONAL_GUIDES: Record<string, ProductEducationalGuide> = {
         title: "Retatrutide (10 mg) guide",
         paragraphs: [
           "After reconstituting your 10 mg vial with 1.0 mL follow this dosage guide for best results. Retatrutide is a once per week injection, in the morning on the same day, every week (example: every Sun in the morning). Start low to minimize GI side effects (nausea, diarrhea). If side effects are felt maintain same dose for following week, then titrate up week after. When desired body composition is achieved, go to a maintenance dose of 500 mcg per week, to maintain the health benefits.",
-          "Week 1 — 1 mg / 10 units on a 1 mL syringe.\nWeek 2 — 2 mg / 20 units on a 1 mL syringe. (tolerance determined)\nWeek 3 — 2.5 mg / 25 units on a 1 mL syringe. (tolerance determined)\nWeek 4 — 3 mg / 30 units on a 1 mL syringe. (tolerance determined)\nWeek 5 — 3.5 mg / 35 units on a 1 mL syringe. (tolerance determined)\nWeek 6 — 4 mg / 40 units on a 1 mL syringe. (tolerance determined)\nWeek 7 — 4.5 mg / 45 units on a 1 mL syringe. (tolerance determined)\nWeek 8 — 5 mg / 50 units on a 1 mL syringe. (tolerance determined)\nWeek 9 — 5.5 mg / 55 units on a 1 mL syringe. (tolerance determined)\nWeek 10 — 6 mg / 60 units on a 1 mL syringe. (tolerance determined)\nWeek 11 — 6.5 mg / 65 units on a 1 mL syringe. (tolerance determined)\nWeek 12 — 7 mg / 70 units on a 1 mL syringe. (tolerance determined)\nWeek 13 — 7.5 mg / 75 units on a 1 mL syringe. (tolerance determined)\nWeek 14+ — 8 mg / 80 units on a 1 mL syringe. (tolerance determined)\nTitrating up 0.5 mg in the following weeks up to a maximum of 120 units (1.2 mL); maintain at that level if tolerated.",
+          "Week 1 — 1 mg / 10 units on a 1 mL syringe.\nWeek 2 — 2 mg / 20 units on a 1 mL syringe. (tolerance determined)\nWeek 3 — 2.5 mg / 25 units on a 1 mL syringe. (tolerance determined)\nWeek 4 — 3 mg / 30 units on a 1 mL syringe. (tolerance determined)",
         ],
       },
     ],
-    closingDisclaimer:
-      "This guide is for educational purposes only and is not medical advice. Retatrutide is not CSA or FDA approved and is available only for research use only. All dosing must follow trial protocols.",
+    closingDisclaimer: EDU_CLOSING_DEFAULT,
   },
   "cjc-1295-ipamorelin-cp-10": {
     sections: [
@@ -159,7 +158,7 @@ const PRODUCT_EDUCATIONAL_GUIDES: Record<string, ProductEducationalGuide> = {
       {
         title: "Wolverine stack (5 mg BPC-157 + 5 mg TB-500)",
         paragraphs: [
-          "To reconstitute a 10 mg total Wolverine Stack vial, add bacteriostatic (BAC) water to the freeze-dried powder. Because this combination is experimental and lacks standardized human dosing guidelines, reconstitution calculations depend on your target volume.",
+          "To reconstitute a 10 mg total Wolverine Stack vial, add bacteriostatic (BAC) water to the freeze-dried powder. How much water you add determines your final concentration.",
           "If you add 2 mL of BAC water: Total concentration = 5 mg/mL (2.5 mg/mL of each peptide). Per unit on a U-100 syringe = 50 mcg of total peptide per unit. Example: 250 mcg = 5 units.",
           "If you add 1 mL of BAC water: Total concentration = 10 mg/mL (5 mg/mL of each peptide). Per unit = 100 mcg of total peptide per unit. Example: 250 mcg = 2.5 units (round per syringe markings).",
         ],
@@ -196,12 +195,6 @@ const PRODUCT_EDUCATIONAL_GUIDES: Record<string, ProductEducationalGuide> = {
           "Introduce water slowly: Angle the needle toward the inside glass wall. Slowly trickle the BAC water down the side of the glass so it rolls into the powder.",
           "Dissolve without shaking: Gently roll the vial between your palms or swirl it slowly until the powder is fully dissolved and the liquid is clear.",
           "Storage: Immediately place the reconstituted vial into the refrigerator.",
-        ],
-      },
-      {
-        title: "Important safety note",
-        paragraphs: [
-          "BPC-157 and TB-500 are investigational agents—not approved by the FDA or Health Canada for human use. Gray-market injectables carry risks of contamination or infection. Because both peptides stimulate angiogenesis, there are theoretical concerns regarding undiagnosed malignancies. Consult a licensed healthcare professional for approved treatment pathways when treating injury or chronic pain.",
         ],
       },
     ],

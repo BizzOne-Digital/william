@@ -37,11 +37,11 @@ export function HomeHero() {
             <Image
               src={LOGO_SRC}
               alt={LOGO_ALT}
-              width={768}
-              height={768}
+              width={691}
+              height={691}
               priority
               unoptimized
-              className="h-auto w-auto max-h-[19.5rem] max-w-[19.5rem] object-contain object-left drop-shadow-[0_8px_28px_rgba(0,0,0,0.45)] sm:max-h-[22.5rem] sm:max-w-[22.5rem] md:max-h-[25.5rem] md:max-w-[25.5rem] lg:max-h-[28.5rem] lg:max-w-[28.5rem]"
+              className="h-auto w-auto max-h-[17.55rem] max-w-[17.55rem] object-contain object-left drop-shadow-[0_8px_28px_rgba(0,0,0,0.45)] sm:max-h-[20.25rem] sm:max-w-[20.25rem] md:max-h-[22.95rem] md:max-w-[22.95rem] lg:max-h-[25.65rem] lg:max-w-[25.65rem]"
             />
           </h1>
 
