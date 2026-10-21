@@ -41,6 +41,7 @@ export async function POST(req: Request) {
   await sendBusinessEmail({
     subject: `Contact form — ${parsed.data.name}`,
     text: `From: ${parsed.data.name} <${parsed.data.email}>\nPhone: ${parsed.data.phone ?? "—"}\nSubject: ${parsed.data.subject ?? "—"}\n\n${parsed.data.message}`,
+    replyTo: parsed.data.email,
   });
 
   return NextResponse.json({ ok: true, id: String(doc._id) });

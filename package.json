@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "eslint",
     "seed:admin": "tsx --env-file=.env.local scripts/seed-admin.ts",
-    "seed:products": "tsx --env-file=.env.local scripts/seed-products.ts"
+    "seed:products": "tsx --env-file=.env.local scripts/seed-products.ts",
+    "test:smtp": "tsx --env-file=.env.local scripts/test-smtp.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

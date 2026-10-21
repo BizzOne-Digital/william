@@ -202,11 +202,13 @@ export async function POST(req: Request) {
       void sendBusinessEmail({
         subject: `New order ${orderNumber} — e-Transfer pending`,
         text: `Order ${orderNumber} for ${parsed.data.email}. Total: ${totals.totalCAD} CAD. Awaiting Interac e-Transfer to ${instructions.email}. Memo: ${orderNumber}.`,
+        replyTo: parsed.data.email,
       }).catch((err) => console.error("[checkout email]", err));
     } else {
       void sendBusinessEmail({
         subject: `New order ${orderNumber} — payment pending`,
         text: `Order ${orderNumber} for ${parsed.data.email}. Total: ${totals.totalCAD} CAD. Awaiting payment confirmation via webhook.`,
+        replyTo: parsed.data.email,
       }).catch((err) => console.error("[checkout email]", err));
     }
 
