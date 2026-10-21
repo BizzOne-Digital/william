@@ -38,7 +38,7 @@ export function SiteHeader({ cartCount }: { cartCount: number }) {
 
       <div className="relative mx-auto flex h-[6rem] w-full min-w-0 max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8 sm:h-[6.5rem]">
         <div className="min-w-0 shrink">
-          <HeaderBrand onHome={onHome} />
+          <HeaderBrand />
         </div>
 
         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex" aria-label="Primary">

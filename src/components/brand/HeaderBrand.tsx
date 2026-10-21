@@ -1,14 +1,13 @@
 import Link from "next/link";
-import { Logo } from "@/components/brand/Logo";
 import { BRAND } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 
-export type HeaderBrandMode = "logo" | "hidden-on-home" | "flag-wordmark";
+export type HeaderBrandMode = "text" | "flag-wordmark";
 
 export function resolveHeaderBrandMode(): HeaderBrandMode {
   const raw = process.env.NEXT_PUBLIC_HEADER_BRAND?.trim().toLowerCase();
-  if (raw === "hidden-on-home" || raw === "flag-wordmark" || raw === "logo") return raw;
-  return "logo";
+  if (raw === "flag-wordmark") return "flag-wordmark";
+  return "text";
 }
 
 function CanadaFlagIcon({ className }: { className?: string }) {
@@ -48,27 +47,21 @@ function FlagWordmark() {
   );
 }
 
-function HomeTextMark() {
+function TextMark() {
   return (
     <Link
       href="/"
-      className="font-display text-lg font-semibold tracking-tight text-white/90 transition hover:text-white sm:text-xl"
+      className="font-display text-lg font-bold tracking-tight sm:text-xl bg-gradient-to-b from-slate-100 via-slate-300 to-slate-500 bg-clip-text text-transparent transition hover:from-white hover:via-slate-200 hover:to-slate-400"
     >
       {BRAND.name}
     </Link>
   );
 }
 
-export function HeaderBrand({ onHome }: { onHome: boolean }) {
-  const mode = resolveHeaderBrandMode();
-
-  if (mode === "flag-wordmark") {
+/** Header uses text or flag — no logo image (hero/footer keep the logo). */
+export function HeaderBrand() {
+  if (resolveHeaderBrandMode() === "flag-wordmark") {
     return <FlagWordmark />;
   }
-
-  if (mode === "hidden-on-home" && onHome) {
-    return <HomeTextMark />;
-  }
-
-  return <Logo variant="header" />;
+  return <TextMark />;
 }
