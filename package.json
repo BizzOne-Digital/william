@@ -12,7 +12,8 @@
     "lint": "eslint",
     "seed:admin": "tsx --env-file=.env.local scripts/seed-admin.ts",
     "seed:products": "tsx --env-file=.env.local scripts/seed-products.ts",
-    "test:smtp": "tsx --env-file=.env.local scripts/test-smtp.ts"
+    "test:smtp": "tsx --env-file=.env.local scripts/test-smtp.ts",
+    "settings:disable-tax": "tsx --env-file=.env.local scripts/disable-tax.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

@@ -30,6 +30,8 @@ export default async function OrderConfirmationPage({ params, searchParams }: Pr
   const returnedFromStripe = Boolean(sp.session_id);
   const etransfer = order.paymentProvider === "etransfer";
   const etransferPending = etransfer && order.paymentStatus === "pending";
+  const pickupPending =
+    order.paymentProvider === "pickup" && order.paymentStatus === "pending";
 
   return (
     <div className="mx-auto w-full min-w-0 max-w-2xl px-4 py-12 sm:px-6">
@@ -41,6 +43,18 @@ export default async function OrderConfirmationPage({ params, searchParams }: Pr
             <p className="mt-4 text-sm leading-relaxed text-amber-100/90">
               {order.checkoutNote ??
                 "Online payment is not activated. This record was saved for demonstration only."}
+            </p>
+          </>
+        ) : pickupPending ? (
+          <>
+            <h1 className="font-display text-3xl font-semibold text-white">Pickup order reserved</h1>
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              Order <span className="font-medium text-foreground">{order.orderNumber}</span> is reserved for local
+              pickup.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-foreground/90">
+              {order.checkoutNote ??
+                "Pay in person when you collect your items. We will contact you when your order is ready."}
             </p>
           </>
         ) : etransferPending ? (

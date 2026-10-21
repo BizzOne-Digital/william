@@ -6,9 +6,13 @@ import Product from "@/models/Product";
 import { getOrCreateCartSessionId } from "@/lib/cart-session";
 import { calculateCartTotals } from "@/lib/pricing";
 
-export async function GET() {
+export async function GET(req: Request) {
   const sessionId = await getOrCreateCartSessionId();
-  const totals = await calculateCartTotals(sessionId);
+  const fulfillment =
+    new URL(req.url).searchParams.get("fulfillment") === "local_pickup"
+      ? "local_pickup"
+      : "shipping";
+  const totals = await calculateCartTotals(sessionId, { fulfillmentMethod: fulfillment });
   return NextResponse.json(totals);
 }
 

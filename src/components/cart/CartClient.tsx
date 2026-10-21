@@ -6,7 +6,7 @@ import { formatCAD } from "@/lib/product-utils";
 import type { CartTotals } from "@/lib/pricing";
 import { Button } from "@/components/ui/Button";
 
-export function CartClient() {
+export function CartClient({ pickupCheckoutEnabled = true }: { pickupCheckoutEnabled?: boolean }) {
   const [totals, setTotals] = useState<CartTotals | null>(null);
   const [loading, setLoading] = useState(true);
   const [code, setCode] = useState("");
@@ -158,6 +158,11 @@ export function CartClient() {
         <Button href="/checkout" className="w-full">
           Proceed to checkout
         </Button>
+        {pickupCheckoutEnabled && (
+          <Button href="/checkout?pickup=1" variant="secondary" className="w-full">
+            Local pickup — pay in person
+          </Button>
+        )}
       </aside>
     </div>
   );

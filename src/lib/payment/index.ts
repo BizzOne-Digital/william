@@ -37,6 +37,11 @@ export function getPaymentConfig(): PaymentConfig {
   return { enabled, provider: enabled ? provider : "none" };
 }
 
+/** Local pickup — pay in person; bypasses online e-Transfer / Stripe. */
+export function isPickupCheckoutEnabled(): boolean {
+  return process.env.PICKUP_ORDERS_ENABLED !== "false";
+}
+
 export { getEtransferEmail, getEtransferPaymentHours, getEtransferPaymentDueAt, buildEtransferInstructions } from "./etransfer";
 
 export async function createCheckoutSession(params: {

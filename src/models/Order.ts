@@ -47,6 +47,11 @@ const OrderSchema = new Schema(
       enum: ["new", "processing", "shipped", "delivered", "cancelled"],
       default: "new",
     },
+    fulfillmentMethod: {
+      type: String,
+      enum: ["shipping", "local_pickup"],
+      default: "shipping",
+    },
     checkoutNote: { type: String },
     archivedAt: { type: Date, default: null },
     deletedAt: { type: Date, default: null },

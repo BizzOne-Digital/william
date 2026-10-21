@@ -45,7 +45,7 @@ const SiteSettingsSchema = new Schema(
     shippingFlatRateCAD: { type: Number, default: SHIPPING_FLAT_RATE_CAD, min: 0 },
     freeShippingThresholdCAD: { type: Number, default: null, min: 0 },
     taxRatePercent: { type: Number, default: DEFAULT_TAX_RATE_PERCENT, min: 0, max: 100 },
-    taxEnabled: { type: Boolean, default: true },
+    taxEnabled: { type: Boolean, default: false },
     aboutContent: { type: String, default: defaultAbout },
     policies: {
       shipping: { type: String, default: defaultPolicies.shipping },

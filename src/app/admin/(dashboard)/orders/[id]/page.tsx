@@ -29,13 +29,15 @@ export default async function AdminOrderDetailPage({
       <div className="glass-panel rounded-2xl p-6 text-sm space-y-2">
         <p>Payment: {order.paymentStatus}</p>
         <p>Provider: {order.paymentProvider ?? "—"}</p>
+        <p>Fulfillment: {order.fulfillmentMethod === "local_pickup" ? "Local pickup" : "Shipping"}</p>
         <p>Reference: {order.paymentReference ?? "—"}</p>
         {order.paymentDueAt && order.paymentStatus === "pending" && (
           <p className="text-amber-200/90">
             Pay by: {new Date(order.paymentDueAt).toLocaleString("en-CA", { timeZone: "America/Toronto" })}
           </p>
         )}
-        {order.paymentProvider === "etransfer" && order.paymentStatus === "pending" && (
+        {(order.paymentProvider === "etransfer" || order.paymentProvider === "pickup") &&
+          order.paymentStatus === "pending" && (
           <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-4">
             <form
               action={async () => {
@@ -44,7 +46,7 @@ export default async function AdminOrderDetailPage({
               }}
             >
               <button type="submit" className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white">
-                Mark e-Transfer received (paid)
+                Mark payment received (paid)
               </button>
             </form>
             <form

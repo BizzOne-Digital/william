@@ -36,6 +36,9 @@ export const POLICY_REVIEW_NOTICE =
 export const HOME_INTRO_DEFAULT =
   "Intense Dropz is our public brand! Our online experience is designed to be fast, transparent, and mobile-ready — with tools that help you shop with confidence.";
 
+export const PICKUP_ORDER_CUSTOMER_NOTE =
+  "Your order is reserved for local pickup. Pay in person when you collect your items (cash, e-Transfer, or another method we accept). We will email you when your order is ready.";
+
 export const FOOTER_REFERRAL_LINE = "The greatest compliment you can give us is a referral";
 
 export const FOOTER_RESEARCH_DISCLAIMER =

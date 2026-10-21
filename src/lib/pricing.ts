@@ -32,9 +32,15 @@ export type CartTotals = {
   discountValid: boolean;
 };
 
+export type FulfillmentMethod = "shipping" | "local_pickup";
+
 export async function calculateCartTotals(
   sessionId: string,
-  options?: { applyDiscount?: boolean; customerKey?: string },
+  options?: {
+    applyDiscount?: boolean;
+    customerKey?: string;
+    fulfillmentMethod?: FulfillmentMethod;
+  },
 ): Promise<CartTotals> {
   await connectDB();
   const settings = await getSiteSettings();
@@ -133,8 +139,10 @@ export async function calculateCartTotals(
   }
 
   const afterDiscount = Math.max(subtotalCAD - discountCAD, 0);
-  let shippingCAD = settings.shippingFlatRateCAD ?? 0;
+  const isPickup = options?.fulfillmentMethod === "local_pickup";
+  let shippingCAD = isPickup ? 0 : settings.shippingFlatRateCAD ?? 0;
   if (
+    !isPickup &&
     settings.freeShippingThresholdCAD != null &&
     afterDiscount >= settings.freeShippingThresholdCAD
   ) {
